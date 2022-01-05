@@ -1,0 +1,22 @@
+{
+  "name": "BIG | Physical",
+  "description": "Andrea Marchetti\n\nChina on canvas\n25X35\n\nReal, at your house: the artworks of our artists are on sale!\nThe artwork will be sold as an NFT of the SNAFU Collective. After purchasing the NFT you will be able to redeem the physical artwork (app.nftsnafu.org/#/claim/)  or resell it. In the meantime, the artist will take care of and protect the artwork for you.",
+  "image": "https://ipfs.infura.io/ipfs/QmXQjefgjNb5YkDJUWhNpnyYrhixurqhZQCFEHAWqBiJSN",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:187",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "25x35"
+    },
+    {
+      "key": "Materials",
+      "trait_type": "Materials",
+      "value": "China on canvas"
+    }
+  ],
+  "id": "187",
+  "editions": "1",
+  "price": "950",
+  "fee": "50"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Aries",
+  "description": "Emme | Collection #2 Farming\n\nThe cosmic dimension of the zodiac is summarized perfectly by this work. The sign of Aries seems static, emanating a feeling of death.\nBut death is change, transformation. Aries knows this and embraces this peculiarity, becoming a symbol of dynamism and passion.",
+  "image": "https://ipfs.infura.io/ipfs/QmQo5fcsibXZinPuu2he5x3JxBpP7Aw2i3GLeP2fwda32C",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:112",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "4696x3465"
+    },
+    {
+      "key": "Size",
+      "trait_type": "Size",
+      "value": "4.8MB"
+    },
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "High resolution image"
+    }
+  ],
+  "id": "112",
+  "editions": "5",
+  "price": "190",
+  "fee": "10"
+}

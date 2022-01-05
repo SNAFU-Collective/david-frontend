@@ -1,0 +1,22 @@
+{
+  "name": "CACEROLAZO | Physical",
+  "description": "Andrea Marchetti\n\nAcrylic on canvas\n40X60\n\nReal, at your house: the artworks of our artists are on sale!\nThe artwork will be sold as an NFT of the SNAFU Collective. After purchasing the NFT you will be able to redeem the physical artwork (app.nftsnafu.org/#/claim/)  or resell it. In the meantime, the artist will take care of and protect the artwork for you.",
+  "image": "https://ipfs.infura.io/ipfs/QmQqvuFbMFTZq5nAJgtyLqEQEbxGhK2oBCMNbBk6m6Z32G",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:186",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "40x60"
+    },
+    {
+      "key": "Materials",
+      "trait_type": "Materials",
+      "value": "Acrylic on canvas"
+    }
+  ],
+  "id": "186",
+  "editions": "1",
+  "price": "950",
+  "fee": "50"
+}

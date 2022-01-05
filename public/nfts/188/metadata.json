@@ -1,0 +1,22 @@
+{
+  "name": "La grande marcia | Physical",
+  "description": "Andrea Marchetti\n\nOil on canvas\n100X40\n\nReal, at your house: the artworks of our artists are on sale!\nThe artwork will be sold as an NFT of the SNAFU Collective. After purchasing the NFT you will be able to redeem the physical artwork (app.nftsnafu.org/#/claim/)  or resell it. In the meantime, the artist will take care of and protect the artwork for you.",
+  "image": "https://ipfs.infura.io/ipfs/QmWuYoxHDiCG17BDTMVVJt7EDR3oX44BacgavL7foNVFT5",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:188",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "100x40"
+    },
+    {
+      "key": "Materials",
+      "trait_type": "Materials",
+      "value": "Oil on canvas"
+    }
+  ],
+  "id": "188",
+  "editions": "1",
+  "price": "950",
+  "fee": "50"
+}

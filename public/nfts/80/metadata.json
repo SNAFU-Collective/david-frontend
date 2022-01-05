@@ -1,0 +1,22 @@
+{
+  "name": "Altra materia - #2",
+  "description": "Jasmine | Collection #2\n\nThe artist gives the concept of indefinite a personal definition. The lines are precise in their imprecision, the light is perfect in its contrast, a concert of contraries that become synonyms.",
+  "image": "https://ipfs.infura.io/ipfs/QmdpcN47zhxaPQQEHzpYkvFpdAaJRntfaPWaJ3FqWGCXgw",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:80",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "2592x3872"
+    },
+    {
+      "key": "Size",
+      "trait_type": "Size",
+      "value": "2.3 MB"
+    }
+  ],
+  "id": "80",
+  "editions": "10",
+  "price": "95",
+  "fee": "5"
+}

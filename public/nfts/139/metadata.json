@@ -1,0 +1,22 @@
+{
+  "name": "Artbook #1 - Autographed Copy - Ed 15/15",
+  "description": "This NFT can be used to redeem a copy of the first print of the SNAFU Collective's artbook #1 autographed by Andrea Dionigi, Emme, Snafumett, Silvia Righetti, Balbèro, El lobo loco Sebastiano and Buda.\n\nThe art book will be shipped at the specified address during redemption.",
+  "image": "https://ipfs.infura.io/ipfs/QmUfCcTEJCdWEGYjgHi7y2D4ioNCUzmoSzRuR67N6drFPH",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:139",
+  "attributes": [
+    {
+      "key": "Redeem",
+      "trait_type": "Redeem",
+      "value": "Autographed copy"
+    },
+    {
+      "key": "Gift",
+      "trait_type": "Gift",
+      "value": "PDF"
+    }
+  ],
+  "id": "139",
+  "editions": "1",
+  "price": "950",
+  "fee": "50"
+}

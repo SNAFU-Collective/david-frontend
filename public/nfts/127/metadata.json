@@ -1,0 +1,22 @@
+{
+  "name": "Artist Collective's Artbook #1",
+  "description": "This NFT contains, as unlockable content, the PDF of the first SNAFU Collective's Artbook.\n\nThe Artbook is 78 pages long and contains descriptions of the artists and their artworks minted during Collection #1 and #2.\n\n\nHow to unlock\nGo to https://xdai.unique.one/my-collectible under the \"Collections\" section and click on this NFT. On the next page, you will see the \"Show Unlocked Content\" button. Press it, sign the transaction with your wallet and enjoy the artbook!",
+  "image": "https://ipfs.infura.io/ipfs/QmTQAuKRJjwtDBUWKpGVRDTWSgwxwKRGzogZ9p6zou5131",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:127",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "A4"
+    },
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "PDF"
+    }
+  ],
+  "id": "127",
+  "editions": "10",
+  "price": "95",
+  "fee": "5"
+}

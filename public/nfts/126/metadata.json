@@ -1,0 +1,22 @@
+{
+  "name": "Free poster - SNAFU Ticket ",
+  "description": "This NFT can be used to redeem a framed poster between the following:\n1. Prologue | Alessandro Nalli | Collection #1\nhttps://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:30\n2. Second Abstr-ACT  | Alessandro Nalli | Collection #1\nhttps://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:38\n3. Third Abstr-ACT  | Alessandro Nalli | Collection #1\nhttps://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:44\n\nTo redeem the prize you need to burn this NFT and send us the transaction hash together with your shipping details and sign the request with your wallet.\nVisit https://app.nftsnafu.org for more details.\n\nPoster dimension: 300x400-mm\nUnless the user specifies, the poster will arrive with a frame.",
+  "image": "https://ipfs.infura.io/ipfs/QmUE3D8YvuRAtPCYSFTs3NBGHSANiJajSMi7cgru1oiCGj",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:126",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "300x400-mm"
+    },
+    {
+      "key": "Framed",
+      "trait_type": "Framed",
+      "value": "Yes"
+    }
+  ],
+  "id": "126",
+  "editions": "3",
+  "price": "316.666666666666666666",
+  "fee": "16.666666666666666666"
+}

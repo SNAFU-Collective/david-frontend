@@ -1,0 +1,22 @@
+{
+  "name": "Pescatore del cielo",
+  "description": "Andrea Marchetti | Collection #2\n\nA moment of play, a dreamlike fun that we can only experience in our dreams. The influences of the surrealism of Breton and Dali are fully discernible but the artist's style remains unique and creates an environment that everyone can inhabit.",
+  "image": "https://ipfs.infura.io/ipfs/QmdMghrMATCZRhZfsRzjFzTXExMwiTWWzrgFaasrieZ67S",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:101",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "3508x4961"
+    },
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "High resolution image"
+    }
+  ],
+  "id": "101",
+  "editions": "10",
+  "price": "95",
+  "fee": "5"
+}

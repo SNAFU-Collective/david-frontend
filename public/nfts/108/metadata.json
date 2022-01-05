@@ -1,0 +1,27 @@
+{
+  "name": "Neuron",
+  "description": "Alessandro Nalli | Collection #2 Farming\n\nThe forces of nature mix with the magnificence of the universe in\nthis magnificent work where light plays a central role. The branches seem to reach the deepest meanders of the firmament, creating a space-time bridge towards new worlds.",
+  "image": "https://ipfs.infura.io/ipfs/QmbrGw1SM2br1fmL6Enk6fpZUPnEgppzy8Wo8hQ9rNJGPR",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:108",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "7335x5020"
+    },
+    {
+      "key": "Size",
+      "trait_type": "Size",
+      "value": "21MB"
+    },
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "High resolution image"
+    }
+  ],
+  "id": "108",
+  "editions": "5",
+  "price": "190",
+  "fee": "10"
+}

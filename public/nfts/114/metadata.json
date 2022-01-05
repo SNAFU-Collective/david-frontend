@@ -1,0 +1,27 @@
+{
+  "name": "Piccoli incontri #2",
+  "description": "Sabrina | Collection #2 Farming\n\nThe detail of the hidden, of the concealed, is shown in all its extraordinary power. An image alive, delicate, and powerful.",
+  "image": "https://ipfs.infura.io/ipfs/QmdRQQLPbhy5Zd9cHTWTbvKjnto72TMZZeu5BA2Y4iQFzT",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:114",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "3488x2504"
+    },
+    {
+      "key": "Size",
+      "trait_type": "Size",
+      "value": "2.7MB"
+    },
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "High resolution image"
+    }
+  ],
+  "id": "114",
+  "editions": "8",
+  "price": "118.75",
+  "fee": "6.25"
+}

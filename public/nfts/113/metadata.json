@@ -1,0 +1,27 @@
+{
+  "name": "Altra materia - #3",
+  "description": "Jasmine Bernardeschi | Collection #2 Farming\n\nTime, a concept that we have always tried to explore, in vain we try to give it a form, a color, and a voice, but it is not possible. Time escapes us and it is useless to chase it, we can only inhabit it now, right now.",
+  "image": "https://ipfs.infura.io/ipfs/QmdLR3YsquLQ8HKRX4Kdz13eoE3edL7qhWzGw6ViEPj2Ww",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:113",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "3872x2592"
+    },
+    {
+      "key": "Size",
+      "trait_type": "Size",
+      "value": "4MB"
+    },
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "High resolution image"
+    }
+  ],
+  "id": "113",
+  "editions": "5",
+  "price": "190",
+  "fee": "10"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "SNAFU - Collection #2 - Special Edition ",
+  "description": "NFT created for the second collection of the SNAFU Collective. \nIt's a free gift for all those who bought the NFT of this collection and contains inside, as unlockable content, the digital version of the first artbook of the Collective.",
+  "image": "https://ipfs.infura.io/ipfs/QmajW5mpjRExqADKiEsE72Q9FzvZGT6to9YU1ZtYgh5qCt",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:124",
+  "attributes": [
+    {
+      "key": "Unlock",
+      "trait_type": "Unlock",
+      "value": "SNAFU Artbook #1"
+    }
+  ],
+  "id": "124",
+  "editions": "18",
+  "price": "52.777777777777777777",
+  "fee": "2.777777777777777777"
+}

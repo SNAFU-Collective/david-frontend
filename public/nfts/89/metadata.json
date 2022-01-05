@@ -1,0 +1,22 @@
+{
+  "name": "BFF",
+  "description": "Andrea Dionigi | Collection #2\n\nThe concreteness of the human body is transformed into a shapeless Rorschach blot that hides its features. The work seems to push the viewer to wonder what are the unconscious mental impulses that govern the concept of eros.",
+  "image": "https://ipfs.infura.io/ipfs/QmdBKcZ4wZEGs9nDsZoa32Y3gGntvN5oWGC3UcmchEaNA3",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:89",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "2500x2500"
+    },
+    {
+      "key": "Unlockable content",
+      "trait_type": "Unlockable content",
+      "value": "GIF Version"
+    }
+  ],
+  "id": "89",
+  "editions": "10",
+  "price": "95",
+  "fee": "5"
+}

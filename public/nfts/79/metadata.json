@@ -1,0 +1,22 @@
+{
+  "name": "Altra materia - #1",
+  "description": "Jasmine | Collection #2\n\nA distorted reality, an uncertain moment dispersed in the meanders of time. A dimension alien to reality that triggers the imagination of the viewer who can only wonder what place he is exploring.",
+  "image": "https://ipfs.infura.io/ipfs/QmZdznVCuw3HDsZ2obmQc3dUjzvjtPEvh9L5jPnDytUpv7",
+  "external_url": "https://xdai.unique.one/token2/0xED1eFC6EFCEAAB9F6d609feC89c9E675Bf1efB0a:79",
+  "attributes": [
+    {
+      "key": "Dimension",
+      "trait_type": "Dimension",
+      "value": "5053x3382"
+    },
+    {
+      "key": "Size",
+      "trait_type": "Size",
+      "value": "3.7 MB"
+    }
+  ],
+  "id": "79",
+  "editions": "10",
+  "price": "95",
+  "fee": "5"
+}
