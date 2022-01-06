@@ -15,14 +15,14 @@
     </v-col>
     <v-col cols="4" offset="1">
       <v-row>
-        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1"></v-img>
-        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1"></v-img>
-        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1"></v-img>
+        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
+        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
+        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
       </v-row>
       <v-row>
-        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1"></v-img>
-        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1"></v-img>
-        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1"></v-img>
+        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
+        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
+        <v-img src="../../public/pfp/unknown.jpeg" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
       </v-row>
     </v-col>
   </v-row>
@@ -34,6 +34,7 @@ export default {
   methods: {
   },
   data() {
+    return {}
   },
   computed: {
   },

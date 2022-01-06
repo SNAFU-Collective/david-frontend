@@ -64,7 +64,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions("connectweb3", ["connectWallet", "addSnafuToMetamask", "disconnectWallet"]),
+    ...mapActions("connectweb3", ["connectWallet", "disconnectWallet"]),
   },
   computed: {
     ...mapFields("connectweb3", ["isConnected", "account", 'chainId']),

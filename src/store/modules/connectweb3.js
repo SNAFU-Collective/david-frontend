@@ -43,7 +43,6 @@ export default {
     mutations: {
         updateField,
         setConnected: (state, payload) => state.isConnected = payload,
-        setSnafuBalance: (state, payload) => state.snafuBalance = payload,
         setSnafuSupply: (state, payload) => state.snafuSupply = payload,
         setSnafuLockedSupply: (state, payload) => state.snafuLockedSupply = payload,
         setSnafuCirculatingSupply: (state, payload) => state.snafuCirculatingSupply = payload,
@@ -142,9 +141,6 @@ export default {
         async updateSnafu20Balance(context) {
             let contract = context.state.snafu20;
             let account = context.state.account;
-            console.log("updatingBalance")
-            let balance = await contract.balanceOf(account);
-            context.commit("setSnafuBalance", balance.toString());
         },
         async updateSnafu20Supply(context) {
             let contract = context.state.snafu20;

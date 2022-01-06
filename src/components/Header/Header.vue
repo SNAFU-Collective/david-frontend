@@ -1,13 +1,10 @@
 <template>
   <div>
     <div id="desktopHeader">
-<!--      <div id="pinnedLeftHeader">-->
-<!--        <div id="transformedText">-->
-<!--          <router-link :to="{ name: 'Home'}" id="snafuText">DAVID</router-link>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div id="pinnedLeftHeader">
+          <router-link :to="{ name: 'Home'}"><v-img width="200px" src="logo.png"></v-img></router-link>
+      </div>
 
-<!--      <p id="subtitle">{{ currentRouteName }}</p>-->
       <div id="subtitle">
         <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
         <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
@@ -17,13 +14,9 @@
     </div>
 
     <div id="mobileHeader">
-<!--      <div id="mobileHeaderContainer">-->
-<!--        <div id="mobileLogoContainer" style="margin-left: -5px">-->
-<!--          <img src="logo.png" alt="logo-SNAFU.png" id="logoMobile">-->
-<!--          <router-link :to="{ name: 'Home'}" id="snafuTextMobile">SNAFU</router-link>-->
-<!--        </div>-->
-<!--        <p id="subtitleMobile">{{ currentRouteName }}</p>-->
-<!--      </div>-->
+      <div id="mobileLogoContainer">
+          <router-link :to="{ name: 'Home'}"><v-img width="150px" src="logo.png"></v-img></router-link>
+      </div>
 
       <div id="menuMobile">
         <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
@@ -117,19 +110,10 @@ export default {
 
   #pinnedLeftHeader {
     position: absolute;
-    top: 110px;
+    top: 20px;
     display: inline-table;
     z-index: 11111;
-    left: -15px
-  }
-
-  #snafuText {
-    text-decoration: unset;
-    font-size: 52px;
-    font-weight: bold;
-    color: #303030;
-    letter-spacing: 0.05em;
-    line-height: 1.2em;
+    left: 10px
   }
 
   #pinnedLeftHeader > #logo {
@@ -141,16 +125,10 @@ export default {
     cursor: pointer;
   }
 
-  #transformedText {
-    transform: rotate(
-        270deg
-    );
-  }
-
   #desktopHeader > #subtitle {
     position: absolute;
     top: 50px;
-    left: 148px;
+    left: 250px;
     font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 17px;
