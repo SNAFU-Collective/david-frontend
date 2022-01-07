@@ -8,7 +8,8 @@
     <v-img
         style="position:absolute;z-index: 1"
         width="390px"
-        src="../../public/pfp/unknown.jpeg"
+        class="test"
+        :src="require('../../public/pfp/' + currentItem + '.png')"
     />
   </div>
 </template>
@@ -16,11 +17,25 @@
 <script>
 export default {
   components: {},
-  methods: {},
-  data() {
-    return {}
+  methods: {
+    getRandomInt(max) {
+      let number = Math.floor(Math.random() * max)
+      if (number === 0) number = 1
+      return number
+    },
   },
-  computed: {},
+  data() {
+    return {
+      currentItem: 1,
+    }
+  },
+  computed: {
+  },
+  mounted() {
+    setInterval(() => {
+      this.currentItem = this.getRandomInt(60)
+    }, 1000)
+  },
 }
 </script>
 
