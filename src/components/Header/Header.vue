@@ -241,7 +241,6 @@ export default {
     display: flex;
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 49%, rgba(0,0,0,0) 100%);
-    display: flex;
     align-content: center;
     align-items: center;
     padding: 0 20px;
@@ -257,7 +256,7 @@ export default {
   }
 
   .bm-burger-bars {
-    background-color: white;
+    background-color: white !important;
   }
 
   .line-style {
