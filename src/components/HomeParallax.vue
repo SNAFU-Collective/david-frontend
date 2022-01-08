@@ -84,8 +84,7 @@ export default {
 
   .characterDiv {
     width: 60%;
-    position: absolute;
-    right: 0px;
+    margin-left: 40%;
     z-index: 2
   }
 }
