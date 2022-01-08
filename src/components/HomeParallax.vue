@@ -15,6 +15,7 @@
       />
       <img
           v-else
+          style="width: 100%; vertical-align: bottom !important; z-index: 2"
           src="../../public/background/mobile/Characters.png"
           transition="slide-y-transition"
       />
@@ -56,13 +57,6 @@ export default {
 </script>
 
 <style>
-/*.divCornice {*/
-/*  display: flex;*/
-/*  align-items: center; !*horizontal centering*!*/
-/*  justify-content: center; !*vertical centering*!*/
-/*  flex-direction: column; !*keep the h3 above the textbox*!*/
-/*}*/
-
 @media screen and (min-width: 769px) {
   .main {
     width: 100%;
@@ -97,13 +91,16 @@ export default {
   }
 
   .davidFrame {
-    top: 50px;
+    top: 150px;
   }
 
   .characterDiv {
+    z-index: 2;
     width: 60%;
     margin-left: 40%;
-    z-index: 2
+    display: flex;
+    align-items: flex-end !important;
+    height: 100%;
   }
 }
 </style>
