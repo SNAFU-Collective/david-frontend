@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <HomeParallax/>
-<!--    <Welcome/>-->
+    <Welcome/>
   </v-app>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   name: "App",
 
   components: {
-    // Welcome,
+    Welcome,
     HomeParallax
   },
 
