@@ -1,10 +1,14 @@
 <template>
   <div class="divCornice">
+        <v-img
+            style="position:absolute;"
+            :width="screenWidth > 768 ? '390px' : '290px'"
+            :src="require('../../public/gif/' + selectedGif + '.gif')"
+        />
     <v-img
         style="position:absolute;"
         :width="screenWidth > 768 ? '390px' : '290px'"
-        class="test"
-        :src="require('../../public/gif/' + selectedGif + '.gif')"
+        :src="require('../../public/background/frameShade.png')"
     />
     <v-img
         style="position:absolute;"
