@@ -1,34 +1,26 @@
 <template>
-  <v-main class="main">
-    <v-img src="../../public/background/desktop/BG.jpg" style="z-index: 0">
-      <DavidFrame/>
-
-      <v-row
-          align="center"
-          justify="center"
-          style="z-index: 3;"
-      >
-        <v-col
-            class="text-center"
-            cols="6"
-            offset="1"
-        >
-          <v-img
-              class="foreground"
-              ref="foreground"
-              width="40%"
-              style="position: absolute;bottom: 20px;z-index: 3"
-              src="../../public/background/desktop/Characters.png"
-              transition="slide-y-transition"
-          />
-        </v-col>
-      </v-row>
-    </v-img>
+  <div class="main" :style="'height:'+screenHeight+'px'">
     <Header/>
     <!--      <router-view />-->
-
-
-  </v-main>
+    <DavidFrame class="davidFrame"/>
+    <v-row
+        class="characterDiv"
+        align="center"
+        justify="center"
+        style="z-index: 2;"
+    >
+      <v-img
+          v-if="screenWidth > 768"
+          src="../../public/background/desktop/Characters.png"
+          transition="slide-y-transition"
+      />
+      <v-img
+          v-else
+          src="../../public/background/mobile/Characters.png"
+          transition="slide-y-transition"
+      />
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -36,7 +28,10 @@ import Header from "../components/Header/Header"
 import DavidFrame from "../components/Frame"
 
 export default {
-  components: {Header, DavidFrame},
+  components: {
+    Header,
+    DavidFrame,
+  },
   methods: {},
   data() {
     return {}
@@ -45,30 +40,53 @@ export default {
     screenHeight() {
       return window.innerHeight
     },
+    screenWidth() {
+      return window.innerWidth
+    },
   },
 }
 </script>
 
 <style>
-/*@media screen and (min-width: 768px) {*/
-/*  .main {*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    background-image: url("../../public/background/desktop/BG.jpg");*/
-/*    background-position: center; !* Center the image *!*/
-/*    background-repeat: no-repeat; !* Do not repeat the image *!*/
-/*    background-size: cover; !* Resize the background image to cover the entire container *!*/
-/*  }*/
-/*}*/
+@media screen and (min-width: 769px) {
+  .main {
+    width: 100%;
+    background-image: url("../../public/background/desktop/BG.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
 
-/*@media screen and (max-width: 768px) {*/
-/*  .main {*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    background-image: url("../../public/background/mobile/BG.jpg");*/
-/*    background-position: center; !* Center the image *!*/
-/*    background-repeat: no-repeat; !* Do not repeat the image *!*/
-/*    background-size: cover; !* Resize the background image to cover the entire container *!*/
-/*  }*/
-/*}*/
+  .davidFrame {
+    margin-top: 300px;
+  }
+
+  .characterDiv {
+    width: 40%;
+    margin-left: 30%;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    height: 900px !important;
+    width: 100%;
+    background-image: url("../../public/background/mobile/BG.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+
+  .davidFrame {
+    margin-top: 300px;
+  }
+
+  .characterDiv {
+    width: 60%;
+    position: absolute;
+    right: 0px;
+    z-index: 2
+  }
+}
 </style>

@@ -1,21 +1,24 @@
 <template>
-  <div>
+  <div class="headerMain">
     <div id="desktopHeader">
-      <div id="pinnedLeftHeader">
+      <v-col cols="2" id="pinnedLeftHeader">
           <router-link :to="{ name: 'Home'}"><v-img width="200px" src="logo.png"></v-img></router-link>
-      </div>
+      </v-col>
 
-      <div id="subtitle">
+      <v-col cols="8" id="subtitle">
         <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
         <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
-      </div>
+      </v-col>
 
-      <wallet-status class="mt-5 pb-2 walletHeader"/>
+      <v-col cols="2">
+        <wallet-status class="mt-5 pb-2 walletHeader"/>
+      </v-col>
+
     </div>
 
     <div id="mobileHeader">
       <div id="mobileLogoContainer">
-          <router-link :to="{ name: 'Home'}"><v-img width="150px" src="logo.png"></v-img></router-link>
+          <router-link :to="{ name: 'Home'}"><v-img width="180px" src="logo.png"></v-img></router-link>
       </div>
 
       <div id="menuMobile">
@@ -88,16 +91,27 @@ export default {
 .highlightOnHover:hover {
   background-color: #a7a7a752;
 }
+
+.headerMain {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
 @media screen and (min-width: 769px) {
   .walletHeader {
-    width: 355px;
-    position: absolute;
-    right: 0px;
-    top: 20px;
+    /*width: 355px;*/
+    /*position: absolute;*/
+    /*right: 0px;*/
+    /*top: 20px;*/
   }
 
   #desktopHeader {
-    display: block;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.9556197478991597) 0%, rgba(0,0,0,0.7679446778711485) 49%, rgba(0,0,0,0) 100%);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 0 20px;
   }
 
   #menuMobile {
@@ -109,8 +123,8 @@ export default {
   }
 
   #pinnedLeftHeader {
-    position: absolute;
-    top: 20px;
+    /*position: absolute;*/
+    /*top: 20px;*/
     display: inline-table;
     z-index: 11111;
     left: 10px
@@ -126,9 +140,9 @@ export default {
   }
 
   #desktopHeader > #subtitle {
-    position: absolute;
-    top: 50px;
-    left: 250px;
+    /*position: absolute;*/
+    /*top: 50px;*/
+    /*left: 250px;*/
     font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 17px;
@@ -226,6 +240,9 @@ export default {
 
   #mobileLogoContainer {
     display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 
   #mobileHeader {

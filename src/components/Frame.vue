@@ -1,15 +1,15 @@
 <template>
   <div class="divCornice">
     <v-img
-        style="position:absolute;z-index: 2"
-        width="400px"
-        src="../../public/background/desktop/cornice.png"
-    />
-    <v-img
-        style="position:absolute;z-index: 1"
-        width="390px"
+        style="position:absolute;"
+        :width="screenWidth > 768 ? '390px' : '290px'"
         class="test"
         :src="require('../../public/pfp/' + currentItem + '.png')"
+    />
+    <v-img
+        style="position:absolute;"
+        :width="screenWidth > 768 ? '400px' : '300px'"
+        src="../../public/background/desktop/cornice.png"
     />
   </div>
 </template>
@@ -30,6 +30,12 @@ export default {
     }
   },
   computed: {
+    screenHeight() {
+      return window.innerHeight
+    },
+    screenWidth() {
+      return window.innerWidth
+    },
   },
   mounted() {
     setInterval(() => {
@@ -41,7 +47,6 @@ export default {
 
 <style>
 .divCornice {
-  margin-top: 250px;
   display: flex;
   align-items: center; /*horizontal centering*/
   justify-content: center; /*vertical centering*/
