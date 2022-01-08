@@ -260,8 +260,12 @@ export default {
     width: 30px;
   }
 
+  .bm-burger-bars {
+    background-color: white;
+  }
+
   .line-style {
-    height: 8% !important;
+    height: 9% !important;
     left: 0;
     position: absolute;
     right: 0;
