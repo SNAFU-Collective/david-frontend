@@ -5,16 +5,15 @@
     <DavidFrame class="davidFrame"/>
     <v-row
         class="characterDiv"
-        align="center"
-        justify="center"
         style="z-index: 2;"
     >
-      <v-img
+      <img
           v-if="screenWidth > 768"
+          style="width: 100%; vertical-align: bottom !important; z-index: 2"
           src="../../public/background/desktop/Characters.png"
           transition="slide-y-transition"
       />
-      <v-img
+      <img
           v-else
           src="../../public/background/mobile/Characters.png"
           transition="slide-y-transition"
@@ -32,7 +31,13 @@ export default {
     Header,
     DavidFrame,
   },
-  methods: {},
+  methods: {
+    getRandomInt(max) {
+      let number = Math.floor(Math.random() * max)
+      if (number === 0) number = 1
+      return number
+    },
+  },
   data() {
     return {}
   },
@@ -43,11 +48,21 @@ export default {
     screenWidth() {
       return window.innerWidth
     },
+    selectedGif() {
+      return this.getRandomInt(4)
+    }
   },
 }
 </script>
 
 <style>
+/*.divCornice {*/
+/*  display: flex;*/
+/*  align-items: center; !*horizontal centering*!*/
+/*  justify-content: center; !*vertical centering*!*/
+/*  flex-direction: column; !*keep the h3 above the textbox*!*/
+/*}*/
+
 @media screen and (min-width: 769px) {
   .main {
     width: 100%;
@@ -58,13 +73,16 @@ export default {
   }
 
   .davidFrame {
-    margin-top: 300px;
+    top: 100px;
   }
 
   .characterDiv {
     width: 40%;
     margin-left: 30%;
     z-index: 2;
+    display: flex;
+    align-items: flex-end !important;
+    height: 100%;
   }
 }
 
@@ -79,7 +97,7 @@ export default {
   }
 
   .davidFrame {
-    margin-top: 300px;
+    top: 50px;
   }
 
   .characterDiv {

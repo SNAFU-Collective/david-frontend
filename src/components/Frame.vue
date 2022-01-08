@@ -1,18 +1,21 @@
 <template>
   <div class="divCornice">
-        <v-img
-            style="position:absolute;"
-            :width="screenWidth > 768 ? '390px' : '290px'"
-            :src="require('../../public/gif/' + selectedGif + '.gif')"
-        />
     <v-img
-        style="position:absolute;"
+        class="inside"
         :width="screenWidth > 768 ? '390px' : '290px'"
+        :height="screenWidth > 768 ? '390px' : '290px'"
+        :src="require('../../public/gif/' + selectedGif + '.gif')"
+    />
+    <v-img
+        class="inside"
+        :width="screenWidth > 768 ? '390px' : '290px'"
+        :height="screenWidth > 768 ? '390px' : '290px'"
         :src="require('../../public/background/frameShade.png')"
     />
     <v-img
-        style="position:absolute;"
+        class="inside"
         :width="screenWidth > 768 ? '400px' : '300px'"
+        :height="screenWidth > 768 ? '400px' : '300px'"
         src="../../public/background/desktop/cornice.png"
     />
   </div>
@@ -29,8 +32,7 @@ export default {
     },
   },
   data() {
-    return {
-    }
+    return {}
   },
   computed: {
     screenHeight() {
@@ -40,8 +42,8 @@ export default {
       return window.innerWidth
     },
     selectedGif() {
-     return this.getRandomInt(4)
-    }
+      return this.getRandomInt(4)
+    },
   },
   mounted() {
   },
@@ -50,9 +52,20 @@ export default {
 
 <style>
 .divCornice {
-  display: flex;
-  align-items: center; /*horizontal centering*/
-  justify-content: center; /*vertical centering*/
-  flex-direction: column; /*keep the h3 above the textbox*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+}
+.inside {
+  margin: auto;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 </style>
