@@ -4,7 +4,7 @@
         style="position:absolute;"
         :width="screenWidth > 768 ? '390px' : '290px'"
         class="test"
-        :src="require('../../public/pfp/' + currentItem + '.png')"
+        :src="require('../../public/gif/' + selectedGif + '.gif')"
     />
     <v-img
         style="position:absolute;"
@@ -26,7 +26,6 @@ export default {
   },
   data() {
     return {
-      currentItem: 1,
     }
   },
   computed: {
@@ -36,11 +35,11 @@ export default {
     screenWidth() {
       return window.innerWidth
     },
+    selectedGif() {
+     return this.getRandomInt(4)
+    }
   },
   mounted() {
-    setInterval(() => {
-      this.currentItem = this.getRandomInt(60)
-    }, 1000)
   },
 }
 </script>
