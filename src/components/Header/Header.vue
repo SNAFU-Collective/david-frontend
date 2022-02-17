@@ -1,38 +1,35 @@
 <template>
-  <div>
+  <div class="headerMain">
     <div id="desktopHeader">
-<!--      <div id="pinnedLeftHeader">-->
-<!--        <div id="transformedText">-->
-<!--          <router-link :to="{ name: 'Home'}" id="snafuText">DAVID</router-link>-->
-<!--        </div>-->
-<!--      </div>-->
+      <v-col cols="10" id="pinnedLeftHeader">
+          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png"/></router-link>
+      </v-col>
 
-<!--      <p id="subtitle">{{ currentRouteName }}</p>-->
-      <div id="subtitle">
-        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
-        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
-      </div>
+<!--      <v-col cols="8" id="subtitle">-->
+<!--        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
+<!--        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
+<!--      </v-col>-->
 
-      <wallet-status class="mt-5 pb-2 walletHeader"/>
+      <v-col cols="2">
+<!--        <wallet-status class="mt-5 pb-2 walletHeader"/>-->
+        <h2 style="color: white">COMING SOON!</h2>
+      </v-col>
+
     </div>
 
     <div id="mobileHeader">
-<!--      <div id="mobileHeaderContainer">-->
-<!--        <div id="mobileLogoContainer" style="margin-left: -5px">-->
-<!--          <img src="logo.png" alt="logo-SNAFU.png" id="logoMobile">-->
-<!--          <router-link :to="{ name: 'Home'}" id="snafuTextMobile">SNAFU</router-link>-->
-<!--        </div>-->
-<!--        <p id="subtitleMobile">{{ currentRouteName }}</p>-->
-<!--      </div>-->
+      <v-col cols="11" id="mobileLogoContainer">
+          <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
+      </v-col>
 
-      <div id="menuMobile">
-        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
-               :width=windowWidth>
-          <wallet-status class="mt-5 pb-2 walletHeader"/>
-          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
-          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
-        </Slide>
-      </div>
+<!--      <v-col cols="1" id="menuMobile">-->
+<!--        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"-->
+<!--               :width=windowWidth>-->
+<!--          <wallet-status class="mt-5 pb-2 walletHeader"/>-->
+<!--          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
+<!--          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
+<!--        </Slide>-->
+<!--      </v-col>-->
 
     </div>
   </div>
@@ -43,7 +40,10 @@ import {Slide} from 'vue-burger-menu'
 import WalletStatus from '../Wallet/WalletStatus.vue'
 
 export default {
-  components: {WalletStatus, Slide},
+  components: {
+    // WalletStatus,
+    // Slide
+  },
   methods: {
     handleOpenMenu() {
       document.querySelector(".bm-burger-button").style.display = 'none'
@@ -95,16 +95,20 @@ export default {
 .highlightOnHover:hover {
   background-color: #a7a7a752;
 }
-@media screen and (min-width: 769px) {
-  .walletHeader {
-    width: 355px;
-    position: absolute;
-    right: 0px;
-    top: 20px;
-  }
 
+.headerMain {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+@media screen and (min-width: 769px) {
   #desktopHeader {
-    display: block;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.9556197478991597) 0%, rgba(0,0,0,0.7679446778711485) 49%, rgba(0,0,0,0) 100%);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 0 20px;
   }
 
   #menuMobile {
@@ -116,20 +120,11 @@ export default {
   }
 
   #pinnedLeftHeader {
-    position: absolute;
-    top: 110px;
+    /*position: absolute;*/
+    /*top: 20px;*/
     display: inline-table;
     z-index: 11111;
-    left: -15px
-  }
-
-  #snafuText {
-    text-decoration: unset;
-    font-size: 52px;
-    font-weight: bold;
-    color: #303030;
-    letter-spacing: 0.05em;
-    line-height: 1.2em;
+    left: 10px
   }
 
   #pinnedLeftHeader > #logo {
@@ -141,16 +136,10 @@ export default {
     cursor: pointer;
   }
 
-  #transformedText {
-    transform: rotate(
-        270deg
-    );
-  }
-
   #desktopHeader > #subtitle {
-    position: absolute;
-    top: 50px;
-    left: 148px;
+    /*position: absolute;*/
+    /*top: 50px;*/
+    /*left: 250px;*/
     font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 17px;
@@ -248,12 +237,17 @@ export default {
 
   #mobileLogoContainer {
     display: flex;
+    top: 10px;
+    left: 10px;
   }
 
   #mobileHeader {
-    margin-left: 30px;
-    margin-top: 20px;
     display: flex;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 49%, rgba(0,0,0,0) 100%);
+    align-content: center;
+    align-items: center;
+    padding: 0 20px;
   }
 
   .bm-burger-button {
@@ -265,8 +259,12 @@ export default {
     width: 30px;
   }
 
+  .bm-burger-bars {
+    background-color: white !important;
+  }
+
   .line-style {
-    height: 8% !important;
+    height: 9% !important;
     left: 0;
     position: absolute;
     right: 0;

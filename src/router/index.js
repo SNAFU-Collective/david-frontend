@@ -8,7 +8,7 @@ const routes = [
         path: '/',
         name: 'Home',
         meta: {
-            title: 'DAVID by SNAFU Collective',
+            title: 'Bored David',
             headerSubtitle: '',
         },
         component: () => import('../views/Home.vue'),

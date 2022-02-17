@@ -1,27 +1,21 @@
 <template>
   <v-app>
-    <v-main class="main">
-      <Header style="padding-bottom: 60px" />
-<!--      <router-view />-->
-    </v-main>
-    <Welcome/>
-    <ScrollToTop/>
+    <HomeParallax/>
+<!--    <Welcome/>-->
   </v-app>
 </template>
 
 <script>
 import {mapActions} from "vuex"
-import Header from "./components/Header/Header"
-import ScrollToTop from "./components/ScrollToTop/Button"
 import Welcome from "./components/Welcome"
+import HomeParallax from "./components/HomeParallax"
 
 export default {
   name: "App",
 
   components: {
-    Header,
-    ScrollToTop,
-    Welcome
+    // Welcome,
+    HomeParallax
   },
 
   methods: {
@@ -36,15 +30,6 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Barlow:200,400,600,800');
 
-
-.main {
-  height: 100%;
-  width: 100%;
-  background-image: url("../public/background.jpg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
 
 html, body {
   font-family: 'Barlow', sans-serif;
