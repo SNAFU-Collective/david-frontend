@@ -2,7 +2,7 @@
   <div class="headerMain">
     <div id="desktopHeader">
       <v-col cols="10" id="pinnedLeftHeader">
-          <router-link :to="{ name: 'Home'}"><img src="logo.png" class="logo"/></router-link>
+          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png"/></router-link>
       </v-col>
 
 <!--      <v-col cols="8" id="subtitle">-->
@@ -19,7 +19,7 @@
 
     <div id="mobileHeader">
       <v-col cols="11" id="mobileLogoContainer">
-          <router-link :to="{ name: 'Home'}"><v-img width="180px" src="logo.png"></v-img></router-link>
+          <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
       </v-col>
 
 <!--      <v-col cols="1" id="menuMobile">-->
@@ -102,9 +102,6 @@ export default {
   top: 0;
 }
 @media screen and (min-width: 769px) {
-  .logo {
-    width: 150px;
-  }
   #desktopHeader {
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,0.9556197478991597) 0%, rgba(0,0,0,0.7679446778711485) 49%, rgba(0,0,0,0) 100%);
@@ -201,10 +198,6 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .logo {
-    width: 100px;
-  }
-
   #desktopHeader {
     display: none;
   }
