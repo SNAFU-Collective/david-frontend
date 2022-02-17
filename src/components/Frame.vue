@@ -55,7 +55,7 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  margin: auto;
+  /*margin: auto;*/
   width: 400px;
   height: 400px;
 }

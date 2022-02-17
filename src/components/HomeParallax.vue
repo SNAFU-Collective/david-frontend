@@ -68,6 +68,9 @@ export default {
 
   .davidFrame {
     top: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .characterDiv {
@@ -92,6 +95,7 @@ export default {
 
   .davidFrame {
     top: 150px;
+    width: 100%;
   }
 
   .characterDiv {
