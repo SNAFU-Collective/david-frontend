@@ -1,17 +1,18 @@
 <template>
   <div class="headerMain">
     <div id="desktopHeader">
-      <v-col cols="2" id="pinnedLeftHeader">
-          <router-link :to="{ name: 'Home'}"><v-img width="200px" src="logo.png"></v-img></router-link>
+      <v-col cols="10" id="pinnedLeftHeader">
+          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png"/></router-link>
       </v-col>
 
-      <v-col cols="8" id="subtitle">
-        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
-        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
-      </v-col>
+<!--      <v-col cols="8" id="subtitle">-->
+<!--        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
+<!--        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
+<!--      </v-col>-->
 
       <v-col cols="2">
-        <wallet-status class="mt-5 pb-2 walletHeader"/>
+<!--        <wallet-status class="mt-5 pb-2 walletHeader"/>-->
+        <h2 style="color: white">COMING SOON!</h2>
       </v-col>
 
     </div>
@@ -21,14 +22,14 @@
           <router-link :to="{ name: 'Home'}"><v-img width="180px" src="logo.png"></v-img></router-link>
       </v-col>
 
-      <v-col cols="1" id="menuMobile">
-        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
-               :width=windowWidth>
-          <wallet-status class="mt-5 pb-2 walletHeader"/>
-          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
-          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
-        </Slide>
-      </v-col>
+<!--      <v-col cols="1" id="menuMobile">-->
+<!--        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"-->
+<!--               :width=windowWidth>-->
+<!--          <wallet-status class="mt-5 pb-2 walletHeader"/>-->
+<!--          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
+<!--          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
+<!--        </Slide>-->
+<!--      </v-col>-->
 
     </div>
   </div>
@@ -39,7 +40,10 @@ import {Slide} from 'vue-burger-menu'
 import WalletStatus from '../Wallet/WalletStatus.vue'
 
 export default {
-  components: {WalletStatus, Slide},
+  components: {
+    // WalletStatus,
+    // Slide
+  },
   methods: {
     handleOpenMenu() {
       document.querySelector(".bm-burger-button").style.display = 'none'

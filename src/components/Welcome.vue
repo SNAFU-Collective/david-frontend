@@ -1,5 +1,5 @@
 <template>
-  <v-row style="padding: 100px" class="welcome">
+  <div style="padding: 100px" class="welcome">
     <v-col cols="4" offset="2">
       <v-row>
         <h2>WELCOME TO THE APA</h2>
@@ -25,7 +25,7 @@
         <v-img src="../../public/pfp/594.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
       </v-row>
     </v-col>
-  </v-row>
+  </div>
 </template>
 
 <script>

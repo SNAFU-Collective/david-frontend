@@ -59,7 +59,7 @@ export default {
 <style>
 @media screen and (min-width: 769px) {
   .main {
-    width: 100%;
+    max-width: 100%;
     background-image: url("../../public/background/desktop/BG.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -83,7 +83,7 @@ export default {
 @media screen and (max-width: 768px) {
   .main {
     height: 900px !important;
-    width: 100%;
+    max-width: 100%;
     background-image: url("../../public/background/mobile/BG.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
