@@ -83,7 +83,7 @@
             <v-btn
                 class="mx-4 white--text"
                 icon
-                @click="goTo('https://www.nftsnafu.org/')"
+                @click="goTo('https://www.app.nftsnafu.org/')"
                 v-bind="attrs"
                 v-on="on"
             >
