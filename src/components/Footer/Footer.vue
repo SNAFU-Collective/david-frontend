@@ -105,6 +105,14 @@
         <br>
       </v-card-text>
 
+      <v-card-text class="white--text footerText" style="width: 100%">
+        <span>Don't miss the drop, whitelist your wallet!</span>
+        <br>
+        <v-btn text class="white--text" style="color: white" @click="goTo('https://forms.gle/P3YE3NAJ5kbNHvYV8')">
+          Add to Whitelist
+        </v-btn>
+      </v-card-text>
+
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
