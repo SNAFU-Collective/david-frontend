@@ -17,7 +17,7 @@
                 icon
                 v-bind="attrs"
                 v-on="on"
-                @click="goTo('https://twitter.com/nftsnafu')"
+                @click="goTo('https://twitter.com/bored_david_nft')"
             >
               <v-icon size="24px">
                 mdi-twitter
