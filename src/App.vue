@@ -2,6 +2,7 @@
   <v-app>
     <HomeParallax/>
 <!--    <Welcome/>-->
+    <Footer/>
   </v-app>
 </template>
 
@@ -9,13 +10,15 @@
 import {mapActions} from "vuex"
 import Welcome from "./components/Welcome"
 import HomeParallax from "./components/HomeParallax"
+import Footer from "./components/Footer/Footer"
 
 export default {
   name: "App",
 
   components: {
     // Welcome,
-    HomeParallax
+    HomeParallax,
+    Footer
   },
 
   methods: {
