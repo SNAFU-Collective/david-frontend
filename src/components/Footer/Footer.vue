@@ -10,55 +10,90 @@
         style="background-color: #000; width: 100%"
     >
       <v-card-text class="mt-5">
-        <v-btn
-            class="mx-4 white--text"
-            icon
-            @click="goTo('https://twitter.com/nftsnafu')"
-        >
-          <v-icon size="24px">
-            mdi-twitter
-          </v-icon>
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                v-bind="attrs"
+                v-on="on"
+                @click="goTo('https://twitter.com/nftsnafu')"
+            >
+              <v-icon size="24px">
+                mdi-twitter
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Follow us on Twitter</span>
+        </v-tooltip>
 
-        <v-btn
-            class="mx-4 white--text"
-            icon
-            @click="goTo('https://discord.gg/kvbxMfUyQD')"
-        >
-          <v-icon size="24px">
-            mdi-discord
-          </v-icon>
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                @click="goTo('https://discord.gg/kvbxMfUyQD')"
+                v-bind="attrs"
+                v-on="on"
+            >
+              <v-icon size="24px">
+                mdi-discord
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Chat with us on SNAFU Discord</span>
+        </v-tooltip>
 
-        <v-btn
-            class="mx-4 white--text"
-            icon
-            @click="goTo('https://t.me/joinchat/8BfTPOsJZ8o3YjJk')"
-        >
-          <v-icon size="24px">
-            mdi-send
-          </v-icon>
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                @click="goTo('https://t.me/joinchat/8BfTPOsJZ8o3YjJk')"
+                v-bind="attrs"
+                v-on="on"
+            >
+              <v-icon size="24px">
+                mdi-send
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Chat with us on SNAFU Telegram</span>
+        </v-tooltip>
 
-        <v-btn
-            class="mx-4 white--text"
-            icon
-            @click="goTo('https://github.com/SNAFU-Collective')"
-        >
-          <v-icon size="24px">
-            mdi-github
-          </v-icon>
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                @click="goTo('https://github.com/SNAFU-Collective')"
+                v-bind="attrs"
+                v-on="on"
+            >
+              <v-icon size="24px">
+                mdi-github
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Review our smart contracts</span>
+        </v-tooltip>
 
-        <v-btn
-            class="mx-4 white--text"
-            icon
-            @click="goTo('https://www.nftsnafu.org/')"
-        >
-          <v-icon size="24px">
-            mdi-web
-          </v-icon>
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                @click="goTo('https://www.nftsnafu.org/')"
+                v-bind="attrs"
+                v-on="on"
+            >
+              <v-icon size="24px">
+                mdi-web
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Go to SNAFU</span>
+        </v-tooltip>
       </v-card-text>
 
       <v-card-text class="white--text footerText" style="width: 100%">
