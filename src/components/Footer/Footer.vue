@@ -7,7 +7,7 @@
         flat
         tile
         class="text-center"
-        style="background-color: #000; width: 100%"
+        style=" width: 100%"
     >
       <v-card-text class="mt-5">
         <v-tooltip bottom>

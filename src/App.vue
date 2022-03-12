@@ -1,17 +1,19 @@
 <template>
-  <v-app style="background-color: #000; color: #fff">
+  <v-app style=" color: #fff" id="v-app-container">
     <HomeParallax/>
 
     <v-container>
-      <Welcome/>
+      <Welcome style="margin-top: 250px"/>
+      <Distribution style="margin-top: 250px"/>
     </v-container>
 
-    <Footer/>
+    <Footer style="margin-top: 250px"/>
   </v-app>
 </template>
 
 <script>
 import {mapActions} from "vuex"
+import Distribution from "./components/Distribution"
 import Welcome from "./components/Welcome"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
@@ -22,7 +24,8 @@ export default {
   components: {
     Welcome,
     HomeParallax,
-    Footer
+    Footer,
+    Distribution
   },
 
   methods: {
@@ -70,5 +73,14 @@ html, body {
   .filters-row {
     margin: 0 10%;
   }
+}
+
+#v-app-container {
+  background: linear-gradient(270deg, #000000, #2f2f2f);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
 }
 </style>
