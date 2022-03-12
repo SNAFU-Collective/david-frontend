@@ -1,6 +1,6 @@
 <template>
   <v-row style="align-items: center;">
-    <v-col class="onlyDesktop" xs="12" md="5" sm="12">
+    <v-col class="onlyDesktop pa-15" xs="12" md="5" sm="12">
       <v-row>
         <h5>AIRDROPPED PROJECTS (SO FAR...)</h5>
       </v-row>
@@ -75,7 +75,7 @@
         </v-avatar>
       </v-row>
     </v-col>
-    <v-col md="6" offset-md="1" sm="12" xs="12" >
+    <v-col md="6" offset-md="1" sm="12" xs="12" class=" pa-15">
       <v-row>
         <h2>A MULTICHAIN NFT COLLECTION</h2>
       </v-row>

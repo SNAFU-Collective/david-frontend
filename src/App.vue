@@ -73,9 +73,6 @@ html, body {
   .filters-row {
     margin: 0 10%;
   }
-  .allWidthOnMobile{
-    display: contents;
-  }
   .homeMargin{
     margin-top: 100px !important;
   }

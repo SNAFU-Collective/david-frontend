@@ -1,6 +1,6 @@
 <template>
   <v-row style="color: white; align-items: center;" class="no-gutters">
-    <v-col xs="12" md="5" sm="12" class="allWidthOnMobile">
+    <v-col xs="12" md="5" sm="12" class="allWidthOnMobile pa-15">
       <v-row>
         <h2>WELCOME TO BORED DAVID</h2>
       </v-row>
@@ -22,7 +22,7 @@
         </p>
       </v-row>
     </v-col>
-    <v-col md="6" offset-md="1" sm="12" xs="12">
+    <v-col class="pa-15" md="6" offset-md="1" sm="12" xs="12">
       <v-row>
         <v-hover style="cursor: pointer">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/18.png" width="50px" class="ma-1"
