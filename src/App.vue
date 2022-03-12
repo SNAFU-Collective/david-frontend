@@ -79,7 +79,7 @@ html, body {
 }
 @media screen and (min-width: 768px) {
   .homeMargin{
-    margin-top: 250px !important;
+    margin-top: 200px !important;
   }
 }
 

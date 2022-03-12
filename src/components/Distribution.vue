@@ -75,7 +75,7 @@
         </v-avatar>
       </v-row>
     </v-col>
-    <v-col md="6" offset-md="1" sm="12" xs="12" class=" pa-15">
+    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-15">
       <v-row>
         <h2>A MULTICHAIN NFT COLLECTION</h2>
       </v-row>
@@ -132,6 +132,42 @@ export default {
           website: '',
           logo: '/projects/twitter.png',
           blockchain: 'eth'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png',
+          blockchain: 'xdai'
         },
         {
           name: 'NFBeez',
