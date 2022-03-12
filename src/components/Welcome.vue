@@ -92,10 +92,10 @@
     <v-overlay
         :value="fullscreen"
         :opacity="0.8"
+        @click="toggle()"
     >
       <v-btn
           icon
-          @click="fullscreen = false"
           style="position: fixed;top: 50px;right: 150px;"
       >
         <h4 class="mr-10">Close</h4>
