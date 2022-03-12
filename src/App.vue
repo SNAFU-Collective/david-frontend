@@ -3,11 +3,11 @@
     <HomeParallax/>
 
     <v-container>
-      <Welcome style="margin-top: 250px"/>
-      <Distribution style="margin-top: 250px"/>
+      <Welcome class="homeMargin"/>
+      <Distribution class="homeMargin"/>
     </v-container>
 
-    <Footer style="margin-top: 250px"/>
+    <Footer class="homeMargin"/>
   </v-app>
 </template>
 
@@ -72,6 +72,17 @@ html, body {
 @media screen and (max-width: 768px) {
   .filters-row {
     margin: 0 10%;
+  }
+  .allWidthOnMobile{
+    display: contents;
+  }
+  .homeMargin{
+    margin-top: 100px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .homeMargin{
+    margin-top: 250px !important;
   }
 }
 

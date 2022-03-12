@@ -1,6 +1,6 @@
 <template>
-  <v-row style="color: white; align-items: center;">
-    <v-col colls-md="5" colls-xs="12" colls-sm="12">
+  <v-row style="color: white; align-items: center;" class="no-gutters">
+    <v-col xs="12" md="5" sm="12" class="allWidthOnMobile">
       <v-row>
         <h2>WELCOME TO BORED DAVID</h2>
       </v-row>
@@ -22,7 +22,7 @@
         </p>
       </v-row>
     </v-col>
-    <v-col cols-md="6" offset-md="1" cols-xs="12" colls-sm="12">
+    <v-col md="6" offset-md="1" sm="12" xs="12">
       <v-row>
         <v-hover style="cursor: pointer">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/18.png" width="50px" class="ma-1"
@@ -103,6 +103,7 @@
           icon
           style="position: fixed;top: 50px;right: 150px;"
           @click="fullscreen = false"
+          class="closeButton"
       >
         <h4 class="mr-10">Close</h4>
         <v-icon style="font-size: 50px">mdi-close</v-icon>
@@ -137,5 +138,11 @@ export default {
 <style>
 .welcome {
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .closeButton {
+    right: 45% !important;
+  }
 }
 </style>
