@@ -2,7 +2,7 @@
   <v-row style="color: white; align-items: center;" class="no-gutters">
     <v-col md="5" class="allWidthOnMobile pa-15">
       <v-row>
-        <h2>WELCOME TO BORED DAVID</h2>
+        <h2 >WELCOME TO BORED DAVID</h2>
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
@@ -11,15 +11,16 @@
         </p>
       </v-row>
       <v-row class="mt-10" >
-        <h4>BY SNAFU</h4>
+        <h4 class="pinkColor">BY SNAFU</h4>
       </v-row>
       <v-row>
         <p class="mt-5">
-          SNAFU is an <b>Italian underground art collective</b> that established a platform
-          that leverages the new power NFTs have brought to the art world to <b>provide a steadier revenue stream to the global and local art community.</b>
+          SNAFU is an <b class="blueColor">Italian underground art collective</b> that established a platform
+          that leverages the new power NFTs have brought to the art world to <b class="blueColor">provide a steadier revenue stream to the global and local art community.</b>
           The collective created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons
           and collectors.
         </p>
+        <a href="https://app.nftsnafu.org" target="_blank">Visit SNAFU</a>
       </v-row>
     </v-col>
     <v-col class="pa-15" md="6" offset-md="1" sm="12" xs="12">

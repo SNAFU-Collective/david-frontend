@@ -98,4 +98,12 @@ html, body {
 .pointerOnHover {
   cursor: pointer;
 }
+
+.blueColor {
+  color: rgb(51 215 241)
+}
+
+.pinkColor {
+  color: rgb(230 75 182)
+}
 </style>
