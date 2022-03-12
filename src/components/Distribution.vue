@@ -2,27 +2,21 @@
   <v-row >
     <v-col cols-md="6" cols-xs="12" colls-sm="12">
       <v-row>
-        <v-img src="../../public/pfp/18.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
-        <v-img src="../../public/pfp/25.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
-        <v-img src="../../public/pfp/30.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
+        <h3>AIRDROPPED PROJECTS SO FAR</h3>
       </v-row>
-      <v-row>
-        <v-img src="../../public/pfp/133.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
-        <v-img src="../../public/pfp/248.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
-        <v-img src="../../public/pfp/594.png" width="50px" class="ma-1" transition="slide-y-transition"></v-img>
+      <v-row class="mt-15">
+        <v-avatar style="" class="pointerOnHover">
+          <v-img src="/projects/twitter.png"/>
+        </v-avatar>
       </v-row>
     </v-col>
     <v-col colls-md="6" colls-xs="12" colls-sm="12">
       <v-row>
-        <h2>WELCOME TO BORED DAVID</h2>
+        <h1>BIGGEST CROSS-CHAIN AIRDROP IN NFT HISTORY!</h1>
       </v-row>
       <v-row>
         <h4 class="mt-10">
-          David is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
-          We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.
-        </h4>
-        <h4 class="mt-5">
-          To celebrate this achievement we created a PFP collection called Bored David that we want to mint on as many chains as possible (Avalanche, Polygon, Gnosis, Fantom, and many more) and airdrop the majority of NFTs to projects and people that sustained us during this year and for our next friends. We basically want to make the biggest multichain airdrop in NFT history!
+          For those who don’t know us, SNAFU (https://nftsnafu.org 9) is an Italian underground art collective that established a platform that leverages the new power NFTs have brought to the art world to provide a steadier revenue stream to the global and local art community. The collective created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons and collectors. SNAFU also issued a token with the same name, dedicated to creating a DAO that will decide how to sustain the artistic collective’s initiatives, financing projects, and young artists. This independent sustainability-oriented thinking positions SNAFU in the first line with other art world pioneers to genuinely utilize and maximize the relatively young NFT market to reinvent how we deal and consume art.
         </h4>
       </v-row>
     </v-col>

@@ -83,4 +83,8 @@ html, body {
   -moz-animation: AnimationName 30s ease infinite;
   animation: AnimationName 30s ease infinite;
 }
+
+.pointerOnHover {
+  cursor: pointer;
+}
 </style>

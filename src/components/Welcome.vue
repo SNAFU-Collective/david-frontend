@@ -2,7 +2,7 @@
   <v-row style="color: white">
     <v-col colls-md="5" colls-xs="12" colls-sm="12">
       <v-row>
-        <h2>WELCOME TO BORED DAVID</h2>
+        <h1>WELCOME TO BORED DAVID</h1>
       </v-row>
       <v-row>
         <h4 class="mt-10">
