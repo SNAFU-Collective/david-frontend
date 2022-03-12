@@ -1,6 +1,6 @@
 <template>
   <v-row style="align-items: center;">
-    <v-col class="onlyDesktop pa-15" xs="12" md="5" sm="12">
+    <v-col class="onlyDesktop pa-15" md="5">
       <v-row>
         <h5>AIRDROPPED PROJECTS (SO FAR...)</h5>
       </v-row>

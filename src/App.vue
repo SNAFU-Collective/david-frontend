@@ -74,7 +74,7 @@ html, body {
     margin: 0 10%;
   }
   .allWidthOnMobile{
-    display: contents;
+    display: block;
   }
   .homeMargin{
     margin-top: 100px !important;

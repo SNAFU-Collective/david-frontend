@@ -1,6 +1,6 @@
 <template>
   <v-row style="color: white; align-items: center;" class="no-gutters">
-    <v-col xs="12" md="5" sm="12" class="allWidthOnMobile pa-15">
+    <v-col md="5" class="allWidthOnMobile pa-15">
       <v-row>
         <h2>WELCOME TO BORED DAVID</h2>
       </v-row>
