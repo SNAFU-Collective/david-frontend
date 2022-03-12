@@ -1,10 +1,10 @@
 <template>
-  <v-row style="color: white">
+  <v-row style="color: white; align-items: center;">
     <v-col colls-md="5" colls-xs="12" colls-sm="12">
       <v-row>
         <h1>WELCOME TO BORED DAVID</h1>
       </v-row>
-      <v-row>
+      <v-row style="text-align: justify;">
         <h4 class="mt-10">
           David is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
           We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.
@@ -92,11 +92,12 @@
     <v-overlay
         :value="fullscreen"
         :opacity="0.8"
-        @click="toggle()"
+        @click="fullscreen = false"
     >
       <v-btn
           icon
           style="position: fixed;top: 50px;right: 150px;"
+          @click="fullscreen = false"
       >
         <h4 class="mr-10">Close</h4>
         <v-icon style="font-size: 50px">mdi-close</v-icon>
