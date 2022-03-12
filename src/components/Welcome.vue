@@ -92,7 +92,6 @@
     <v-overlay
         :value="fullscreen"
         :opacity="0.8"
-        @click="toggle()"
     >
       <v-btn
           icon
