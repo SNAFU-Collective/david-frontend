@@ -6,7 +6,13 @@
       </v-row>
       <v-row class="mt-15">
         <v-avatar v-for="(project, index) in airdroppedProjects" :key="index" style="" class="pointerOnHover ma-1">
-          <v-img :src="project.logo"/>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+                <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
+            </template>
+            <span>{{project.name}}</span>
+          </v-tooltip>
+
         </v-avatar>
       </v-row>
     </v-col>
@@ -46,7 +52,11 @@ export default {
   components: {
 
   },
-  methods: {},
+  methods: {
+    goTo(url) {
+      window.open(url, '_blank')
+    }
+  },
   data() {
     return {
       airdroppedProjects: [
@@ -59,7 +69,37 @@ export default {
           name: 'NFBeez',
           website: '',
           logo: '/projects/twitter.png'
-        }
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png'
+        },
+        {
+          name: 'NFBeez',
+          website: '',
+          logo: '/projects/twitter.png'
+        },
       ]
     }
   },
