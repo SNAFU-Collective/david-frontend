@@ -2,18 +2,23 @@
   <v-row style="color: white; align-items: center;">
     <v-col colls-md="5" colls-xs="12" colls-sm="12">
       <v-row>
-        <h1>WELCOME TO BORED DAVID</h1>
+        <h2>WELCOME TO BORED DAVID</h2>
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
           David is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
           We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.
         </p>
+      </v-row>
+      <v-row class="mt-10" >
+        <h4>BY SNAFU</h4>
+      </v-row>
+      <v-row>
         <p class="mt-5">
-          To celebrate this achievement we created a PFP collection called Bored David that we want to mint on as many
-          chains as possible (Avalanche, Polygon, Gnosis, Fantom, and many more) and airdrop the majority of NFTs to
-          projects and people that sustained us during this year and for our next friends. We basically want to make
-          the biggest multichain airdrop in NFT history!
+          SNAFU is an <b>Italian underground art collective</b> that established a platform
+          that leverages the new power NFTs have brought to the art world to <b>provide a steadier revenue stream to the global and local art community.</b>
+          The collective created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons
+          and collectors.
         </p>
       </v-row>
     </v-col>
