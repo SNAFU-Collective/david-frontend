@@ -97,15 +97,6 @@
       </v-card-text>
 
       <v-card-text class="white--text footerText" style="width: 100%">
-        <span>David is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.</span>
-        <br>
-        <span>We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.</span>
-        <br>
-        <span>Follow us on social media to be updated about the collection, minting date, how this collection will be integrated into SNAFU and all the benefits Bored David will give you!</span>
-        <br>
-      </v-card-text>
-
-      <v-card-text class="white--text footerText" style="width: 100%">
         <span>Don't miss the drop, whitelist your wallet!</span>
         <br>
         <v-btn text class="white--text" style="color: white" @click="goTo('https://forms.gle/P3YE3NAJ5kbNHvYV8')">
