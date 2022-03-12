@@ -5,16 +5,16 @@
         <h1>WELCOME TO BORED DAVID</h1>
       </v-row>
       <v-row style="text-align: justify;">
-        <h4 class="mt-10">
+        <p class="mt-10">
           David is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
           We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.
-        </h4>
-        <h4 class="mt-5">
+        </p>
+        <p class="mt-5">
           To celebrate this achievement we created a PFP collection called Bored David that we want to mint on as many
           chains as possible (Avalanche, Polygon, Gnosis, Fantom, and many more) and airdrop the majority of NFTs to
           projects and people that sustained us during this year and for our next friends. We basically want to make
           the biggest multichain airdrop in NFT history!
-        </h4>
+        </p>
       </v-row>
     </v-col>
     <v-col cols-md="6" offset-md="1" cols-xs="12" colls-sm="12">
