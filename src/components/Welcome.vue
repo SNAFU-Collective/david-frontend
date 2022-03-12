@@ -26,7 +26,7 @@
               <v-btn text style="width: 100%;height: 100%; color:#fff; " @click="toggle(18)">Preview</v-btn>
             </div>
           </v-img>
-          <v-img v-else @click="toggle()" src="../../public/pfp/18.png" width="50px" class="ma-1"
+          <v-img v-else src="../../public/pfp/18.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
 
@@ -37,7 +37,7 @@
               <v-btn text style="width: 100%;height: 100%; color:#fff; " @click="toggle(25)">Preview</v-btn>
             </div>
           </v-img>
-          <v-img v-else @click="toggle()" src="../../public/pfp/25.png" width="50px" class="ma-1"
+          <v-img v-else src="../../public/pfp/25.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
 
@@ -48,7 +48,7 @@
               <v-btn text style="width: 100%;height: 100%; color:#fff; " @click="toggle(30)">Preview</v-btn>
             </div>
           </v-img>
-          <v-img v-else @click="toggle()" src="../../public/pfp/30.png" width="50px" class="ma-1"
+          <v-img v-else src="../../public/pfp/30.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
       </v-row>
@@ -61,7 +61,7 @@
               <v-btn text style="width: 100%;height: 100%; color:#fff; " @click="toggle(133)">Preview</v-btn>
             </div>
           </v-img>
-          <v-img v-else @click="toggle()" src="../../public/pfp/133.png" width="50px" class="ma-1"
+          <v-img v-else src="../../public/pfp/133.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
 
@@ -72,7 +72,7 @@
               <v-btn text style="width: 100%;height: 100%; color:#fff; " @click="toggle(248)">Preview</v-btn>
             </div>
           </v-img>
-          <v-img v-else @click="toggle()" src="../../public/pfp/248.png" width="50px" class="ma-1"
+          <v-img v-else src="../../public/pfp/248.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
 
@@ -83,7 +83,7 @@
               <v-btn text style="width: 100%;height: 100%; color:#fff; " @click="toggle(594)">Preview</v-btn>
             </div>
           </v-img>
-          <v-img v-else @click="toggle()" src="../../public/pfp/594.png" width="50px" class="ma-1"
+          <v-img v-else src="../../public/pfp/594.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
       </v-row>
