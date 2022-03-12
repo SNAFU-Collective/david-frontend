@@ -101,11 +101,11 @@
     >
       <v-btn
           icon
-          style="position: fixed;top: 50px;right: 150px;"
+          style="position: fixed;top: 50%;right: 30%;"
           @click="fullscreen = false"
           class="closeButton"
       >
-        <h4 class="mr-10">Close</h4>
+<!--        <h4 class="mr-10">Close</h4>-->
         <v-icon style="font-size: 50px">mdi-close</v-icon>
       </v-btn>
       <img :src="src"/>
