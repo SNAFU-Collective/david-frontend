@@ -1,7 +1,11 @@
 <template>
-  <v-app>
+  <v-app style="background-color: #000; color: #fff">
     <HomeParallax/>
-<!--    <Welcome/>-->
+
+    <v-container>
+      <Welcome/>
+    </v-container>
+
     <Footer/>
   </v-app>
 </template>
@@ -16,7 +20,7 @@ export default {
   name: "App",
 
   components: {
-    // Welcome,
+    Welcome,
     HomeParallax,
     Footer
   },
@@ -67,5 +71,4 @@ html, body {
     margin: 0 10%;
   }
 }
-
 </style>
