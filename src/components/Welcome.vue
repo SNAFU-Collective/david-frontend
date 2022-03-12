@@ -102,7 +102,7 @@
         <h4 class="mr-10">Close</h4>
         <v-icon style="font-size: 50px">mdi-close</v-icon>
       </v-btn>
-      <img :src="src" @click="toggle"/>
+      <img :src="src"/>
     </v-overlay>
   </v-row>
 </template>
