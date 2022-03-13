@@ -84,6 +84,9 @@ html, body {
   .homeMargin{
     margin-top: 200px !important;
   }
+  .allWidthOnMobile{
+    display: flex;
+  }
 }
 
 #v-app-container {
