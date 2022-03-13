@@ -102,7 +102,7 @@
     >
       <v-btn
           icon
-          style="position: fixed;top: 50%;right: 30%;"
+          style=""
           @click="fullscreen = false"
           class="closeButton"
       >
@@ -140,10 +140,20 @@ export default {
 .welcome {
   color: white;
 }
+.closeButton {
 
+}
+@media screen and (min-width: 768px) {
+  .closeButton {
+    position: fixed;
+    top: 50%;
+    right: 30%;
+  }
+}
 @media screen and (max-width: 768px) {
   .closeButton {
-    right: 45% !important;
+    top: 50px;
+    right: 150px;
   }
 }
 </style>
