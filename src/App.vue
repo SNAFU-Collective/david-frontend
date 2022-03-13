@@ -4,7 +4,7 @@
 
     <v-container>
       <Welcome class="homeMargin"/>
-      <Distribution class="homeMargin"/>
+      <Introduction class="homeMargin"/>
     </v-container>
 
     <Footer class="homeMargin"/>
@@ -13,7 +13,7 @@
 
 <script>
 import {mapActions} from "vuex"
-import Distribution from "./components/Distribution"
+import Introduction from "./components/Introduction"
 import Welcome from "./components/Welcome"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
@@ -25,7 +25,7 @@ export default {
     Welcome,
     HomeParallax,
     Footer,
-    Distribution
+    Introduction
   },
 
   methods: {
