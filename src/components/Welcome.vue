@@ -145,13 +145,14 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .closeButton {
-    position: fixed;
+    position: fixed !important;
     top: 50%;
-    right: 30%;
+    right: 30% ;
   }
 }
 @media screen and (max-width: 768px) {
   .closeButton {
+    position: fixed !important;
     top: 50px;
     right: 150px;
   }
