@@ -2,13 +2,13 @@
   <v-row style="align-items: center;">
     <v-col class="onlyDesktop pa-15" md="5">
       <v-row>
-        <h5 class="pinkColor">PROJECTS AIRDROPPED (SO FAR...)</h5>
+        <h5 class="blueColor">PROJECTS AIRDROPPED (SO FAR...)</h5>
       </v-row>
-      <v-row class="mt-10" >
-        <h6>ETHEREUM</h6>
-      </v-row>
+<!--      <v-row class="mt-10" >-->
+<!--        <h6>ETHEREUM</h6>-->
+<!--      </v-row>-->
       <v-row class="mt-4">
-        <v-avatar v-for="(project, index) in projects('eth')" :key="index" size="35" class="pointerOnHover ma-1">
+        <v-avatar v-for="(project, index) in airdroppedProjects" :key="index" size="35" class="pointerOnHover ma-1">
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
                 <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
@@ -16,62 +16,6 @@
             <span>{{project.name}}</span>
           </v-tooltip>
 
-        </v-avatar>
-      </v-row>
-
-      <v-row class="mt-6" >
-        <h6 >GNOSIS CHAIN</h6>
-      </v-row>
-      <v-row class="mt-4">
-        <v-avatar v-for="(project, index) in projects('xdai')" :key="index" size="40" class="pointerOnHover ma-1">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
-            </template>
-            <span>{{project.name}}</span>
-          </v-tooltip>
-        </v-avatar>
-      </v-row>
-
-      <v-row class="mt-6" >
-        <h6>AVALANCHE</h6>
-      </v-row>
-      <v-row class="mt-4">
-        <v-avatar v-for="(project, index) in projects('avax')" :key="index" size="40" class="pointerOnHover ma-1">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
-            </template>
-            <span>{{project.name}}</span>
-          </v-tooltip>
-        </v-avatar>
-      </v-row>
-
-      <v-row class="mt-6" >
-        <h6>POLYGON</h6>
-      </v-row>
-      <v-row class="mt-4">
-        <v-avatar v-for="(project, index) in projects('polygon')" :key="index" size="40" class="pointerOnHover ma-1">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
-            </template>
-            <span>{{project.name}}</span>
-          </v-tooltip>
-        </v-avatar>
-      </v-row>
-
-      <v-row class="mt-6" >
-        <h6>BINANCE CHAIN</h6>
-      </v-row>
-      <v-row class="mt-4">
-        <v-avatar v-for="(project, index) in projects('bnb')" :key="index" size="40" class="pointerOnHover ma-1">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
-            </template>
-            <span>{{project.name}}</span>
-          </v-tooltip>
         </v-avatar>
       </v-row>
     </v-col>
