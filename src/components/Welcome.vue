@@ -2,11 +2,11 @@
   <v-row style="color: white; align-items: center;" class="no-gutters">
     <v-col md="5" class="allWidthOnMobile pa-15">
       <v-row>
-        <h2 >WELCOME TO BORED DAVID</h2>
+        <h2 class="pinkColor">WELCOME TO BORED DAVID</h2>
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
-          David is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
+          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
           We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.
         </p>
       </v-row>
@@ -20,7 +20,7 @@
           The collective created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons
           and collectors.
         </p>
-        <a href="https://app.nftsnafu.org" target="_blank">Visit SNAFU</a>
+        <a href="https://app.nftsnafu.org" target="_blank" class="customLink">Visit SNAFU</a>
       </v-row>
     </v-col>
     <v-col class="pa-15" md="6" offset-md="1" sm="12" xs="12">

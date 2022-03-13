@@ -106,4 +106,10 @@ html, body {
 .pinkColor {
   color: rgb(230 75 182)
 }
+
+a.customLink {
+  color: white !important;
+  border-bottom: 2px solid white;
+  text-decoration: none;
+}
 </style>
