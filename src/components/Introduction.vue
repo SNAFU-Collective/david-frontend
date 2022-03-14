@@ -2,25 +2,6 @@
   <v-row style="align-items: center;">
     <v-col class="onlyDesktop pa-15" md="5">
       <v-row>
-        <h5 class="blueColor">PROJECTS AIRDROPPED (SO FAR...)</h5>
-      </v-row>
-<!--      <v-row class="mt-10" >-->
-<!--        <h6>ETHEREUM</h6>-->
-<!--      </v-row>-->
-      <v-row class="mt-4">
-        <v-avatar v-for="(project, index) in airdroppedProjects" :key="index" size="35" class="pointerOnHover ma-1">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-                <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
-            </template>
-            <span>{{project.name}}</span>
-          </v-tooltip>
-
-        </v-avatar>
-      </v-row>
-    </v-col>
-    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-15">
-      <v-row>
         <h2  class="pinkColor">A MULTICHAIN NFT COLLECTION</h2>
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
@@ -32,6 +13,10 @@
         </p>
       </v-row>
 
+    </v-col>
+    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-15 mt-10">
+
+
       <v-row class="mt-10" >
         <h4  class="pinkColor">THE BIGGEST NFT AIRDROP EVER SEEN!</h4>
       </v-row>
@@ -40,7 +25,26 @@
           We are airdropping the majority of NFTs to projects, dev teams and communities that provide usefully resources, support and applications to the web3 community.
           Right now we are whitelisting all the addresses, when we will go live you will be able to mint the NFTs for free.
         </p>
-        <p>
+      </v-row>
+
+      <v-row class="mt-10">
+        <h5 class="blueColor">PROJECTS AIRDROPPED (SO FAR...)</h5>
+      </v-row>
+      <!--      <v-row class="mt-10" >-->
+      <!--        <h6>ETHEREUM</h6>-->
+      <!--      </v-row>-->
+      <v-row class="mt-4">
+        <v-avatar v-for="(project, index) in airdroppedProjects" :key="index" size="35" class="pointerOnHover ma-1">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-img :src="project.logo" @click="goTo(project.website)" v-bind="attrs" v-on="on"/>
+            </template>
+            <span>{{project.name}}</span>
+          </v-tooltip>
+
+        </v-avatar>
+
+        <p class="mt-5">
           Want to receive the airdrop? <a href="https://discord.gg/kvbxMfUyQD" target="_blank" class="customLink">Get in touch with us</a>.
         </p>
       </v-row>

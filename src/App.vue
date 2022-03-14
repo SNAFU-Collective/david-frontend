@@ -77,12 +77,12 @@ html, body {
     display: block;
   }
   .homeMargin{
-    margin-top: 100px !important;
+    margin-top: 50px !important;
   }
 }
 @media screen and (min-width: 768px) {
   .homeMargin{
-    margin-top: 200px !important;
+    margin-top: 100px !important;
   }
   .allWidthOnMobile{
     display: flex;

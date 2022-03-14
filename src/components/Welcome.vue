@@ -2,7 +2,7 @@
   <v-row style="color: white; align-items: center;" class="no-gutters allWidthOnMobile">
     <v-col md="5" class="pa-15">
       <v-row>
-        <h2 class="pinkColor">WELCOME TO BORED DAVID</h2>
+        <h2 >WELCOME TO BORED DAVID</h2>
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
