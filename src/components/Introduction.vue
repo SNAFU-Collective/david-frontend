@@ -64,106 +64,106 @@ export default {
     return {
       airdroppedProjects: [
         {
+          name: 'Gnosis Chain Team',
+          website: 'https://gnosischain.world/',
+          logo: '/projects/gnosis.jpg',
+          blockchain: 'xdai'
+        },
+        {
           name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
+          website: 'https://www.nfbeez.xyz/',
+          logo: '/projects/nfbeez.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'NFTTrader',
+          website: 'https://www.nfttrader.io/',
+          logo: '/projects/nfttrader.jpg',
           blockchain: 'eth'
         },
         {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
+          name: '1Hive',
+          website: 'https://1hive.io/',
+          logo: '/projects/1hive.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'SNAFU',
+          website: 'https://app.nftsnafu.org',
+          logo: '/projects/snafu.jpg',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'XP Network',
+          website: 'https://xp.network/',
+          logo: '/projects/xpnetwork.jpg',
           blockchain: 'eth'
         },
         {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
+          name: 'Eporio',
+          website: 'https://epor.io/',
+          logo: '/projects/eporio.png',
           blockchain: 'xdai'
         },
         {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
+          name: 'Rarity Garden',
+          website: 'https://rarity.garden',
+          logo: '/projects/unifty.jpg',
+          blockchain: 'eth'
+        },
+        {
+          name: 'Safe xDai',
+          website: 'https://mobile.twitter.com/safexdai',
+          logo: '/projects/safexdai.jpg',
           blockchain: 'xdai'
         },
         {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
+          name: 'xDai Tigers',
+          website: 'https://xdaitigers.com/',
+          logo: '/projects/xdaitigers.jpg',
           blockchain: 'xdai'
         },
         {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'xdai'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'avax'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'avax'
-        },
-        {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
+          name: 'Culo Coin',
+          website: 'https://theculocoin.com/',
+          logo: '/projects/culocoin.jpg',
           blockchain: 'bnb'
         },
         {
-          name: 'NFBeez',
-          website: '',
-          logo: '/projects/twitter.png',
-          blockchain: 'polygon'
+          name: 'Paribu Punks',
+          website: 'https://twitter.com/paribupunks',
+          logo: '/projects/paribupunks.jpg',
+          blockchain: 'paribu'
+        },
+        {
+          name: 'Ether Board',
+          website: 'https://etherboard.io/',
+          logo: '/projects/etherboard.jpg',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'Cardstack',
+          website: 'https://cardstack.com/',
+          logo: '/projects/cardstack.jpg',
+          blockchain: 'eth'
+        },
+        {
+          name: 'Avascan',
+          website: 'https://avascan.info/',
+          logo: '/projects/avascan.jpg',
+          blockchain: 'avax'
+        },
+        {
+          name: 'Blockscout',
+          website: 'https://blockscout.com/xdai/mainnet/',
+          logo: '/projects/blockscout.jpg',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'Minerva',
+          website: 'https://minerva.digital/',
+          logo: '/projects/minerva.jpg',
+          blockchain: 'xdai'
         },
       ]
     }
