@@ -17,7 +17,7 @@
       </v-row>
       <v-row>
         <p class="mt-5" style="text-align: justify;">
-          To celebrate the <b class="blueColor">1 year birthday of SNAFU</b> we decided to <b class="blueColor">airdrop</b> the majority of <b class="blueColor">NFTs to projects, dev teams and communities</b> that helped us during this year, that provide usefully resources and tools to the web3 community.
+          To celebrate the <b class="blueColor">1 year birthday of SNAFU</b> we decided to <b class="blueColor">airdrop</b> the majority of <b class="blueColor">NFTs to projects, dev teams and communities</b> that helped us during this year, that provide support, usefully resources and tools to the web3 community.
         </p>
       </v-row>
 
