@@ -25,7 +25,7 @@
     </v-col>
     <v-col class="pa-15" md="6" offset-md="1" sm="12" xs="12">
       <v-row>
-        <v-hover style="cursor: pointer">
+        <v-hover style="cursor: pointer" xs="6">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/18.png" width="50px" class="ma-1"
                  transition="slide-y-transition">
             <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
@@ -36,7 +36,7 @@
                  transition="slide-y-transition"></v-img>
         </v-hover>
 
-        <v-hover style="cursor: pointer">
+        <v-hover style="cursor: pointer" xs="6">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/25.png" width="50px" class="ma-1"
                  transition="slide-y-transition">
             <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
@@ -57,9 +57,6 @@
           <v-img v-else src="../../public/pfp/30.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
-      </v-row>
-
-      <v-row>
         <v-hover style="cursor: pointer">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/133.png" width="50px" class="ma-1"
                  transition="slide-y-transition">

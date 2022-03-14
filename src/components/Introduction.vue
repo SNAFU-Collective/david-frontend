@@ -1,6 +1,6 @@
 <template>
-  <v-row style="align-items: center;">
-    <v-col class="onlyDesktop pa-15" md="5">
+  <v-row style="align-items: center;" class="allWidthOnMobile">
+    <v-col class="pa-15" md="5">
       <v-row>
         <h2  class="pinkColor">A MULTICHAIN NFT COLLECTION</h2>
       </v-row>
@@ -14,9 +14,7 @@
       </v-row>
 
     </v-col>
-    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-15 mt-10">
-
-
+    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-15">
       <v-row class="mt-10" >
         <h4  class="pinkColor">THE BIGGEST NFT AIRDROP EVER SEEN!</h4>
       </v-row>
