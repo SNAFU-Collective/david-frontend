@@ -6,7 +6,7 @@
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
-          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a masterpiece of Renaissance sculpture, created by the Italian artist Michelangelo,
+          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a <b class="blueColor">masterpiece of Renaissance sculpture</b>, created by the Italian artist <b class="blueColor">Michelangelo</b>,
           that we decided to use as the SNAFU mascot.
         </p>
       </v-row>
@@ -17,9 +17,9 @@
         <p class="mt-5" style="text-align: justify;">
           This NFT collections is created by SNAFU, an <b class="blueColor">Italian underground art collective</b> that established a platform
           that leverages the new power NFTs have brought to the art world to <b class="blueColor">provide a steadier revenue stream to the global and local art community.</b>
-          We created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons
-          and collectors.
         </p>
+<!--        We created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons-->
+<!--        and collectors.-->
         <a href="https://app.nftsnafu.org" target="_blank" class="customLink">Visit SNAFU</a>
       </v-row>
     </v-col>
