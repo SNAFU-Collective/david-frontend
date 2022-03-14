@@ -1,5 +1,5 @@
 <template>
-  <v-row style="color: white; align-items: center;" class="no-gutters allWidthOnMobile">
+  <v-row style="color: white; align-items: center;" class="allWidthOnMobile">
     <v-col md="5" class="pa-10">
       <v-row>
         <h2 >WELCOME TO BORED DAVID</h2>
@@ -151,9 +151,7 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .closeButton {
-    position: fixed !important;
-    top: 50px;
-    right: 150px;
+    display: none;
   }
 }
 </style>
