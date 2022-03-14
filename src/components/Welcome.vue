@@ -1,31 +1,31 @@
 <template>
   <v-row style="color: white; align-items: center;" class="no-gutters allWidthOnMobile">
-    <v-col md="5" class="pa-15">
+    <v-col md="5" class="pa-10">
       <v-row>
         <h2 >WELCOME TO BORED DAVID</h2>
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
-          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a masterpiece of Renaissance sculpture created by the Italian artist Michelangelo.
-          We, the SNAFU Collective, had no choice but to choose this masterpiece as the theme of our PFP Collection.
+          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a masterpiece of Renaissance sculpture, created by the Italian artist Michelangelo,
+          that we decided to use as the SNAFU mascot.
         </p>
       </v-row>
       <v-row class="mt-10" >
-        <h4 class="pinkColor">BY SNAFU</h4>
+        <h3 class="pinkColor">BY SNAFU</h3>
       </v-row>
       <v-row>
         <p class="mt-5" style="text-align: justify;">
-          SNAFU is an <b class="blueColor">Italian underground art collective</b> that established a platform
+          This NFT collections is created by SNAFU, an <b class="blueColor">Italian underground art collective</b> that established a platform
           that leverages the new power NFTs have brought to the art world to <b class="blueColor">provide a steadier revenue stream to the global and local art community.</b>
-          The collective created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons
+          We created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons
           and collectors.
         </p>
         <a href="https://app.nftsnafu.org" target="_blank" class="customLink">Visit SNAFU</a>
       </v-row>
     </v-col>
-    <v-col class="pa-15" md="6" offset-md="1" sm="12" xs="12">
+    <v-col class="pa-10" md="6" offset-md="1" sm="12" xs="12">
       <v-row>
-        <v-hover style="cursor: pointer" xs="6">
+        <v-hover style="cursor: pointer">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/18.png" width="50px" class="ma-1"
                  transition="slide-y-transition">
             <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
@@ -36,7 +36,7 @@
                  transition="slide-y-transition"></v-img>
         </v-hover>
 
-        <v-hover style="cursor: pointer" xs="6">
+        <v-hover style="cursor: pointer">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/25.png" width="50px" class="ma-1"
                  transition="slide-y-transition">
             <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
@@ -57,6 +57,8 @@
           <v-img v-else src="../../public/pfp/30.png" width="50px" class="ma-1"
                  transition="slide-y-transition"></v-img>
         </v-hover>
+      </v-row>
+      <v-row>
         <v-hover style="cursor: pointer">
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/133.png" width="50px" class="ma-1"
                  transition="slide-y-transition">

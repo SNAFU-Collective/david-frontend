@@ -1,27 +1,23 @@
 <template>
-  <v-row style="align-items: center;" class="allWidthOnMobile">
-    <v-col class="pa-15" md="5">
+  <v-row class="allWidthOnMobile">
+    <v-col class="pa-10" md="5">
       <v-row>
-        <h2  class="pinkColor">A MULTICHAIN NFT COLLECTION</h2>
+        <h3  class="pinkColor">A MULTICHAIN NFT COLLECTION</h3>
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          We think art shouldn't have barries, so it's crazy to create artificial ones. This is why at SNAFU we decided to provide nft bridges to our users with the help of <a href="https://xp.network/" target="_blank" class="customLink">XP.Network</a>.
-        </p>
-        <p class="mt-5" style="text-align: justify;">
-          To celebrate this achievement we decided to mint our unique Bored David NFTs on <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
+          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why at we decided to mint the NFTs on <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
         </p>
       </v-row>
 
     </v-col>
-    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-15">
-      <v-row class="mt-10" >
-        <h4  class="pinkColor">THE BIGGEST NFT AIRDROP EVER SEEN!</h4>
+    <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
+      <v-row class="" >
+        <h3  class="pinkColor">THE BIGGEST NFT AIRDROP EVER SEEN!</h3>
       </v-row>
       <v-row>
         <p class="mt-5" style="text-align: justify;">
-          We are airdropping the majority of NFTs to projects, dev teams and communities that provide usefully resources, support and applications to the web3 community.
-          Right now we are whitelisting all the addresses, when we will go live you will be able to mint the NFTs for free.
+          To celebrate the <b class="blueColor">1 year birthday of SNAFU</b> we decided to <b class="blueColor">airdrop</b> the majority of <b class="blueColor">NFTs to projects, dev teams and communities</b> that helped us during this year, that provide usefully resources and tools to the web3 community.
         </p>
       </v-row>
 
