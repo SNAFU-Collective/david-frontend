@@ -9,7 +9,10 @@
         class="text-center"
         style=" width: 100%"
     >
-      <v-card-text class="mt-5">
+      <v-card-text class="mt-5 mb-10">
+        <v-row justify="center" class="mb-5 mt-10">
+          <h3>FOLLOW US</h3>
+        </v-row>
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -43,66 +46,15 @@
           </template>
           <span>Chat with us on SNAFU Discord</span>
         </v-tooltip>
-
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                class="mx-4 white--text"
-                icon
-                @click="goTo('https://t.me/joinchat/8BfTPOsJZ8o3YjJk')"
-                v-bind="attrs"
-                v-on="on"
-            >
-              <v-icon size="24px">
-                mdi-send
-              </v-icon>
-            </v-btn>
-          </template>
-          <span>Chat with us on SNAFU Telegram</span>
-        </v-tooltip>
-
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                class="mx-4 white--text"
-                icon
-                @click="goTo('https://github.com/SNAFU-Collective')"
-                v-bind="attrs"
-                v-on="on"
-            >
-              <v-icon size="24px">
-                mdi-github
-              </v-icon>
-            </v-btn>
-          </template>
-          <span>Review our smart contracts</span>
-        </v-tooltip>
-
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                class="mx-4 white--text"
-                icon
-                @click="goTo('https://app.nftsnafu.org/')"
-                v-bind="attrs"
-                v-on="on"
-            >
-              <v-icon size="24px">
-                mdi-web
-              </v-icon>
-            </v-btn>
-          </template>
-          <span>Go to SNAFU</span>
-        </v-tooltip>
       </v-card-text>
 
-      <v-card-text class="white--text footerText" style="width: 100%">
-        <span>Don't miss the drop, whitelist your wallet!</span>
-        <br>
-        <v-btn text class="white--text" style="color: white" @click="goTo('https://forms.gle/P3YE3NAJ5kbNHvYV8')">
-          Add to Whitelist
-        </v-btn>
-      </v-card-text>
+<!--      <v-card-text class="white&#45;&#45;text footerText" style="width: 100%">-->
+<!--        <span>Don't miss the drop, whitelist your wallet!</span>-->
+<!--        <br>-->
+<!--        <v-btn text class="white&#45;&#45;text" style="color: white" @click="goTo('https://forms.gle/P3YE3NAJ5kbNHvYV8')">-->
+<!--          Add to Whitelist-->
+<!--        </v-btn>-->
+<!--      </v-card-text>-->
 
       <v-divider></v-divider>
 

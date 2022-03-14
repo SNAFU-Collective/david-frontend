@@ -10,6 +10,21 @@
         </p>
       </v-row>
 
+      <v-row class="mt-10">
+        <h5>POWERED BY</h5>
+      </v-row>
+      <v-row>
+        <v-avatar v-for="(blockchain, index) in blockchains" :key="index" size="50" class="pointerOnHover ma-1">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-img :src="blockchain.logo" @click="goTo(blockchain.website)" v-bind="attrs" v-on="on"/>
+            </template>
+            <span>{{blockchain.name}}</span>
+          </v-tooltip>
+
+        </v-avatar>
+      </v-row>
+
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row class="" >
@@ -22,7 +37,7 @@
       </v-row>
 
       <v-row class="mt-10">
-        <h5 class="blueColor">PROJECTS AIRDROPPED (SO FAR...)</h5>
+        <h5>WHITELISTED PROJECTS (SO FAR...)</h5>
       </v-row>
       <!--      <v-row class="mt-10" >-->
       <!--        <h6>ETHEREUM</h6>-->
@@ -62,6 +77,33 @@ export default {
   },
   data() {
     return {
+      blockchains: [
+        {
+          name: 'Ethereum',
+          website: 'https://ethereum.org/it/',
+          logo: '/projects/ethereum.jpg',
+        },
+        {
+          name: 'Gnosis Chain',
+          website: 'https://gnosischain.world/',
+          logo: '/projects/gnosis.jpg',
+        },
+        {
+          name: 'Polygon',
+          website: 'https://polygon.technology/',
+          logo: '/projects/polygon.jpg',
+        },
+        {
+          name: 'Avalanche',
+          website: 'https://www.avax.network/',
+          logo: '/projects/avalanche.jpg',
+        },
+        {
+          name: 'Binance Smart Chain',
+          website: 'https://www.bnbchain.world/en/smartChain',
+          logo: '/projects/binance.jpg',
+        },
+      ],
       airdroppedProjects: [
         {
           name: 'Gnosis Chain Team',
