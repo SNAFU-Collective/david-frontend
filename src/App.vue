@@ -1,10 +1,21 @@
 <template>
-  <v-app style=" color: #fff" id="v-app-container">
+  <v-app style="color: #fff" id="v-app-container">
     <HomeParallax/>
 
     <v-container>
+      <v-img src="/background/graffiti_1.png" style="    position: absolute;
+    opacity: 0.1;
+    width: 100%;
+    left: 50%;
+    margin-top: 13px;"></v-img>
+      <v-img src="/background/graffiti_2.png" style="    position: absolute;
+    opacity: 0.1;
+    width: 100%;
+    right:50%;
+    margin-top: 50%;"></v-img>
       <Welcome class="homeMargin"/>
       <Introduction class="homeMargin"/>
+      <Distribution class="homeMargin"/>
     </v-container>
 
     <Footer class="homeMargin"/>
@@ -14,6 +25,7 @@
 <script>
 import {mapActions} from "vuex"
 import Introduction from "./components/Introduction"
+import Distribution from "./components/Distribution"
 import Welcome from "./components/Welcome"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
@@ -25,7 +37,8 @@ export default {
     Welcome,
     HomeParallax,
     Footer,
-    Introduction
+    Introduction,
+    Distribution
   },
 
   methods: {

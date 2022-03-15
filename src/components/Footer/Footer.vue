@@ -64,6 +64,10 @@
         <a>hello@nftsnafu.org</a>
       </v-card-text>
     </v-card>
+    <v-img style="position: absolute;
+    opacity: 0.1;
+    width: 250px;
+    top: 0;" src="/background/graffiti_3.png" />
   </v-footer>
 </template>
 

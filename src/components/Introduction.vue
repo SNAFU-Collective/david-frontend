@@ -6,12 +6,12 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why at we decided to mint the NFTs on <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
+          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why at we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
         </p>
       </v-row>
 
       <v-row class="mt-10">
-        <h5>POWERED BY</h5>
+        <h5>MINTED ON</h5>
       </v-row>
       <v-row>
         <v-avatar v-for="(blockchain, index) in blockchains" :key="index" size="50" class="pointerOnHover ma-1">
