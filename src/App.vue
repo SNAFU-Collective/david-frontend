@@ -8,11 +8,11 @@
     width: 100%;
     left: 50%;
     margin-top: 13px;"></v-img>
-      <v-img src="/background/graffiti_2.png" style="    position: absolute;
-    opacity: 0.1;
-    width: 100%;
-    right:50%;
-    margin-top: 50%;"></v-img>
+<!--      <v-img src="/background/graffiti_2.png" style="    position: absolute;-->
+<!--    opacity: 0.1;-->
+<!--    width: 100%;-->
+<!--    right:50%;-->
+<!--    margin-top: 50%;"></v-img>-->
       <Welcome class="homeMargin"/>
       <Introduction class="homeMargin"/>
       <Distribution class="homeMargin"/>
