@@ -17,6 +17,8 @@
           - cambiare img pfp su snafu<br/>
           - contare nella dao<br/>
           RARE<br/>
+          Vogliamo che la qualità di snafu sia alta, per poterlo fare non possiamo fidarci di dell'opinione di una persona ma di un collettivo di collezionisti
+          che possano dare la loro opinione.<br/>
           - selezionare le opere che gli artisti vogliono mintare<br/>
         </p>
       </v-row>

@@ -5,6 +5,7 @@
     <v-container>
       <v-img src="/background/graffiti_4.png" id="graffiti4"></v-img>
       <v-img src="/background/graffiti_5.png" id="graffiti5"></v-img>
+      <v-img src="/background/graffiti_2.png" id="graffiti2"></v-img>
       <Welcome id="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
@@ -97,6 +98,10 @@ html, body {
     position: absolute;
     display: none;
   }
+  #graffiti2 {
+    position: absolute;
+    display: none;
+  }
   div#bonusesSection, div#distributionSection, div#welcomeSection {
     margin-top: 100px;
   }
@@ -121,6 +126,13 @@ html, body {
     bottom: 269px;
     transform: revert;
     right: 0;
+  }
+  #graffiti2 {
+    position: absolute;
+    opacity: 0.05;
+    top:2000px;
+    transform: revert;
+    left: 0;
   }
   div#bonusesSection, div#distributionSection, div#welcomeSection {
     margin-top: 150px;
