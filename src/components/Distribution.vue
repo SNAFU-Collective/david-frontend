@@ -10,7 +10,7 @@
           <b class="blueColor">Each chain will have 5000 unique Bored David NFTs.</b><br/><br/>
           Of those 5000 per chain we will reserve the following percentages:<br/>
           - <b class="blueColor">1000 RARE NFTs</b> reserved for sale<br/>
-          - <b class="blueColor">2500 COMMON NFTs</b> airdropped to the community (if we will be unable to airdrop all of them then will leave the remaining for sale)<br/>
+          - <b class="blueColor">2500 COMMON NFTs</b> airdropped to the community (if we will be unable to airdrop all of them then we will put the remaining for sale)<br/>
           - <b class="blueColor">1000 COMMON NFTs</b> reserved for Pool Together, Farming and Giveaways<br/>
           - <b class="blueColor">500 COMMON NFTs</b> reserved for the team<br/>
         </p>
