@@ -1,7 +1,7 @@
 <template>
   <v-row class="allWidthOnMobile"  style=" align-items: center;">
-    <v-col class="pa-10" md="5" style="display: flex;">
-      <v-img src="/pfp/250.png" width="400px" height="400px"></v-img>
+    <v-col class="pa-10" md="5">
+      <v-img src="/pfp/250.png" width="350px" height="350px"></v-img>
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row>

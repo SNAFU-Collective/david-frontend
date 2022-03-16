@@ -10,7 +10,7 @@
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
       <Bonuses id="bonusesSection"/>
-      <Team class="homeMargin"/>
+      <Team id="teamSection"/>
       <VideoKez class="homeMargin"/>
     </v-container>
 
@@ -110,7 +110,7 @@ html, body {
     position: absolute;
     display: none;
   }
-  div#bonusesSection, div#distributionSection, div#welcomeSection {
+  div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
     margin-top: 100px;
   }
 }
@@ -142,7 +142,7 @@ html, body {
     transform: revert;
     left: 0;
   }
-  div#bonusesSection, div#distributionSection, div#welcomeSection {
+  div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
     margin-top: 150px;
   }
 }
