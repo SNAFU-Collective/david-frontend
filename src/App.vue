@@ -10,6 +10,7 @@
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
       <Bonuses id="bonusesSection"/>
+      <Team class="homeMargin"/>
       <VideoKez class="homeMargin"/>
     </v-container>
 
@@ -24,6 +25,7 @@ import Distribution from "./components/Distribution"
 import VideoKez from "./components/VideoKez"
 import Bonuses from "./components/Bonuses"
 import Welcome from "./components/Welcome"
+import Team from "./components/Team"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
 
@@ -37,7 +39,8 @@ export default {
     Introduction,
     Distribution,
     Bonuses,
-    VideoKez
+    VideoKez,
+    Team
   },
 
   methods: {
