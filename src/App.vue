@@ -96,7 +96,9 @@ html, body {
   }
   #graffiti5 {
     position: absolute;
-    display: none;
+    opacity: 0.05;
+    top: 52%;
+    right: 0;
   }
   #graffiti2 {
     position: absolute;
