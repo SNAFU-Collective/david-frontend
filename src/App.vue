@@ -10,6 +10,7 @@
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
       <Bonuses id="bonusesSection"/>
+      <VideoKez class="homeMargin"/>
     </v-container>
 
     <Footer class="homeMargin"/>
@@ -20,6 +21,7 @@
 import {mapActions} from "vuex"
 import Introduction from "./components/Introduction"
 import Distribution from "./components/Distribution"
+import VideoKez from "./components/VideoKez"
 import Bonuses from "./components/Bonuses"
 import Welcome from "./components/Welcome"
 import HomeParallax from "./components/HomeParallax"
@@ -34,7 +36,8 @@ export default {
     Footer,
     Introduction,
     Distribution,
-    Bonuses
+    Bonuses,
+    VideoKez
   },
 
   methods: {
