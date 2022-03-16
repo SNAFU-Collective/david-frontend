@@ -39,9 +39,6 @@
       <v-row class="mt-10">
         <h5>WHITELISTED PROJECTS (SO FAR...)</h5>
       </v-row>
-      <!--      <v-row class="mt-10" >-->
-      <!--        <h6>ETHEREUM</h6>-->
-      <!--      </v-row>-->
       <v-row class="mt-4">
         <v-avatar v-for="(project, index) in airdroppedProjects" :key="index" size="35" class="pointerOnHover ma-1">
           <v-tooltip bottom>
