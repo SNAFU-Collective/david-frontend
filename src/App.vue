@@ -5,7 +5,7 @@
     <v-container>
       <v-img src="/background/graffiti_4.png" id="graffiti4"></v-img>
       <v-img src="/background/graffiti_5.png" id="graffiti5"></v-img>
-      <Welcome class="homeMargin"/>
+      <Welcome id="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
       <Bonuses id="bonusesSection"/>
@@ -90,13 +90,13 @@ html, body {
   #graffiti4 {
     position: absolute;
     opacity: 0.1;
-    margin-top: 550px;
+    margin-top: 760px;
   }
   #graffiti5 {
     position: absolute;
     display: none;
   }
-  div#bonusesSection, div#distributionSection {
+  div#bonusesSection, div#distributionSection, div#welcomeSection {
     margin-top: 100px;
   }
 }
@@ -112,7 +112,7 @@ html, body {
     opacity: 0.1;
     width: 900px;
     left: 50%;
-    margin-top: 13px;
+    margin-top: 70px;
   }
   #graffiti5 {
     position: absolute;
@@ -121,7 +121,7 @@ html, body {
     transform: revert;
     right: 0;
   }
-  div#bonusesSection, div#distributionSection {
+  div#bonusesSection, div#distributionSection, div#welcomeSection {
     margin-top: 150px;
   }
 }
