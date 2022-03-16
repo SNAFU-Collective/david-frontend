@@ -3,7 +3,7 @@
     <HomeParallax/>
 
     <v-container>
-      <v-img src="/background/graffiti_1.png" id="graffiti1"></v-img>
+      <v-img src="/background/graffiti_4.png" id="graffiti4"></v-img>
       <Welcome class="homeMargin"/>
       <Introduction class="homeMargin"/>
       <Distribution class="homeMargin"/>
@@ -83,11 +83,10 @@ html, body {
   .homeMargin{
     margin-top: 50px !important;
   }
-  #graffiti1 {
+  #graffiti4 {
     position: absolute;
     opacity: 0.1;
-    left: 50%;
-    margin-top: 500px;
+    margin-top: 550px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -97,10 +96,10 @@ html, body {
   .allWidthOnMobile{
     display: flex;
   }
-  #graffiti1 {
+  #graffiti4 {
     position: absolute;
     opacity: 0.1;
-    width: 100%;
+    width: 900px;
     left: 50%;
     margin-top: 13px;
   }

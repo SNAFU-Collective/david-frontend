@@ -9,6 +9,11 @@
         class="text-center"
         style=" width: 100%"
     >
+      <v-img style="position: absolute;
+        opacity: 0.5;
+        width: 250px;
+        top: 0;" src="/background/graffiti_3.png"/>
+
       <v-card-text class="mt-5 mb-10">
         <v-row justify="center" class="mb-5 mt-10">
           <h3>FOLLOW US</h3>
@@ -48,13 +53,13 @@
         </v-tooltip>
       </v-card-text>
 
-<!--      <v-card-text class="white&#45;&#45;text footerText" style="width: 100%">-->
-<!--        <span>Don't miss the drop, whitelist your wallet!</span>-->
-<!--        <br>-->
-<!--        <v-btn text class="white&#45;&#45;text" style="color: white" @click="goTo('https://forms.gle/P3YE3NAJ5kbNHvYV8')">-->
-<!--          Add to Whitelist-->
-<!--        </v-btn>-->
-<!--      </v-card-text>-->
+      <!--      <v-card-text class="white&#45;&#45;text footerText" style="width: 100%">-->
+      <!--        <span>Don't miss the drop, whitelist your wallet!</span>-->
+      <!--        <br>-->
+      <!--        <v-btn text class="white&#45;&#45;text" style="color: white" @click="goTo('https://forms.gle/P3YE3NAJ5kbNHvYV8')">-->
+      <!--          Add to Whitelist-->
+      <!--        </v-btn>-->
+      <!--      </v-card-text>-->
 
       <v-divider></v-divider>
 
@@ -64,22 +69,17 @@
         <a>hello@nftsnafu.org</a>
       </v-card-text>
     </v-card>
-    <v-img style="position: absolute;
-    opacity: 0.1;
-    width: 250px;
-    top: 0;" src="/background/graffiti_3.png" />
   </v-footer>
 </template>
 
 <script>
 export default {
-  data: () => ({
-  }),
+  data: () => ({}),
   methods: {
     goTo(url) {
       window.open(url, '_blank')
-    }
-  }
+    },
+  },
 }
 </script>
 
