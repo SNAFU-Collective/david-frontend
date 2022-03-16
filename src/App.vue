@@ -3,16 +3,7 @@
     <HomeParallax/>
 
     <v-container>
-      <v-img src="/background/graffiti_1.png" style="    position: absolute;
-    opacity: 0.1;
-    width: 100%;
-    left: 50%;
-    margin-top: 13px;"></v-img>
-<!--      <v-img src="/background/graffiti_2.png" style="    position: absolute;-->
-<!--    opacity: 0.1;-->
-<!--    width: 100%;-->
-<!--    right:50%;-->
-<!--    margin-top: 50%;"></v-img>-->
+      <v-img src="/background/graffiti_1.png" id="graffiti1"></v-img>
       <Welcome class="homeMargin"/>
       <Introduction class="homeMargin"/>
       <Distribution class="homeMargin"/>
@@ -92,6 +83,12 @@ html, body {
   .homeMargin{
     margin-top: 50px !important;
   }
+  #graffiti1 {
+    position: absolute;
+    opacity: 0.1;
+    left: 50%;
+    margin-top: 500px;
+  }
 }
 @media screen and (min-width: 768px) {
   .homeMargin{
@@ -99,6 +96,13 @@ html, body {
   }
   .allWidthOnMobile{
     display: flex;
+  }
+  #graffiti1 {
+    position: absolute;
+    opacity: 0.1;
+    width: 100%;
+    left: 50%;
+    margin-top: 13px;
   }
 }
 
