@@ -18,9 +18,6 @@
           This NFT collection is created by SNAFU, an <b class="blueColor">Italian underground art collective</b> that established a platform
           that leverages the new power NFTs have brought to the art world to <b class="blueColor">provide a steadier revenue stream to the global and local art community.</b>
         </p>
-<!--        TODO: mettere nella sezione del "cosa ti da in più"-->
-<!--        We created a colorful and engaging platform (also called SNAFU) where artists can mint their work as NFTs and interact directly with patrons-->
-<!--        and collectors.-->
         <a href="https://app.nftsnafu.org" target="_blank" class="customLink">Visit SNAFU</a>
       </v-row>
     </v-col>

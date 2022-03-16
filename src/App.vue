@@ -7,7 +7,8 @@
       <v-img src="/background/graffiti_5.png" id="graffiti5"></v-img>
       <Welcome class="homeMargin"/>
       <Introduction class="homeMargin"/>
-      <Distribution class="homeMargin"/>
+      <Distribution id="distributionSection"/>
+      <Bonuses id="bonusesSection"/>
     </v-container>
 
     <Footer class="homeMargin"/>
@@ -18,6 +19,7 @@
 import {mapActions} from "vuex"
 import Introduction from "./components/Introduction"
 import Distribution from "./components/Distribution"
+import Bonuses from "./components/Bonuses"
 import Welcome from "./components/Welcome"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
@@ -30,7 +32,8 @@ export default {
     HomeParallax,
     Footer,
     Introduction,
-    Distribution
+    Distribution,
+    Bonuses
   },
 
   methods: {
@@ -93,6 +96,9 @@ html, body {
     position: absolute;
     display: none;
   }
+  div#bonusesSection, div#distributionSection {
+    margin-top: 100px;
+  }
 }
 @media screen and (min-width: 768px) {
   .homeMargin{
@@ -114,6 +120,9 @@ html, body {
     bottom: 269px;
     transform: revert;
     right: 0;
+  }
+  div#bonusesSection, div#distributionSection {
+    margin-top: 150px;
   }
 }
 

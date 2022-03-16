@@ -2,12 +2,12 @@
   <v-row class="allWidthOnMobile">
     <v-col class="pa-10" md="5">
       <v-row>
-        <h3  class="pinkColor">25K UNIQUE NFTs</h3>
+        <h3  class="pinkColor">25000 UNIQUE NFTs</h3>
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
           There will be a maximum of <b class="blueColor">25000 unique Bored Davids</b>, minted across 5 different Blockchains.<br/>
-          <b class="blueColor">Each chain will have 5000 unique Bored David NFTs.</b><br/><br/>
+          <b class="blueColor">Each blockchain will have a set of 5000 unique Bored David NFTs.</b><br/><br/>
           Of those 5000 per chain we will reserve the following percentages:<br/>
         </p>
           <ul>
