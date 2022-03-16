@@ -90,7 +90,8 @@ html, body {
   #graffiti4 {
     position: absolute;
     opacity: 0.1;
-    margin-top: 760px;
+    margin-top: 596px;
+    transform: rotate(180deg);
   }
   #graffiti5 {
     position: absolute;
