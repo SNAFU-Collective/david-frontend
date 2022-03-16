@@ -6,7 +6,7 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why at we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
+          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
         </p>
       </v-row>
 
@@ -32,7 +32,7 @@
       </v-row>
       <v-row>
         <p class="mt-5" style="text-align: justify;">
-          To celebrate the <b class="blueColor">1 year birthday of SNAFU</b> we decided to <b class="blueColor">airdrop</b> the majority of <b class="blueColor">NFTs to projects, dev teams and communities</b> that helped us during this year, that provide support, useful resources and tools to the web3 community.
+          To celebrate the <b class="blueColor">1 year birthday of SNAFU</b> we decided to create the first ever multichain collection and <b class="blueColor">airdrop NFTs to projects, dev teams and communities</b> that helped us during this year, that provide support, useful resources and tools to the web3 community. All of this simultaneously on all chains.
         </p>
       </v-row>
 
