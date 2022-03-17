@@ -2,7 +2,7 @@
   <v-row style="color: white; align-items: center;" class="allWidthOnMobile">
     <v-col>
       <v-row>
-        <h2 >TEAM</h2>
+        <h3 class="pinkColor">TEAM</h3>
       </v-row>
       <v-row>
         <v-hover style="cursor: pointer">
