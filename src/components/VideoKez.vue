@@ -1,6 +1,6 @@
 <template>
   <v-row class="allWidthOnMobile">
-      <video controls loop muted autoplay src="https://gateway.pinata.cloud/ipfs/QmQ9hcJPGNsLUCFzRUCf8UJ3kSgnuk4JZvucuUExoaaRfh" style="width: 100%"  type="video/mp4"/>
+      <video controls loop muted autoplay src="https://s3.eu-central-1.amazonaws.com/david.prod/kez.mp4" style="width: 100%"  type="video/mp4"/>
   </v-row>
 </template>
 
