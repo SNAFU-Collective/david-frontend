@@ -102,13 +102,13 @@ html, body {
   }
   #graffiti5 {
     position: absolute;
-    opacity: 0.05;
-    top: 52%;
-    right: 0;
+    display: none;
   }
   #graffiti2 {
     position: absolute;
-    display: none;
+    opacity: 0.05;
+    top: 46%;
+    right: 0;
   }
   div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
     margin-top: 100px;
