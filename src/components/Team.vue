@@ -30,7 +30,7 @@
           <v-img slot-scope="{ hover }" v-if="hover" src="../../public/pfp/795.png" width="50px" class="ma-1"
                  transition="slide-y-transition">
             <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
-              <v-btn text style="width: 100%;height: 100%; color:#fff; ">missingno | dev</v-btn>
+              <v-btn text style="width: 100%;height: 100%; color:#fff; ">missigno | dev</v-btn>
             </div>
           </v-img>
           <v-img v-else src="../../public/pfp/795.png" width="50px" class="ma-1"
