@@ -5,7 +5,7 @@
       </v-row>
       <v-row class="mt-10 px-10" style="text-align: justify;">
         <p>
-          <b class="blueColor">Andrea Marchetti</b> is an italian artist in constant contact with the socially engaged realities of the local areas, developing a growing sensitivity to those themes that will become fundamental in his work: denunciation, struggle, tradition and sharing.
+          <b class="blueColor">Andrea Marchetti</b> aka KEZ is an italian artist in constant contact with the socially engaged realities of the local areas, developing a growing sensitivity to those themes that will become fundamental in his work: denunciation, struggle, tradition and sharing.
         </p>
         <p>
           <a href="https://andreamarchettiart.it/" target="_blank" class="customLink">Visit portfolio</a>
