@@ -103,10 +103,9 @@
           @click="fullscreen = false"
           class="closeButton"
       >
-<!--        <h4 class="mr-10">Close</h4>-->
         <v-icon style="font-size: 50px">mdi-close</v-icon>
       </v-btn>
-      <img :src="src"/>
+      <img :src="src" style="max-width:100%"/>
     </v-overlay>
   </v-row>
 </template>
