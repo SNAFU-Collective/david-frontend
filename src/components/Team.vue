@@ -4,17 +4,17 @@
       <h3 class="pinkColor">TEAM</h3>
     </v-row>
     <v-row class="pa-10">
-        <v-hover style="cursor: pointer" v-for="member of members" :key="member.nickname">
-          <v-img slot-scope="{ hover }" v-if="hover" :src="member.src" width="50px" class="ma-1"
-                 transition="slide-y-transition">
-            <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
-              <v-btn text style="width: 100%;height: 100%; color:#fff; ">{{member.nickname}} | {{member.description}}</v-btn>
-            </div>
-          </v-img>
-          <v-img v-else :src="member.src" width="50px" class="ma-1"
-                 transition="slide-y-transition"></v-img>
-        </v-hover>
-      </v-row>
+      <v-hover style="cursor: pointer" v-for="member of members" :key="member.nickname">
+        <v-img slot-scope="{ hover }" v-if="hover" :src="member.src" width="50px" class="ma-1"
+               transition="slide-y-transition">
+          <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
+            <v-btn text style="width: 100%;height: 100%; color:#fff; ">{{member.nickname}} | {{member.description}}</v-btn>
+          </div>
+        </v-img>
+        <v-img v-else :src="member.src" width="50px" class="ma-1"
+               transition="slide-y-transition"></v-img>
+      </v-hover>
+    </v-row>
   </v-row>
 </template>
 

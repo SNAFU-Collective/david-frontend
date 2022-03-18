@@ -4,10 +4,7 @@
 
     <HomeParallax/>
 
-    <v-container>
-      <v-img src="/background/graffiti_4.png" id="graffiti4"></v-img>
-      <v-img src="/background/graffiti_5.png" id="graffiti5"></v-img>
-      <v-img src="/background/graffiti_2.png" id="graffiti2"></v-img>
+    <v-container style="z-index: 2">
       <Welcome id="welcomeSection" class="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
@@ -18,6 +15,13 @@
     </v-container>
 
     <Footer class="homeMargin"/>
+
+    <v-img style="z-index: 1" src="/background/graffiti_4.png" id="graffiti4"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_5.png" id="graffiti5"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_2.png" id="graffiti2"></v-img>
+    <!--      <v-img src="/background/graffiti_6.png" id="graffiti6"></v-img>-->
+    <v-img style="z-index: 1" src="/background/graffiti_7.png" id="graffiti7"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_8.png" id="graffiti8"></v-img>
   </v-app>
 </template>
 
@@ -117,6 +121,15 @@ html, body {
     top: 46%;
     right: 0;
   }
+  #graffiti6 {
+    position: absolute;
+  }
+  #graffiti7 {
+    position: absolute;
+  }
+  #graffiti8 {
+    position: absolute;
+  }
   div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
     margin-top: 100px;
   }
@@ -137,8 +150,8 @@ html, body {
   }
   #graffiti5 {
     position: absolute;
-    opacity: 0.1;
-    bottom: 269px;
+    opacity: 0.03;
+    bottom: 0px;
     transform: revert;
     right: 0;
   }
@@ -149,6 +162,28 @@ html, body {
     transform: revert;
     left: 0;
   }
+  /*#graffiti6 {*/
+  /*  position: absolute;*/
+  /*}*/
+  #graffiti7 {
+    position: absolute;
+    opacity: 0.1;
+    bottom: 1141px;
+    transform: revert;
+    left: 100px;
+    width: 300px;
+    z-index: 1;
+  }
+  #graffiti8 {
+    position: absolute;
+    opacity: 0.1;
+    bottom: 2162px;
+    transform: revert;
+    right: 80px;
+    width: 300px;
+    z-index: 1;
+  }
+
   div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
     margin-top: 150px;
   }

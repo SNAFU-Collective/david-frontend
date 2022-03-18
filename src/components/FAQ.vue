@@ -37,16 +37,16 @@ export default {
           answer: 'You will be able to mint Bored David NFTs on this website when the minting will start.'
         },
         {
-          question: 'Can I buy with credit card?',
-          answer: 'No. You will need to use the default currency of the blockchain where you want to mint the NFT on (eg: ETH on Ethereum, xDAI on Gnosis Chain, AVAX on Avalanche, etc. If you want to buy with credit card you will need to first use other services to onboard, eg: https://ramp.network/'
-        },
-        {
           question: 'When can I buy Bored David?',
           answer: 'COMMON NFTs will be available to claim and mint on 16 April 2022.'
         },
         {
           question: 'When can I buy RARE NFTs?',
           answer: 'Mint date of RARE NFTs will be defined, but it will for sure be after all the common NFTs will be claimed/minted.'
+        },
+        {
+          question: 'Can I buy with credit card?',
+          answer: 'No. You will need to use the default currency of the blockchain where you want to mint the NFT on (eg: ETH on Ethereum, xDAI on Gnosis Chain, AVAX on Avalanche, etc. If you want to buy with credit card you will need to first use other services to onboard, eg: https://ramp.network/'
         },
         {
           question: 'How can I claim airdropped NFT?',
