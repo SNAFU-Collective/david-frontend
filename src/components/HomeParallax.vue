@@ -106,7 +106,7 @@ export default {
   }
 
   .scrollDownButton{
-    margin-top: -30px;
+    margin-top: -50px;
   }
 }
 

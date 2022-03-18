@@ -33,28 +33,28 @@ export default {
       panel: [0],
       faqs: [
         {
-          question: 'How can I claim airdropped NFT?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          question: 'Where can I buy Bored David?',
+          answer: 'You will be able to mint Bored David NFTs on this website when the minting will start.'
         },
         {
-          question: 'Where can I buy Bored David?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          question: 'Can I buy with credit card?',
+          answer: 'No. You will need to use the default currency of the blockchain where you want to mint the NFT on (eg: ETH on Ethereum, xDAI on Gnosis Chain, AVAX on Avalanche, etc. If you want to buy with credit card you will need to first use other services to onboard, eg: https://ramp.network/'
         },
         {
           question: 'When can I buy Bored David?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          answer: 'COMMON NFTs will be available to claim and mint on 16 April 2022.'
         },
         {
           question: 'When can I buy RARE NFTs?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          answer: 'Mint date of RARE NFTs will be defined, but it will for sure be after all the common NFTs will be claimed/minted.'
         },
         {
           question: 'How can I claim airdropped NFT?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          answer: 'We will add a section to this webapp where you will be able to see the airdrops you can claim and mint the NFT. Remember: the NFT won\'t be sent to you, you will need to manually mint it for free.'
         },
         {
           question: 'What\'s the roadmap?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          answer: 'First thing is to integrate the pfp collection inside the SNAFU Dapp to allow users set Bored David profile images; Then we will create a discord channel where collectors with rare NFTs will be able to vote for artworks to mint. In the meanwhile we will do tons of giveaways, raffles, meme contests, etc.'
         },
       ]
     }
