@@ -108,7 +108,7 @@ html, body {
   #graffiti4 {
     position: absolute;
     opacity: 0.1;
-    margin-top: 596px;
+    top: 1519px;
     transform: rotate(180deg);
   }
   #graffiti5 {
@@ -118,17 +118,23 @@ html, body {
   #graffiti2 {
     position: absolute;
     opacity: 0.05;
-    top: 46%;
+    top: 2572px;
     right: 0;
   }
   #graffiti6 {
     position: absolute;
+    display: none;
   }
   #graffiti7 {
     position: absolute;
+    display: none;
   }
   #graffiti8 {
     position: absolute;
+    width: 300px;
+    opacity: 0.1;
+    top: 4586px;
+    right: 0;
   }
   div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
     margin-top: 100px;
