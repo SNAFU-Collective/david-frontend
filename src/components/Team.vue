@@ -4,7 +4,7 @@
       <h3 class="pinkColor">TEAM</h3>
     </v-row>
     <v-row class="pa-10">
-      <v-hover style="cursor: pointer" v-for="member of members" :key="member.nickname">
+      <v-hover style="cursor: pointer" v-for="member of members" :key="member.nickname" class="teamImage">
         <v-img slot-scope="{ hover }" v-if="hover" :src="member.src" width="50px" class="ma-1"
                transition="slide-y-transition">
           <div style="background-color: rgba(0,0,0,0.47); width: 100%; height: 100%;">
@@ -76,10 +76,16 @@ export default {
     top: 50%;
     right: 30% ;
   }
+  .teamImage {
+    width: 50px !important;
+  }
 }
 @media screen and (max-width: 768px) {
   .closeButton {
     display: none;
+  }
+  .teamImage {
+    width: 45% !important;
   }
 }
 </style>
