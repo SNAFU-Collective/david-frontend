@@ -9,10 +9,12 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          Decide if an NFT is worth to be minted and sold to collectors on the SNAFU platform: own a  <b class="blueColor">RARE Bored David NFT</b> and drive your passion for art even further!
+          Decide if an NFT is worth to be minted and sold on the SNAFU platform: own a  <b class="blueColor">RARE Bored David NFT</b> and drive your passion for art even further!
+          <br/>
+          Validate artist's artworks, give feedbacks and preview the NFTs before the other collectors.
         </p>
         <p>
-          All Bored David NFTs will also <b class="blueColor">give access</b> to the  <a href="https://vote.nftsnafu.org/" target="_blank" class="customLink">SNAFU DAO</a>.
+          <b class="blueColor">All Bored David NFTs</b> will also <b class="blueColor">give you access</b> to the  <a href="https://vote.nftsnafu.org/" target="_blank" class="customLink">SNAFU DAO</a>.
         </p>
         <p>
           <b class="blueColor">Do you have some interesting ideas on how we could use Bored Davids?</b><br/> Join our <a href="https://discord.com/invite/kvbxMfUyQD" target="_blank" class="customLink">discord</a> and share it with us, we are always listening to our community for doing cool stuff!

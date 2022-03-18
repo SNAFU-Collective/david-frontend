@@ -132,7 +132,7 @@ html, body {
     position: absolute;
     width: 300px;
     opacity: 0.1;
-    top: 4586px;
+    top: 4416px;
     right: 0;
   }
   div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
