@@ -3,7 +3,7 @@
     <v-row  class="px-10">
       <h3 class="pinkColor">FAQs</h3>
     </v-row>
-    <v-expansion-panels accordion class="px-1 mt-10" multiple  v-model="panel">
+    <v-expansion-panels accordion class="px-1 mt-10" multiple v-model="panel">
       <v-expansion-panel
           v-model="panel"
           expand
