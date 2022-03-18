@@ -11,7 +11,7 @@
       <Welcome id="welcomeSection" class="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
-      <Bonuses id="bonusesSection"/>
+      <Bonuses class="homeMargin"/>
       <Team id="teamSection"/>
       <VideoKez class="homeMargin"/>
       <FAQ class="homeMargin"/>

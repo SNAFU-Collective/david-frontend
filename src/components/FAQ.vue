@@ -3,7 +3,7 @@
     <v-row  class="px-10">
       <h3 class="pinkColor">FAQs</h3>
     </v-row>
-    <v-expansion-panels accordion class="px-1 mt-10" style="" v-model="panel">
+    <v-expansion-panels accordion class="px-1 mt-10" multiple  v-model="panel">
       <v-expansion-panel
           v-model="panel"
           expand
@@ -45,7 +45,7 @@ export default {
           answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         },
         {
-          question: 'Will there be rarities?',
+          question: 'When can I buy RARE NFTs?',
           answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         },
         {
