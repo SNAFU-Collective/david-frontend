@@ -19,7 +19,7 @@
       />
     </v-row>
     <v-row style="justify-content: center;">
-      <button style="margin-top: -30px;z-index: 3;" @click="goToSection('welcomeSection')">
+      <button class="scrollDownButton" style="z-index: 3;" @click="goToSection('welcomeSection')">
         <v-icon
             style="font-size: xxx-large;
             animation-name: backgroundColorPalette;
@@ -105,6 +105,10 @@ export default {
     align-items: flex-end !important;
     height: 100%;
   }
+
+  .scrollDownButton{
+    margin-top: -30px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -129,6 +133,10 @@ export default {
     display: flex;
     align-items: flex-end !important;
     height: 100%;
+  }
+
+  .scrollDownButton{
+    margin-top: -100px;
   }
 }
 

@@ -11,7 +11,7 @@
           <a href="https://andreamarchettiart.it/" target="_blank" class="customLink">Visit portfolio</a>
         </p>
       </v-row>
-      <video class="pa-10" controls loop muted autoplay src="https://s3.eu-central-1.amazonaws.com/david.prod/kez.mp4" style="width: 100%"  type="video/mp4"/>
+      <video class="pt-10 pb-10 px-7" controls loop muted autoplay src="https://s3.eu-central-1.amazonaws.com/david.prod/kez.mp4" style="width: 100%"  type="video/mp4"/>
   </v-row>
 </template>
 
@@ -26,7 +26,8 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+    }
   },
   computed: {},
 }

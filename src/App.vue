@@ -1,6 +1,7 @@
 <template>
   <v-app style="color: #fff" id="v-app-container">
     <Header/>
+
     <HomeParallax/>
 
     <v-container>
@@ -13,6 +14,7 @@
       <Bonuses id="bonusesSection"/>
       <Team id="teamSection"/>
       <VideoKez class="homeMargin"/>
+      <FAQ class="homeMargin"/>
     </v-container>
 
     <Footer class="homeMargin"/>
@@ -26,6 +28,7 @@ import Distribution from "./components/Distribution"
 import VideoKez from "./components/VideoKez"
 import Bonuses from "./components/Bonuses"
 import Welcome from "./components/Welcome"
+import FAQ from "./components/FAQ"
 import Team from "./components/Team"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
@@ -43,7 +46,8 @@ export default {
     Bonuses,
     VideoKez,
     Team,
-    Header
+    Header,
+    FAQ
   },
 
   methods: {

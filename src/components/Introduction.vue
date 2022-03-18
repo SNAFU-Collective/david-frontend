@@ -6,7 +6,7 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon and Binance Smart Chain</b>.
+          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon, Binance Smart Chain</b> and other blockchains that will be announced before the mint.
         </p>
       </v-row>
 
@@ -66,6 +66,9 @@ export default {
   },
   methods: {
     goTo(url) {
+      if (url === "")
+        return false
+
       window.open(url, '_blank')
     },
     projects(blockchainCode) {
@@ -99,6 +102,11 @@ export default {
           name: 'Binance Smart Chain',
           website: 'https://www.bnbchain.world/en/smartChain',
           logo: '/projects/binance.jpg',
+        },
+        {
+          name: 'Other blockchains will be revealed soon',
+          website: '',
+          logo: '/projects/more.png',
         },
       ],
       airdroppedProjects: [
