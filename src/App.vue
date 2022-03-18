@@ -19,7 +19,6 @@
     <v-img style="z-index: 1" src="/background/graffiti_4.png" id="graffiti4"></v-img>
     <v-img style="z-index: 1" src="/background/graffiti_5.png" id="graffiti5"></v-img>
     <v-img style="z-index: 1" src="/background/graffiti_2.png" id="graffiti2"></v-img>
-    <!--      <v-img src="/background/graffiti_6.png" id="graffiti6"></v-img>-->
     <v-img style="z-index: 1" src="/background/graffiti_7.png" id="graffiti7"></v-img>
     <v-img style="z-index: 1" src="/background/graffiti_8.png" id="graffiti8"></v-img>
   </v-app>
