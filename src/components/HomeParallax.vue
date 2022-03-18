@@ -1,7 +1,5 @@
 <template>
   <div class="main" :style="'height:'+screenHeight+'px'">
-    <Header/>
-    <!--      <router-view />-->
     <DavidFrame class="davidFrame"/>
     <v-row
         class="characterDiv"
@@ -20,6 +18,16 @@
           transition="slide-y-transition"
       />
     </v-row>
+    <v-row style="justify-content: center;">
+      <button style="margin-top: -30px;z-index: 3;" @click="goToSection('welcomeSection')">
+        <v-icon
+            style="font-size: xxx-large;
+            animation-name: backgroundColorPalette;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;">mdi-chevron-double-down</v-icon>
+      </button>
+    </v-row>
   </div>
 </template>
 
@@ -29,7 +37,6 @@ import DavidFrame from "../components/Frame"
 
 export default {
   components: {
-    Header,
     DavidFrame,
   },
   methods: {
@@ -38,6 +45,23 @@ export default {
       if (number === 0) number = 1
       return number
     },
+    goToSection(refName) {
+      let el = document.getElementById(refName)
+      let offset = this.getOffset(el);
+
+      window.scrollTo({
+        left: 0,
+        top: offset.top,
+        behavior: 'smooth',
+      })
+    },
+    getOffset(el) {
+      const rect = el.getBoundingClientRect();
+      return {
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY
+      };
+    }
   },
   data() {
     return {}
@@ -105,6 +129,25 @@ export default {
     display: flex;
     align-items: flex-end !important;
     height: 100%;
+  }
+}
+
+/* Standard syntax */
+@keyframes backgroundColorPalette {
+  0% {
+    color: #ffffff;
+  }
+  25% {
+    color: rgba(255, 255, 255, 0.91);
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.66);
+  }
+  75% {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.25);
   }
 }
 </style>
