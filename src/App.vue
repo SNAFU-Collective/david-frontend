@@ -152,7 +152,7 @@ html, body {
     opacity: 0.1;
     width: 900px;
     left: 50%;
-    margin-top: 70px;
+    top: 1014px;
   }
   #graffiti5 {
     position: absolute;
