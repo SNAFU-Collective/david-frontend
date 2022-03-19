@@ -27,31 +27,31 @@ export default {
     return {
       members: [
         {
-          src: '/pfp/147.png',
+          src: '/pfp/311.png',
           nickname: 'kez',
           description: 'artist',
           socials: []
         },
         {
-          src: '/pfp/1276.png',
+          src: '/pfp/277.png',
           nickname: 'agilulfo',
           description: 'dev',
           socials: []
         },
         {
-          src: '/pfp/795.png',
+          src: '/pfp/1805.png',
           nickname: 'missigno',
           description: 'dev',
           socials: []
         },
         {
-          src: '/pfp/1183.png',
+          src: '/pfp/1543.png',
           nickname: 'fe',
           description: 'social media',
           socials: []
         },
         {
-          src: '/pfp/691.png',
+          src: '/pfp/1077.png',
           nickname: 'irsh',
           description: 'dev',
           socials: []

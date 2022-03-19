@@ -81,30 +81,30 @@ export default {
       src: "",
       previewsRow1: [
         {
-          id: 18,
-          src: '/pfp/18.png',
+          id: 1983,
+          src: '/pfp/1983.png',
         },
         {
-          id: 25,
-          src: '/pfp/25.png',
+          id: 513,
+          src: '/pfp/513.png',
         },
         {
-          id: 30,
-          src: '/pfp/30.png',
+          id: 474,
+          src: '/pfp/474.png',
         },
       ],
       previewsRow2: [
         {
-          id: 133,
-          src: '/pfp/133.png',
+          id: 162,
+          src: '/pfp/162.png',
         },
         {
-          id: 248,
-          src: '/pfp/248.png',
+          id: 238,
+          src: '/pfp/238.png',
         },
         {
-          id: 594,
-          src: '/pfp/594.png',
+          id: 392,
+          src: '/pfp/392.png',
         }
       ]
     }
