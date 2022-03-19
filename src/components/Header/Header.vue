@@ -12,7 +12,7 @@
 
       <v-col cols="2">
 <!--        <wallet-status class="mt-5 pb-2 walletHeader"/>-->
-        <h2 style="color: white">COMING SOON!</h2>
+        <h2 style="color: white">MINTING SOON!</h2>
       </v-col>
 
     </div>
@@ -22,7 +22,7 @@
           <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
       </v-col>
       <v-col cols="6" style="text-align: right">
-        <h2 style="color: white">COMING SOON!</h2>
+        <h2 style="color: white">MINTING SOON!</h2>
       </v-col>
 <!--      <v-col cols="1" id="menuMobile">-->
 <!--        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"-->

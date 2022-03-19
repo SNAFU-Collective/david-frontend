@@ -1,24 +1,56 @@
 <template>
-  <v-app>
+  <v-app style="color: #fff" id="v-app-container">
+    <Header/>
+
     <HomeParallax/>
-<!--    <Welcome/>-->
-    <Footer/>
+
+    <v-container style="z-index: 2">
+      <Welcome id="welcomeSection" class="welcomeSection"/>
+      <Introduction class="homeMargin"/>
+      <Distribution id="distributionSection"/>
+      <Bonuses class="homeMargin"/>
+      <Team id="teamSection"/>
+      <VideoKez class="homeMargin"/>
+      <FAQ class="homeMargin"/>
+    </v-container>
+
+    <Footer class="homeMargin"/>
+
+    <v-img style="z-index: 1" src="/background/graffiti_4.png" id="graffiti4"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_5.png" id="graffiti5"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_2.png" id="graffiti2"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_7.png" id="graffiti7"></v-img>
+    <v-img style="z-index: 1" src="/background/graffiti_8.png" id="graffiti8"></v-img>
   </v-app>
 </template>
 
 <script>
 import {mapActions} from "vuex"
+import Introduction from "./components/Introduction"
+import Distribution from "./components/Distribution"
+import VideoKez from "./components/VideoKez"
+import Bonuses from "./components/Bonuses"
 import Welcome from "./components/Welcome"
+import FAQ from "./components/FAQ"
+import Team from "./components/Team"
 import HomeParallax from "./components/HomeParallax"
 import Footer from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
 
 export default {
   name: "App",
 
   components: {
-    // Welcome,
+    Welcome,
     HomeParallax,
-    Footer
+    Footer,
+    Introduction,
+    Distribution,
+    Bonuses,
+    VideoKez,
+    Team,
+    Header,
+    FAQ
   },
 
   methods: {
@@ -66,6 +98,126 @@ html, body {
   .filters-row {
     margin: 0 10%;
   }
+  .allWidthOnMobile{
+    display: block;
+  }
+  .homeMargin{
+    margin-top: 50px !important;
+  }
+  #graffiti4 {
+    position: absolute;
+    opacity: 0.1;
+    top: 1519px;
+    transform: rotate(180deg);
+  }
+  #graffiti5 {
+    position: absolute;
+    display: none;
+  }
+  #graffiti2 {
+    position: absolute;
+    opacity: 0.05;
+    top: 2572px;
+    right: 0;
+  }
+  #graffiti6 {
+    position: absolute;
+    display: none;
+  }
+  #graffiti7 {
+    position: absolute;
+    display: none;
+  }
+  #graffiti8 {
+    position: absolute;
+    width: 300px;
+    opacity: 0.1;
+    top: 4416px;
+    right: 0;
+  }
+  div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .homeMargin{
+    margin-top: 100px !important;
+  }
+  .allWidthOnMobile{
+    display: flex;
+  }
+  #graffiti4 {
+    position: absolute;
+    opacity: 0.1;
+    width: 900px;
+    left: 50%;
+    top: 1014px;
+  }
+  #graffiti5 {
+    position: absolute;
+    opacity: 0.03;
+    bottom: 0px;
+    transform: revert;
+    right: 0;
+  }
+  #graffiti2 {
+    position: absolute;
+    opacity: 0.05;
+    top:2000px;
+    transform: revert;
+    left: 0;
+  }
+  /*#graffiti6 {*/
+  /*  position: absolute;*/
+  /*}*/
+  #graffiti7 {
+    position: absolute;
+    opacity: 0.1;
+    bottom: 1141px;
+    transform: revert;
+    left: 100px;
+    width: 300px;
+    z-index: 1;
+  }
+  #graffiti8 {
+    position: absolute;
+    opacity: 0.1;
+    bottom: 2162px;
+    transform: revert;
+    right: 80px;
+    width: 300px;
+    z-index: 1;
+  }
+
+  div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
+    margin-top: 150px;
+  }
 }
 
+#v-app-container {
+  background: linear-gradient(300deg, #000000, #504a4a);
+  background-size: 100% 100%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.pointerOnHover {
+  cursor: pointer;
+}
+
+.blueColor {
+  color: rgb(51 215 241)
+}
+
+.pinkColor {
+  color: rgb(230 75 182)
+}
+
+a.customLink {
+  color: white !important;
+  border-bottom: 2px solid white;
+  text-decoration: none;
+}
 </style>

@@ -26,9 +26,11 @@ export default {
   components: {},
   methods: {
     getRandomInt(max) {
-      let number = Math.floor(Math.random() * max)
-      if (number === 0) number = 1
-      return number
+      //use only 1 gif
+      return 1
+      // let number = Math.floor(Math.random() * max)
+      // if (number === 0) number = 1
+      // return number
     },
   },
   data() {
