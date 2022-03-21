@@ -52,7 +52,7 @@ export default {
         },
         {
           src: '/pfp/1077.png',
-          nickname: 'irsh',
+          nickname: 'HAWK',
           description: 'dev',
           socials: []
         },
