@@ -9,7 +9,7 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          Decide if an NFT is worth to be minted and sold on the SNAFU platform: own a  <b class="blueColor">RARE Bored David NFT</b> and drive your passion for art even further!
+          Become a SNAFU CURATOR: decide if an NFT is worth to be minted and sold on the SNAFU platform. Own a  <b class="blueColor">RARE Bored David NFT</b> and drive your passion for art even further!
           <br/>
           Validate artist's artworks, give feedbacks and preview the NFTs before the other collectors.
         </p>

@@ -212,6 +212,30 @@ export default {
           logo: '/projects/minerva.jpg',
           blockchain: 'xdai'
         },
+        {
+          name: 'Punk Domains',
+          website: 'https://punk.domains/#/',
+          logo: '/projects/punkdomains.png',
+          blockchain: 'xdai'
+        },
+        {
+          name: 'Endemic',
+          website: 'https://endemic.app/',
+          logo: '/projects/endemic-logo.png',
+          blockchain: 'aurora'
+        },
+        {
+          name: 'Lost In Metaverse',
+          website: 'https://www.lostinmetaverse.club/',
+          logo: '/projects/lostinmetaverse.png',
+          blockchain: 'ethereum'
+        },
+        {
+          name: 'NFT Italia News',
+          website: 'https://twitter.com/NFTItalianews',
+          logo: '/projects/nftitalianews.jpg',
+          blockchain: 'ethereum'
+        },
       ]
     }
   },

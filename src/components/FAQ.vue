@@ -38,7 +38,7 @@ export default {
         },
         {
           question: 'When can I buy Bored David?',
-          answer: 'COMMON NFTs will be available to claim and mint on 16 April 2022.'
+          answer: 'COMMON NFTs will be available to claim and mint at the end of May 2022.'
         },
         {
           question: 'When can I buy RARE NFTs?',
