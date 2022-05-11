@@ -14,7 +14,7 @@
       </v-row>
       <v-row style="justify-content: center" class="mt-0">
         <p class="">
-          1) Join <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">Discord</a>
+          1) Join <a href="https://discord.gg/hWH9WFskXc" target="_blank" class="customLink">Discord</a>
         </p>
       </v-row>
       <v-row style="justify-content: center">
