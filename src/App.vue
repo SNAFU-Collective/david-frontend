@@ -5,6 +5,7 @@
     <HomeParallax/>
 
     <v-container style="z-index: 2">
+      <Giveaway/>
       <Welcome id="welcomeSection" class="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
@@ -28,6 +29,7 @@
 import {mapActions} from "vuex"
 import Introduction from "./components/Introduction"
 import Distribution from "./components/Distribution"
+import Giveaway from "./components/Giveaway"
 import VideoKez from "./components/VideoKez"
 import Bonuses from "./components/Bonuses"
 import Welcome from "./components/Welcome"
@@ -50,7 +52,8 @@ export default {
     VideoKez,
     Team,
     Header,
-    FAQ
+    FAQ,
+    Giveaway
   },
 
   methods: {

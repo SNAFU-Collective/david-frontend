@@ -6,8 +6,11 @@
       </v-row>
       <v-row style="text-align: justify;">
         <p class="mt-10">
-          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a <b class="blueColor">masterpiece of Renaissance sculpture</b>, created by the Italian artist <b class="blueColor">Michelangelo</b>,
-          that we decided to use as the SNAFU mascot.
+          <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)" target="_blank" class="customLink">David</a> is a <b class="blueColor">masterpiece of Renaissance sculpture</b>,
+          created by the Italian artist Michelangelo, but since the moment of its creation (in 1504) David started to feel a bit bored:
+          only tourists making photos all day long!
+          <br>
+          For this reason, the SNAFU Collective tried to imagine what David is doing when nobody watches him and we discovered that being bored never was so funny!
         </p>
       </v-row>
       <v-row class="mt-10" >
