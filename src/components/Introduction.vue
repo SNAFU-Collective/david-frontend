@@ -6,7 +6,7 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon, Binance Smart Chain</b> and other blockchains that will be announced before the mint.
+          We think art shouldn't have barriers, so it's crazy to create artificial ones: this is why we decided to mint Bored David on the biggest blockchains out there: <b class="blueColor">Ethereum, Gnosis Chain, Avalanche, Polygon, Binance Smart Chain and Aurora</b>.
         </p>
       </v-row>
 
