@@ -40,7 +40,7 @@
             <v-btn
                 class="mx-4 white--text"
                 icon
-                @click="goTo('https://discord.gg/kvbxMfUyQD')"
+                @click="goTo('https://discord.gg/hWH9WFskXc')"
                 v-bind="attrs"
                 v-on="on"
             >
