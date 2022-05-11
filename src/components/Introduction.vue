@@ -104,9 +104,9 @@ export default {
           logo: '/projects/binance.jpg',
         },
         {
-          name: 'Other blockchains will be revealed soon',
-          website: '',
-          logo: '/projects/more.png',
+          name: 'Aurora',
+          website: 'https://aurorascan.dev/',
+          logo: '/projects/aurora.svg',
         },
       ],
       airdroppedProjects: [
@@ -231,9 +231,27 @@ export default {
           blockchain: 'ethereum'
         },
         {
+          name: 'Beauty Of Woman',
+          website: 'https://www.beautyofwomennft.com/',
+          logo: '/projects/bow.svg',
+          blockchain: 'ethereum'
+        },
+        {
+          name: 'Mifuto',
+          website: 'http://www.mifuto.com/',
+          logo: '/projects/mifuto.svg',
+          blockchain: 'ethereum'
+        },
+        {
           name: 'NFT Italia News',
           website: 'https://twitter.com/NFTItalianews',
           logo: '/projects/nftitalianews.jpg',
+          blockchain: 'ethereum'
+        },
+        {
+          name: 'Many more!',
+          website: 'https://discord.gg/hWH9WFskXc',
+          logo: '/projects/more.png',
           blockchain: 'ethereum'
         },
       ]
