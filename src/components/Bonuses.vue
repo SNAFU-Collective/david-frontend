@@ -5,7 +5,7 @@
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row>
-        <h3  class="pinkColor">COLLECTORS UNITED!</h3>
+        <h3  class="pinkColor">BECOME AN ART CURATOR</h3>
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>

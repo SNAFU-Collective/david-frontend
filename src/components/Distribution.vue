@@ -2,7 +2,7 @@
   <v-row class="allWidthOnMobile" style="align-items: center;">
     <v-col class="pa-10" md="5">
       <v-row>
-        <h3  class="pinkColor">25000 UNIQUE NFTs</h3>
+        <h3  class="pinkColor">QUANTITY</h3>
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>

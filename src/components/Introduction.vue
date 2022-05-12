@@ -28,7 +28,7 @@
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row class="" >
-        <h3  class="pinkColor">THE BIGGEST NFT AIRDROP EVER SEEN!</h3>
+        <h3  class="pinkColor">COMMUNITY AIRDROP</h3>
       </v-row>
       <v-row>
         <p class="mt-5" style="text-align: justify;">
@@ -37,7 +37,7 @@
       </v-row>
 
       <v-row class="mt-10">
-        <h5>WHITELISTED PROJECTS (SO FAR...)</h5>
+        <h5>WHITELISTED COMMUNITIES (SO FAR...)</h5>
       </v-row>
       <v-row class="mt-4">
         <v-avatar v-for="(project, index) in airdroppedProjects" :key="index" size="35" class="pointerOnHover ma-1">
