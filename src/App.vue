@@ -1,39 +1,76 @@
 <template>
-  <router-view>
-  </router-view>
+  <v-app style="color: #fff" id="v-app-container">
+    <Header />
+    <router-view :key="$route.fullPath"> </router-view>
+
+    <Footer class="homeMargin" />
+
+    <v-img
+      style="z-index: 1"
+      src="/background/graffiti_4.png"
+      id="graffiti4"
+    ></v-img>
+    <v-img
+      style="z-index: 1"
+      src="/background/graffiti_5.png"
+      id="graffiti5"
+    ></v-img>
+    <v-img
+      style="z-index: 1"
+      src="/background/graffiti_2.png"
+      id="graffiti2"
+    ></v-img>
+    <v-img
+      style="z-index: 1"
+      src="/background/graffiti_7.png"
+      id="graffiti7"
+    ></v-img>
+    <v-img
+      style="z-index: 1"
+      src="/background/graffiti_8.png"
+      id="graffiti8"
+    ></v-img>
+    
+  </v-app>
 </template>
 
 <script>
-import {mapActions} from "vuex"
+import { mapActions } from "vuex";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export default {
   name: "App",
+  components: {
+    Header,
+    Footer
+  },
 
   methods: {
     ...mapActions("connectweb3", ["startWeb3"]),
   },
-  beforeMount(){
+  beforeMount() {
     this.startWeb3();
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Barlow:200,400,600,800');
+@import url("https://fonts.googleapis.com/css?family=Barlow:200,400,600,800");
 
-
-html, body {
-  font-family: 'Barlow', sans-serif;
+html,
+body {
+  font-family: "Barlow", sans-serif;
 }
 
 #app {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 .filter {
   margin: 0;
   font-size: 12px !important;
-  color:  rgb(143, 143, 143);
+  color: rgb(143, 143, 143);
 }
 
 .currentTag {
@@ -54,10 +91,10 @@ html, body {
   .filters-row {
     margin: 0 10%;
   }
-  .allWidthOnMobile{
+  .allWidthOnMobile {
     display: block;
   }
-  .homeMargin{
+  .homeMargin {
     margin-top: 50px !important;
   }
   #graffiti4 {
@@ -91,15 +128,18 @@ html, body {
     top: 4416px;
     right: 0;
   }
-  div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
+  div#bonusesSection,
+  div#distributionSection,
+  div#welcomeSection,
+  div#teamSection {
     margin-top: 100px;
   }
 }
 @media screen and (min-width: 768px) {
-  .homeMargin{
+  .homeMargin {
     margin-top: 100px !important;
   }
-  .allWidthOnMobile{
+  .allWidthOnMobile {
     display: flex;
   }
   #graffiti4 {
@@ -119,7 +159,7 @@ html, body {
   #graffiti2 {
     position: absolute;
     opacity: 0.05;
-    top:2000px;
+    top: 2000px;
     transform: revert;
     left: 0;
   }
@@ -145,7 +185,10 @@ html, body {
     z-index: 1;
   }
 
-  div#bonusesSection, div#distributionSection, div#welcomeSection, div#teamSection {
+  div#bonusesSection,
+  div#distributionSection,
+  div#welcomeSection,
+  div#teamSection {
     margin-top: 150px;
   }
 }
@@ -164,11 +207,11 @@ html, body {
 }
 
 .blueColor {
-  color: rgb(51 215 241)
+  color: rgb(51 215 241);
 }
 
 .pinkColor {
-  color: rgb(230 75 182)
+  color: rgb(230 75 182);
 }
 
 a.customLink {

@@ -1,18 +1,17 @@
 <template>
   <div class="headerMain">
     <div id="desktopHeader">
-      <v-col cols="10" id="pinnedLeftHeader">
+      <v-col cols="2" id="pinnedLeftHeader">
           <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png"/></router-link>
       </v-col>
 
-<!--      <v-col cols="8" id="subtitle">-->
-<!--        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
-<!--        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
-<!--      </v-col>-->
+    <v-col cols="7" id="subtitle">
+       <router-link class="backHome" :to="{ name: 'Mint'}">MINT DAVID</router-link>
+       <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
+    </v-col> 
 
-      <v-col cols="2">
-<!--        <wallet-status class="mt-5 pb-2 walletHeader"/>-->
-        <h2 style="color: white">MINTING 31 MAY!</h2>
+      <v-col cols="3">
+        <wallet-status class="mt-5 pb-2 walletHeader"/>
       </v-col>
 
     </div>
@@ -43,7 +42,7 @@ import WalletStatus from '../Wallet/WalletStatus.vue'
 
 export default {
   components: {
-    // WalletStatus,
+     WalletStatus,
     // Slide
   },
   methods: {

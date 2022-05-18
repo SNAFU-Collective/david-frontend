@@ -2,8 +2,11 @@
 import { ethers } from "ethers";
 import ERC1155ABI from "../../assets/abis/ERC1155.json";
 import SNAFU20 from "@/assets/abis/SNAFU20Pair.json";
-import SNAFU721 from "@/assets/abis/SNAFU721.json"
+import SNAFU721 from "@/assets/abis/SNAFU721.json";
+import BOREDABI from "@/assets/abis/BoredDavid.json"
 import FARM from "@/assets/abis/UNIFTY_FARM.json"
+
+import { networks } from "../../utils/networks";
 
 import { snafu20Address, snafuNftAddress, snafu721Address, xdaiRPC, commonFarmAddress } from "../../utils/constants"
 
@@ -19,6 +22,7 @@ export default {
         account: null,
         isLoading: false,
         chainId: null,
+        boredDavidState: {}
     },
     getters: {
         getField,
@@ -38,6 +42,30 @@ export default {
             } else {
                 return false
             }
+        },
+        getSymbol: (state) => {
+            let chain = networks[parseInt(state.chainId)]
+            if(chain){
+                return chain.symbol;
+            }
+        },
+        getCommonCost:(state) => {
+            if(state.boredDavidState){
+                return state.boredDavidState.commonCost;
+            }
+            return 0;
+        },
+        getRareCost:(state) => {
+            if(state.boredDavidState){
+                return state.boredDavidState.rareCost;
+            }
+            return 0;
+        },
+        isAirdropEligible: (state) => {
+            if(state.boredDavidState){
+                return state.boredDavidState.airdropAvailable;
+            }
+            return false;
         }
     },
     mutations: {
@@ -51,6 +79,9 @@ export default {
         disconnectWallet: async function (state) {
             state.connected = {};
             state.account = null;
+        },
+        setBoredDavidState: (state, payload)  => {
+            state.boredDavidState = payload;
         }
     },
     actions: {
@@ -72,12 +103,18 @@ export default {
                 state.snafu721 = await new ethers.Contract(snafu721Address, SNAFU721.output.abi, signer);
                 state.snafu20 = await new ethers.Contract(snafu20Address, SNAFU20, signer);
                 state.commonFarm = await new ethers.Contract(commonFarmAddress, FARM, signer);
+                let chain = networks[parseInt(context.state.chainId)];
+                if(chain){
+                    state.boredDavid = await new ethers.Contract(chain.address, BOREDABI.abi, signer);
+                    context.dispatch("updateBoredDavidState");
+                }
             } else {
                 state.web3 = web3;
                 state.snafuNft = await new ethers.Contract(snafuNftAddress, ERC1155ABI, web3);
                 state.snafu721 = await new ethers.Contract(snafu721Address, SNAFU721.output.abi, web3);
                 state.snafu20 = await new ethers.Contract(snafu20Address, SNAFU20, web3);
                 state.commonFarm = await new ethers.Contract(commonFarmAddress, FARM, web3);
+
                 context.dispatch("updateSnafu20Supply");
                 context.dispatch("updateSnafu20Fee");
             }
@@ -137,6 +174,14 @@ export default {
                 context.dispatch("connectWallet")
             }
 
+        },
+        async updateBoredDavidState(context) {
+            let contract = context.state.connected.boredDavid;
+            let commonCost = await contract.commonCost();
+            let rareCost = await contract.rareCost();
+            let account = context.state.account;
+            let airdropAvailable = await contract.eligibleForAirdrop(account);
+            context.commit("setBoredDavidState", {commonCost, rareCost, airdropAvailable})
         },
         async updateSnafu20Balance(context) {
             let contract = context.state.snafu20;

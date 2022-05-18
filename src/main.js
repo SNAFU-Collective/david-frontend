@@ -9,6 +9,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import {xdaiRPC} from "./utils/constants"
+import { networks } from './utils/networks';
 import Vuethereum from "vuethereum"
 
 Vue.config.productionTip = false
@@ -44,11 +45,12 @@ Vue.filter('fromWei', function (value) {
 
 Vue.filter('networkName', function (value) {
     console.log('networknamevalue', value)
-  if (value === 100 || value === '0x64'){
-      return 'Gnosis Chain'
-  } else {
+
+    let chain = networks[parseInt(value)];
+    if(!chain){
       return 'Wrong network'
-  }
+    }
+    return chain.name;
 })
 
 Vue.filter('abbreviateAddress', (value) => {

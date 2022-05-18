@@ -13,6 +13,22 @@ const routes = [
         },
         component: () => import('../views/Home.vue'),
     },
+    {
+        path: '/mint',
+        name: "Mint",
+        meta: {
+            title: "Bored David - Mint"
+        },
+        component: () => import('../views/Mint.vue')
+    },
+    {
+        path: '/wallet',
+        name: "Wallet",
+        meta: {
+            title: "Bored David - Wallet"
+        },
+        component: () => import('../views/Wallet.vue')
+    }
 ]
 
 const router = new VueRouter({
