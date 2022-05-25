@@ -11,7 +11,7 @@
     </div>
     <div v-else>
       <div v-if="wrongChain">
-        <v-alert type="error" class="mt-5">
+        <v-alert type="error" class="mt-5 mb-5">
           <span class="body-1">
             You are not connected to the correct chain.
           </span>
@@ -29,8 +29,9 @@
         </v-alert>
       </div>
 
-      <div v-if="isClaimable" class="mt-16">
-        <h3>Congratulations! <br> You are eligible to mint a free Bored David NFT on <b>{{ claimChainId | networkName }}</b> blockchain.</h3>
+      <div v-if="isClaimable" class="mt-10">
+        <h3>Congratulations!</h3>
+        <h3>You are eligible to mint a <b class="blueColor">free Bored David NFT</b> on the <b class="blueColor">{{ claimChainId | networkName }}</b> blockchain.</h3>
 
         <v-card
             class="mt-5"
