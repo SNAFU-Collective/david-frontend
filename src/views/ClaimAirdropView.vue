@@ -3,19 +3,19 @@
     <div v-if="isConnecting">
       <v-row no-gutters justify="center" class="py-4">
         <v-progress-circular
-          :size="80"
-          color="black"
-          indeterminate
+            :size="80"
+            color="black"
+            indeterminate
         ></v-progress-circular>
       </v-row>
     </div>
     <div v-else>
       <div v-if="wrongChain">
-        <v-alert type="error" class="mt-n3">
+        <v-alert type="error" class="mt-5">
           <span class="body-1">
             You are not connected to the correct chain.
           </span>
-          <v-btn dark small class="ml-10" @click="connectToChain(claimChainId)">
+          <v-btn dark small class="ml-10" @click="connectToChain(claimChainId)" style="position: absolute; right: 25px">
             Switch to {{ claimChainId | networkName }}
           </v-btn>
         </v-alert>
@@ -23,38 +23,66 @@
       <div v-else-if="wrongAddress">
         <v-alert type="error" class="mt-n3">
           <span class="body-1">
-            You are not connected to the correct address. <br />
+            You are not connected to the correct address. <br/>
             Select {{ claimAddress }} to continue.
           </span>
         </v-alert>
       </div>
-      <div v-if="isClaimable">
-        You are eligible to mint a free Bored David NFT!
 
-        <v-btn dark  v-if="isClaimable" @click="() => showClaimAirdropModal = true" class="ml-5">
-          Claim
-        </v-btn>
-        <claim-airdrop-modal :show="showClaimAirdropModal"  @close="() => showClaimAirdropModal = false" />
+      <div v-if="isClaimable" class="mt-16">
+        <h3>Congratulations! <br> You are eligible to mint a free Bored David NFT on <b>{{ claimChainId | networkName }}</b> blockchain.</h3>
+
+        <v-card
+            class="mt-5"
+            width="11vw"
+            dark
+        >
+          <v-card-title>
+            <v-row no-gutters justify="center">
+              {{ claimChainId | networkName }}
+            </v-row>
+          </v-card-title>
+          <v-card-text>
+            <v-row no-gutters justify="center">
+              <v-img src="/pfp/unveiling.gif" width="50px"
+                     transition="slide-y-transition"></v-img>
+            </v-row>
+            <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
+              You can claim a free NFT on {{ claimChainId | networkName }}
+            </v-row>
+          </v-card-text>
+          <v-card-actions>
+            <v-row no-gutters justify="center">
+              <v-btn dark v-if="isClaimable" @click="() => showClaimAirdropModal = true">
+                Mint
+              </v-btn>
+            </v-row>
+          </v-card-actions>
+        </v-card>
+
+
+        <claim-airdrop-modal :show="showClaimAirdropModal" @close="() => showClaimAirdropModal = false"/>
       </div>
     </div>
   </v-container>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-import ClaimAirdropModal from '../components/Mint/ClaimAirdropModal.vue';
+import {mapGetters, mapActions} from "vuex"
+import ClaimAirdropModal from '../components/Mint/ClaimAirdropModal.vue'
+
 export default {
-  components: { ClaimAirdropModal },
+  components: {ClaimAirdropModal},
   data: function () {
-      return {
-      showClaimAirdropModal: false
-    };
+    return {
+      showClaimAirdropModal: false,
+    }
   },
   mounted: function () {
     this.checkAirdropForChain({
       chainId: this.claimChainId,
       address: this.claimAddress,
-    });
+    })
   },
   computed: {
     ...mapGetters("connectweb3", [
@@ -64,25 +92,25 @@ export default {
       "airdropState",
     ]),
     claimAddress: function () {
-      return this.$route.params.address;
+      return this.$route.params.address
     },
     claimChainId: function () {
-      return this.$route.params.chainId;
+      return this.$route.params.chainId
     },
     wrongChain: function () {
-      return this.claimChainId != this.chainId;
+      return this.claimChainId != this.chainId
     },
     wrongAddress: function () {
-      return this.claimAddress != this.getUserAccount;
+      return this.claimAddress != this.getUserAccount
     },
     isClaimable: function () {
-      return this.airdropState[this.claimChainId];
+      return this.airdropState[this.claimChainId]
     },
   },
   methods: {
     ...mapActions("connectweb3", ["connectToChain", "checkAirdropForChain"]),
   },
-};
+}
 </script>
 
 <style>
