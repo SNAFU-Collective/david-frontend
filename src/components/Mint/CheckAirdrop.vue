@@ -1,6 +1,5 @@
 <template>
   <div>
-    <v-row no-gutters> <h3>Check Airdrop</h3></v-row>
     <v-row justify="center">
       <v-col cols="8">
         <v-text-field
@@ -12,11 +11,11 @@
       </v-col>
       <v-col cols="4">
         <v-btn
-          dark
+          light
           :disabled="!validAddress"
           @click="checkButton"
         >
-          Check
+          Search
         </v-btn>
       </v-col>
     </v-row>
@@ -31,7 +30,7 @@
       </v-row>
     </div>
     <div v-else>
-      <v-row no-gutters justify="center" class="py-4">
+      <v-row no-gutters class="pt-16">
         <v-card
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
@@ -46,6 +45,10 @@
           </v-card-title>
           <v-card-text>
             <v-row no-gutters justify="center">
+              <v-img v-if="airdrop.airdropAvailable" src="/pfp/unveiling.gif" width="50px"
+                     transition="slide-y-transition"></v-img>
+            </v-row>
+            <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
               {{
                 airdrop.airdropAvailable
                   ? "You can claim a free NFT!"
