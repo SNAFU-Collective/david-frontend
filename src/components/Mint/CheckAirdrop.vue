@@ -34,8 +34,8 @@
         <v-card
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
-          :class="index > 0 ? 'ml-10' : 'ml-0'"
-          width="11vw"
+          :class="screenWidth > 768 ? index > 0 ? 'ml-10' : 'ml-0' : 'mb-5 mx-2'"
+          :width="screenWidth > 768 ? '11vw' : '100%'"
           dark
         >
           <v-card-title>
@@ -113,6 +113,9 @@ export default {
       this.checkAirdrop(this.address).finally(() => {
         this.loading = false;
       });
+    },
+    screenWidth() {
+      return window.innerWidth
     },
   },
 };
