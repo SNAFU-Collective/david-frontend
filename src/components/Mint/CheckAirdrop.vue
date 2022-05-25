@@ -70,7 +70,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import { ethers } from "ethers";
-import { getNetworks } from "@/utils/networks";
+import { getNetworks } from "@/utils/networks"
 
 export default {
   data: function () {
@@ -93,9 +93,11 @@ export default {
     getAirdropInfo() {
       let networks = getNetworks();
       let airdropInfo = [];
+      let airdropFound = false
       for (let chainId in this.airdropState) {
         let network = networks[chainId];
         if (network) {
+          airdropFound = true
           airdropInfo.push({
             network: network,
             chainId: chainId,
@@ -103,10 +105,13 @@ export default {
           });
         }
       }
+
+      if (airdropFound)
+        this.startConfettiEffects()
+
       return airdropInfo;
     },
     screenWidth() {
-      console.log(window.innerWidth)
       return window.innerWidth
     },
   },
@@ -117,6 +122,12 @@ export default {
       this.checkAirdrop(this.address).finally(() => {
         this.loading = false;
       });
+    },
+    startConfettiEffects() {
+      this.$confetti.start();
+      setTimeout(() => {
+        this.$confetti.stop();
+      }, 3000);
     },
   },
 };
