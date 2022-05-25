@@ -54,7 +54,7 @@
           </v-card-text>
           <v-card-actions>
             <v-row no-gutters justify="center">
-              <v-btn dark v-if="isClaimable" @click="() => showClaimAirdropModal = true">
+              <v-btn dark v-if="isClaimable" @click="() => showClaimAirdropModal = true" :disabled="wrongChain">
                 Mint
               </v-btn>
             </v-row>
