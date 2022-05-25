@@ -3,7 +3,7 @@
     <HomeParallax/>
 
     <v-container style="z-index: 2">
-      <Giveaway/>
+<!--      <Giveaway/>-->
       <Welcome id="welcomeSection" class="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
@@ -38,7 +38,7 @@ export default {
     VideoKez,
     Team,
     FAQ,
-    Giveaway
+    // Giveaway
   },
 
 }
