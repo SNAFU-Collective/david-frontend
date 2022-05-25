@@ -21,10 +21,10 @@
     </v-row>
 
     <div v-if="loading">
-      <v-row no-gutters justify="center" class="py-4">
+      <v-row no-gutters justify="center" class="py-4 pt-16">
         <v-progress-circular
           :size="80"
-          color="black"
+          color="white"
           indeterminate
         ></v-progress-circular>
       </v-row>
