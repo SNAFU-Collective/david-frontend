@@ -27,6 +27,7 @@ export default {
         getUserSigner: (state) => state.connected.signer,
         isConnecting: (state) => state.isConnecting,
         airdropState: (state) => state.airdropState,
+        boredDavidState: (state) => state.boredDavidState,
         chainId: (state) => state.chainId,
         isMetamask: async (state) => {
             if (state.connected.web3 && state.connected.web3.provider.isMetamask && !state.connected.web3.provider.isMetamask()) {
@@ -90,7 +91,7 @@ export default {
             state.account = null;
         },
         setBoredDavidState: (state, payload) => {
-            state.boredDavidState[payload.chainId] = payload;
+            Vue.set(state.boredDavidState, payload.chainId, payload);
         },
         setAirdropState: (state, payload) => {
             Vue.set(state.airdropState, payload.chainId, payload.airdropAvailable);
@@ -128,6 +129,15 @@ export default {
             }
 
             console.log("setting Web3");
+        },
+        updateBoredDavidStateForAll: async function (context) {
+            let networks = getNetworks();
+            for (let i in networks) {
+                let network = networks[i];
+                let provider = new ethers.providers.JsonRpcProvider(network.rpc);
+                let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider);
+                await context.dispatch('updateBoredDavidState', { chainId: i, contract });
+            }
         },
         connectWallet: async function (context) {
             console.log("connecting");

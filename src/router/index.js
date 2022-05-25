@@ -30,6 +30,14 @@ const routes = [
         component: () => import('../views/ClaimAirdropView.vue')
     },
     {
+        path: '/sale',
+        name: "Sale",
+        meta: {
+            title: "Bored David - Sale"
+        },
+        component: () => import('../views/BuyView.vue')
+    },
+    {
         path: '/wallet',
         name: "Wallet",
         meta: {
