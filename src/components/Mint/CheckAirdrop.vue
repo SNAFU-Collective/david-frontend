@@ -51,7 +51,7 @@
             <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
               {{
                 airdrop.airdropAvailable
-                  ? "You can claim a free NFT!"
+                  ? "You can claim a free NFT on " + airdrop.network.name
                   : "Not Available"
               }}
             </v-row>
