@@ -32,11 +32,11 @@
       <div v-if="isClaimable" class="mt-10">
         <h3>Congratulations!</h3>
         <h3>You are eligible to mint for free a <b class="blueColor">common Bored David NFT</b> on the <b class="blueColor">{{ claimChainId | networkName }}</b> blockchain.</h3>
-
+{{screenWidth}}
         <v-card
-            class="mt-5"
-            width="11vw"
             dark
+            :class="screenWidth > 768 ? 'ml-10 mt-5' : 'mb-5 mx-2 mt-5'"
+            :width="screenWidth > 768 ? '11vw' : '100%'"
         >
           <v-card-title>
             <v-row no-gutters justify="center">
@@ -106,6 +106,10 @@ export default {
     },
     isClaimable: function () {
       return this.airdropState[this.claimChainId]
+    },
+    screenWidth() {
+      console.log(window.innerWidth)
+      return window.innerWidth
     },
   },
   methods: {

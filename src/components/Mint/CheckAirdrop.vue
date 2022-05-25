@@ -105,6 +105,10 @@ export default {
       }
       return airdropInfo;
     },
+    screenWidth() {
+      console.log(window.innerWidth)
+      return window.innerWidth
+    },
   },
   methods: {
     ...mapActions("connectweb3", ["checkAirdrop"]),
@@ -113,9 +117,6 @@ export default {
       this.checkAirdrop(this.address).finally(() => {
         this.loading = false;
       });
-    },
-    screenWidth() {
-      return window.innerWidth
     },
   },
 };
