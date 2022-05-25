@@ -1,17 +1,20 @@
 <template>
-    <v-container style="z-index: 2" class="mt-16 pt-16">
-        <CheckAirdrop v-if="!isConnecting" />
-    </v-container>
+  <v-container style="z-index: 2" class="mt-16 pt-16">
+    <v-img src="/banners/community-giveaway.png"></v-img>
+
+    <CheckAirdrop class="mt-16" v-if="!isConnecting"/>
+  </v-container>
 </template>
 
 <script>
 import CheckAirdrop from '../components/Mint/CheckAirdrop.vue'
 import {mapGetters} from 'vuex'
+
 export default {
-  components: { CheckAirdrop },
-    computed:{
-        ...mapGetters("connectweb3", [ "isConnecting"]),
-    },
+  components: {CheckAirdrop},
+  computed: {
+    ...mapGetters("connectweb3", ["isConnecting"]),
+  },
 }
 </script>
 
