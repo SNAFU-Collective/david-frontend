@@ -52,7 +52,7 @@
               {{
                 airdrop.airdropAvailable
                   ? "You can claim a free NFT on " + airdrop.network.name
-                  : "Not Available"
+                  : "Not eligible for airdrop"
               }}
             </v-row>
           </v-card-text>
