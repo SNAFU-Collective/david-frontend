@@ -197,7 +197,7 @@ export default {
         //Updates fees, balance, nfts ... to use after transactions!
         updateData(context, chainId) {
             context.dispatch("updateBoredDavidState", { contract: null, chainId: parseInt(chainId) })
-            context.dispatch("checkAirdrop", context.state.connected.address)
+            context.dispatch("checkAirdrop", context.state.account)
         },
         async checkAirdrop(context, address) {
             let networks = getNetworks();

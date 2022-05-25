@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-dialog v-model="showModal" max-width="550px" scrollable persistent>
-      <v-card color="#F5F5F5">
+      <v-card color="#F5F5F5" v-if="!showTransactionModal">
         <v-card-title>
           <v-row no-gutters
           >
@@ -31,9 +31,7 @@
           </v-card-text>
         </div>
       </v-card>
-    </v-dialog>
-    <v-dialog v-model="showTransactionModal" max-width="450px" scrollable persistent>
-      <v-card color="#F5F5F5">
+      <v-card color="#F5F5F5" v-if="showTransactionModal">
         <v-card-title>
           <v-row no-gutters
           >
@@ -101,6 +99,7 @@
           </v-card-text>
         </div>
       </v-card>
+
     </v-dialog>
   </div>
 </template>
@@ -136,13 +135,8 @@ export default {
         this.$emit("close", false)
       },
     },
-    showTransactionModal: {
-      get() {
-        return this.loading || this.success || this.error
-      },
-      set(val) {
-        // this.$emit("updateDialog2", false);
-      },
+    showTransactionModal() {
+      return this.loading || this.confirmed || this.error
     },
     txUrl() {
       return this.network.explorer + this.txHash
@@ -172,7 +166,6 @@ export default {
               this.nftClaimed = true
               this.txHash = res.transactionHash
               this.updateData(this.chainId)
-
             })
             .catch((err) => {
               //console.log(err);

@@ -62,8 +62,8 @@
         </v-card>
 
 
-        <claim-airdrop-modal :show="showClaimAirdropModal" @close="() => showClaimAirdropModal = false"/>
       </div>
+        <claim-airdrop-modal :show="showClaimAirdropModal" @close="handleCloseClaimModal"/>
     </div>
   </v-container>
 </template>
@@ -113,6 +113,10 @@ export default {
   },
   methods: {
     ...mapActions("connectweb3", ["connectToChain", "checkAirdropForChain"]),
+    handleCloseClaimModal: function () {
+      this.showClaimAirdropModal = false
+      this.$router.push({name: "Airdrop"})
+    },
   },
 }
 </script>
