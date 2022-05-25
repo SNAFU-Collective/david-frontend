@@ -31,7 +31,7 @@
 
       <div v-if="isClaimable" class="mt-10">
         <h3>Congratulations!</h3>
-        <h3>You are eligible to mint a <b class="blueColor">free Bored David NFT</b> on the <b class="blueColor">{{ claimChainId | networkName }}</b> blockchain.</h3>
+        <h3>You are eligible to mint for free a <b class="blueColor">common Bored David NFT</b> on the <b class="blueColor">{{ claimChainId | networkName }}</b> blockchain.</h3>
 
         <v-card
             class="mt-5"
