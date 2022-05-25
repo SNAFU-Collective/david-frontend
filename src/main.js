@@ -11,11 +11,13 @@ import VueAxios from "vue-axios";
 import {xdaiRPC} from "./utils/constants"
 import { getNetworks } from './utils/networks';
 import Vuethereum from "vuethereum"
+import VueClipboard from 'vue-clipboard2'
 
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios);
 Vue.use(Vuethereum)
+Vue.use(VueClipboard)
 
 const providerOptions = {
   walletconnect: {

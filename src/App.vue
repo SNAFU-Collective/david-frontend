@@ -1,36 +1,39 @@
 <template>
   <v-app style="color: #fff" id="v-app-container">
-    <Header />
-    <router-view :key="$route.fullPath"> </router-view>
+    <Header style="z-index: 3" />
+    <router-view :key="$route.fullPath" style="z-index: 2"> </router-view>
 
     <Footer class="homeMargin" />
 
-    <v-img
-      style="z-index: 1"
-      src="/background/graffiti_4.png"
-      id="graffiti4"
-    ></v-img>
-    <v-img
-      style="z-index: 1"
-      src="/background/graffiti_5.png"
-      id="graffiti5"
-    ></v-img>
-    <v-img
-      style="z-index: 1"
-      src="/background/graffiti_2.png"
-      id="graffiti2"
-    ></v-img>
-    <v-img
-      style="z-index: 1"
-      src="/background/graffiti_7.png"
-      id="graffiti7"
-    ></v-img>
-    <v-img
-      style="z-index: 1"
-      src="/background/graffiti_8.png"
-      id="graffiti8"
-    ></v-img>
-    
+   <div :style="$route.path === '/' ? 'display: block;' : 'display: none;'">
+     <v-img
+         style="z-index: 1"
+         src="/background/graffiti_4.png"
+         id="graffiti4"
+     ></v-img>
+     <v-img
+         style="z-index: 1"
+         src="/background/graffiti_5.png"
+         id="graffiti5"
+     ></v-img>
+     <v-img
+         style="z-index: 1"
+         src="/background/graffiti_2.png"
+         id="graffiti2"
+     ></v-img>
+     <v-img
+         style="z-index: 1"
+         src="/background/graffiti_7.png"
+         id="graffiti7"
+     ></v-img>
+     <v-img
+         style="z-index: 1"
+         src="/background/graffiti_8.png"
+         id="graffiti8"
+     ></v-img>
+   </div>
+
+
   </v-app>
 </template>
 

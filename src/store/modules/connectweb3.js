@@ -84,10 +84,6 @@ export default {
     mutations: {
         updateField,
         setConnected: (state, payload) => state.isConnected = payload,
-        setSnafuSupply: (state, payload) => state.snafuSupply = payload,
-        setSnafuLockedSupply: (state, payload) => state.snafuLockedSupply = payload,
-        setSnafuCirculatingSupply: (state, payload) => state.snafuCirculatingSupply = payload,
-        setSnafuFee: (state, payload) => state.snafuFee = payload,
 
         disconnectWallet: async function (state) {
             state.connected = {};

@@ -2,7 +2,7 @@
   <div style="display: flex">
     <div v-if="!isConnected" cols="1" >
       <v-btn @click="connectWallet" style="margin-bottom: 10px">
-        Sign in
+        Connect wallet
       </v-btn>
     </div>
     <div cols="9" no-gutters v-else>
