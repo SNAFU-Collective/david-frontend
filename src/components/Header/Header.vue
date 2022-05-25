@@ -18,21 +18,21 @@
     </div>
 
     <div id="mobileHeader">
-      <v-col cols="6" id="mobileLogoContainer">
+      <div id="mobileHeaderContainer">
+        <v-col cols="6" id="mobileLogoContainer">
           <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
-      </v-col>
-      <v-col cols="6" style="text-align: right">
-        <h2 style="color: white">MINTING 31 MAY!</h2>
-      </v-col>
-<!--      <v-col cols="1" id="menuMobile">-->
-<!--        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"-->
-<!--               :width=windowWidth>-->
-<!--          <wallet-status class="mt-5 pb-2 walletHeader"/>-->
-<!--          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
-<!--          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
-<!--        </Slide>-->
-<!--      </v-col>-->
+        </v-col>
+      </div>
 
+      <div id="menuMobile">
+        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
+               :width=windowWidth>
+          <wallet-status class="mt-5 pb-2 walletHeader"/>
+          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
+          <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
+          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
+        </Slide>
+      </div>
     </div>
   </div>
 </template>
@@ -44,7 +44,7 @@ import WalletStatus from '../Wallet/WalletStatus.vue'
 export default {
   components: {
      WalletStatus,
-    // Slide
+    Slide
   },
   methods: {
     handleOpenMenu() {
@@ -296,7 +296,7 @@ export default {
     top: 0;
     transition: .5s;
     z-index: 1000;
-    opacity: 0.9;
+    opacity: 1;
   }
 
   .bm-item-list > * {
