@@ -34,8 +34,8 @@
         <v-card
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
-          class="mx-10"
-          width="10vw"
+          :class="index > 0 ? 'ml-10' : 'ml-0'"
+          width="11vw"
           dark
         >
           <v-card-title>
