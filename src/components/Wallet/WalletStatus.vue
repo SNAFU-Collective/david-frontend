@@ -8,7 +8,7 @@
     <div cols="9" no-gutters v-else>
 
       <v-chip
-          :color="isCorrectNetwork ? '#303030' : '#bc423e'"
+          :color="isCorrectNetwork ? '#5fb43f' : '#bc423e'"
           :text-color="isCorrectNetwork ? '#fff' : '#fff'"
           style="margin-bottom: 10px; padding-left: 0"
       >
@@ -23,7 +23,7 @@
           <span style="color: #303030; font-weight: 500">{{ account | abbreviateAddress }}</span>
         </v-chip>
         </router-link>
-        <span style="padding-left: 5px; font-weight: 500">{{ chainId | networkName }}</span>
+        <span style="padding-left: 15px;padding-right: 15px; font-weight: 500">{{ chainId | networkName }}</span>
       </v-chip>
 
     </div>
