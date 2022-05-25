@@ -14,12 +14,12 @@ const routes = [
         component: () => import('../views/Home.vue'),
     },
     {
-        path: '/mint',
-        name: "Mint",
+        path: '/airdrop',
+        name: "Airdrop",
         meta: {
             title: "Bored David - Mint"
         },
-        component: () => import('../views/Mint.vue')
+        component: () => import('../views/AirdropView.vue')
     },
     {
         path: '/wallet',

@@ -1,6 +1,6 @@
 <template>
   <div>
-      Mint a Bored David Nft for {{cost | fromWei }} {{symbol}}!
+      Mint a Bored David Nft for {{cost | fromWei }} {{symbol}} each!
 
         <v-btn>
             Mint

@@ -8,8 +8,8 @@
     <div cols="9" no-gutters v-else>
 
       <v-chip
-          :color="isXdai ? '#303030' : '#bc423e'"
-          :text-color="isXdai ? '#fff' : '#fff'"
+          :color="isCorrectNetwork ? '#303030' : '#bc423e'"
+          :text-color="isCorrectNetwork ? '#fff' : '#fff'"
           style="margin-bottom: 10px; padding-left: 0"
       >
         <router-link class="accountLinkHeader" :to="{ name: 'Wallet'}">
@@ -68,7 +68,7 @@ export default {
   },
   computed: {
     ...mapFields("connectweb3", ["isConnected", "account", 'chainId']),
-    ...mapGetters("connectweb3", ["isMetamask", "isXdai"]),
+    ...mapGetters("connectweb3", ["isMetamask", "isCorrectNetwork"]),
   },
 
 }

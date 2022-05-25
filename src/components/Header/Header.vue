@@ -6,7 +6,7 @@
       </v-col>
 
     <v-col cols="7" id="subtitle">
-       <router-link class="backHome" :to="{ name: 'Mint'}">MINT DAVID</router-link>
+       <router-link class="backHome" :to="{ name: 'Airdrop'}">CHECK AIRDROP</router-link>
        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
     </v-col> 
 
