@@ -97,7 +97,7 @@ export default {
       for (let chainId in this.airdropState) {
         let network = networks[chainId];
         if (network) {
-          airdropFound = true
+          airdropFound = airdropFound || this.airdropState[chainId];
           airdropInfo.push({
             network: network,
             chainId: chainId,
@@ -106,9 +106,9 @@ export default {
         }
       }
 
-      if (airdropFound)
+      if (airdropFound){
         this.startConfettiEffects()
-
+      }
       return airdropInfo;
     },
     screenWidth() {
