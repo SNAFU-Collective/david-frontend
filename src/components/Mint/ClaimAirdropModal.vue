@@ -71,7 +71,7 @@
             </v-row>
             <v-row no-gutters justify="center" class="mt-n3">
               <a :href="txUrl" target="_blank" style="color: black">
-                View Details on Blockscout
+                View Details on Block Explorer
               </a>
             </v-row>
           </v-card-text>
@@ -95,7 +95,7 @@
             </v-row>
             <v-row no-gutters justify="center" class="mt-n3" v-if="txHash">
               <a :href="txUrl" target="_blank" style="color: black">
-                View Details on Blockscout
+                View Details on Block Explorer
               </a>
             </v-row>
           </v-card-text>
@@ -106,13 +106,9 @@
 </template>
 
 <script>
-import {mapActions, mapMutations} from "vuex"
-import NftClaimOutput from './NftClaimOutput.vue'
-import {mapFields} from 'vuex-map-fields'
-import ClaimForm from './ClaimForm.vue'
+import {mapActions, mapGetters} from "vuex"
 
 export default {
-  components: {NftClaimOutput, ClaimForm},
   data() {
     return {
       loading: false,
@@ -128,20 +124,16 @@ export default {
       type: Boolean,
       default: false,
     },
-    withdrawFromPool: {
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
-    ...mapFields("prizeContract", ["formData", "validForm", "recaptchaResponse"]),
+    ...mapGetters("connectweb3", {network: "getNetwork", chainId:  "chainId"}),	
     showModal: {
       get() {
         return this.show
       },
       set(val) {
         this.resetModal()
-        this.$emit("updateDialog", false)
+        this.$emit("close", false)
       },
     },
     showTransactionModal: {
@@ -153,10 +145,10 @@ export default {
       },
     },
     txUrl() {
-      return "https://blockscout.com/xdai/mainnet/tx/" + this.txHash
+      return this.network.explorer + this.txHash
     },
     enableRedeemButton() {
-      if (this.nftClaimed && this.validForm && this.recaptchaResponse) {
+      if (this.nftClaimed) {
         return true
       } else {
         return false
@@ -164,27 +156,23 @@ export default {
     },
   },
   methods: {
-    ...mapActions("prizeContract", ["burnErc1155"]),
-    ...mapMutations("prizeContract", ["resetSelectedNft"]),
-    ...mapActions("connectweb3", ["updateData"]),
+    ...mapActions("connectweb3", ["updateData", "claimAirdrop"]),
     closeModal() {
       this.resetModal()
-      this.$emit("updateDialog", false)
+      this.$emit("close", false)
     },
     async confirmClaim() {
       this.loading = true
       try {
-        let tx = await this.burnErc1155()
+        let tx = await this.claimAirdrop()
         tx.wait()
             .then((res) => {
               console.log(res.transactionHash);
               this.confirmed = true
               this.nftClaimed = true
               this.txHash = res.transactionHash
-              this.formData.burnTxHash = res.transactionHash
-              this.updateData()
+              this.updateData(this.chainId)
 
-              console.log(this.formData)
             })
             .catch((err) => {
               //console.log(err);
@@ -208,7 +196,6 @@ export default {
         if (err.message) {
           this.errorMessage = err.message
         }
-        this.resetSelectedNft()
         this.loading = false
       }
     },
@@ -219,11 +206,6 @@ export default {
       this.errorMessage = null
 
       this.txHash = null
-      this.formData = {
-        burnTxHash: null
-      }
-      this.recaptchaResponse = null
-      this.validForm = null
     },
   },
 }

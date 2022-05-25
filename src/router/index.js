@@ -17,9 +17,17 @@ const routes = [
         path: '/airdrop',
         name: "Airdrop",
         meta: {
-            title: "Bored David - Mint"
+            title: "Bored David - Check Airdrop"
         },
-        component: () => import('../views/AirdropView.vue')
+        component: () => import('../views/CheckAirdropView.vue')
+    },
+    {
+        path: '/airdrop/:chainId/:address',
+        name: "Claim Airdrop",
+        meta: {
+            title: "Bored David - Claim Airdrop"
+        },
+        component: () => import('../views/ClaimAirdropView.vue')
     },
     {
         path: '/wallet',

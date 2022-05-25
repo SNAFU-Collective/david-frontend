@@ -4,9 +4,9 @@ import Vue from "vue";
 import BOREDABI from "@/assets/abis/BoredDavid.json"
 
 import { getNetworks } from "../../utils/networks";
-
-
 import { getField, updateField } from 'vuex-map-fields';
+import detectEthereumProvider from '@metamask/detect-provider';
+
 
 export default {
     namespaced: true,
@@ -27,6 +27,7 @@ export default {
         getUserSigner: (state) => state.connected.signer,
         isConnecting: (state) => state.isConnecting,
         airdropState: (state) => state.airdropState,
+        chainId: (state) => state.chainId,
         isMetamask: async (state) => {
             if (state.connected.web3 && state.connected.web3.provider.isMetamask && !state.connected.web3.provider.isMetamask()) {
                 return false
@@ -45,36 +46,36 @@ export default {
             return true
         },
         getSymbol: (state) => {
-            let networks = getNetworks();       
+            let networks = getNetworks();
 
             let chain = networks[parseInt(state.chainId)]
-            if(chain){
+            if (chain) {
                 return chain.symbol;
             }
         },
         getNetwork: (state) => {
-           let networks = getNetworks();
-        
+            let networks = getNetworks();
+
             let chain = networks[parseInt(state.chainId)]
-            if(chain){
+            if (chain) {
                 return chain;
             }
             return null;
         },
-        getCommonCost:(state) => {
-            if(state.boredDavidState && state.boredDavidState.commonCost){
+        getCommonCost: (state) => {
+            if (state.boredDavidState && state.boredDavidState.commonCost) {
                 return state.boredDavidState.commonCost;
             }
             return 0;
         },
-        getRareCost:(state) => {
-            if(state.boredDavidState && state.boredDavidState.rareCost){
+        getRareCost: (state) => {
+            if (state.boredDavidState && state.boredDavidState.rareCost) {
                 return state.boredDavidState.rareCost;
             }
             return 0;
         },
         isAirdropEligible: (state) => {
-            if(state.boredDavidState){
+            if (state.boredDavidState) {
                 return state.boredDavidState.airdropAvailable;
             }
             return false;
@@ -92,10 +93,10 @@ export default {
             state.connected = {};
             state.account = null;
         },
-        setBoredDavidState: (state, payload)  => {
+        setBoredDavidState: (state, payload) => {
             state.boredDavidState[payload.chainId] = payload;
         },
-        setAirdropState: (state, payload)  => {
+        setAirdropState: (state, payload) => {
             Vue.set(state.airdropState, payload.chainId, payload.airdropAvailable);
         }
 
@@ -106,7 +107,7 @@ export default {
             let state = context.state;
             console.log("connected", connected)
             let networks = getNetworks();
-        
+
 
             if (connected) {
                 state = context.state.connected;
@@ -117,15 +118,15 @@ export default {
                 context.state.chainId = parseInt((await web3.getNetwork()).chainId)
                 //console.log('Chain ID: ', context.state.chainId)
                 let chain = networks[parseInt(context.state.chainId)];
-                if(chain){
+                if (chain) {
                     state.boredDavidContract = await new ethers.Contract(chain.address, BOREDABI.abi, signer);
                 }
             } else {
-                for(let i in networks){
+                for (let i in networks) {
                     let network = networks[i];
                     let provider = new ethers.providers.JsonRpcProvider(network.rpc);
-                    let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider );
-                    context.dispatch('updateBoredDavidState', {chainId: i, contract});
+                    let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider);
+                    context.dispatch('updateBoredDavidState', { chainId: i, contract });
                 }
 
             }
@@ -158,7 +159,7 @@ export default {
 
                 // Subscribe to chainId change
                 provider.on("chainChanged", (chainId) => {
-                    context.state.chainId = chainId
+                    context.state.chainId = parseInt(chainId)
                     console.log('Chain ID: ', context.state.chainId)
                 });
 
@@ -179,7 +180,7 @@ export default {
         },
         startWeb3: async function (context) {
 
-            context.dispatch("setWeb3", { web3:null, connected: false });
+            context.dispatch("setWeb3", { web3: null, connected: false });
 
             if (this._vm.$web3Modal.cachedProvider) {
                 //This is case where someone already connected
@@ -193,19 +194,73 @@ export default {
             let commonCost = await contract.commonCost();
             let rareCost = await contract.rareCost();
             let maxMintAmount = await contract.maxMintAmount();
-            context.commit("setBoredDavidState", {contract, chainId, commonCost, rareCost, maxMintAmount});
+            let maxSupply = await contract.maxSupply();
+            let totalSupply = await contract.totalSupply();
+            context.commit("setBoredDavidState", { contract, chainId, commonCost, rareCost, maxMintAmount, maxSupply, totalSupply });
         },
         //Updates fees, balance, nfts ... to use after transactions!
         updateData(context, chainId) {
-            context.dispatch("updateBoredDavidState", {contract: null, chainId})
+            context.dispatch("updateBoredDavidState", { contract: null, chainId: parseInt(chainId) })
+            context.dispatch("checkAirdrop", context.state.connected.address)
         },
         async checkAirdrop(context, address) {
             let networks = getNetworks();
-            for(let i in networks){
+            for (let i in networks) {
                 let contract = context.state.boredDavidState[i] && context.state.boredDavidState[i].contract ? context.state.boredDavidState[i].contract : await new ethers.Contract(networks[i].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[i].rpc));
                 let airdropAvailable = await contract.eligibleForAirdrop(address);
-                context.commit("setAirdropState", {chainId:i, address, airdropAvailable});
-            }                
+                context.commit("setAirdropState", { chainId: i, address, airdropAvailable });
+            }
         },
+        async checkAirdropForChain(context, payload) {
+            let chainId = payload.chainId;
+            let address = payload.address;
+            let networks = getNetworks();
+
+            let contract = context.state.boredDavidState[chainId] && context.state.boredDavidState[chainId].contract ? context.state.boredDavidState[chainId].contract : await new ethers.Contract(networks[chainId].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[chainId].rpc));
+            let airdropAvailable = await contract.eligibleForAirdrop(address);
+            context.commit("setAirdropState", { chainId, address, airdropAvailable });
+        },
+        claimAirdrop(context) {
+            let state = context.state;
+            let contract = state.connected.boredDavidContract;
+            let airdropAvailable = state.airdropState[state.chainId];
+            if (airdropAvailable) {
+                return contract.claimAirdrop();
+            }
+        },
+        async connectToChain(context, chainId) {
+            const provider = await detectEthereumProvider();
+            let networks = getNetworks();
+            let network = networks[chainId];
+            if (network) {
+                provider.request({
+                    method: 'wallet_switchEthereumChain',
+                    params: [{ chainId: `0x${Number(chainId).toString(16)}` }],
+                })
+                    .then((res) => {
+                        console.log('switch', res)
+                    })
+                    .catch((e) => {
+                        if (e.code === 4902) {
+                            provider.request({
+                                method: 'wallet_addEthereumChain',
+                                params: [
+                                    {
+                                        chainId: `0x${Number(chainId).toString(16)}`,
+                                        chainName: network.name,
+                                        nativeCurrency: {
+                                            name: network.symbol,
+                                            symbol: network.symbol, // 2-6 characters long
+                                            decimals: 18,
+                                        },
+                                        rpcUrls: [network.rpc],
+                                        blockExplorerUrls: [network.explorer],
+                                    },
+                                ],
+                            })
+                        }
+                    })
+            }
+        }
     },
 }
