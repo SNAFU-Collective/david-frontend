@@ -27,7 +27,7 @@
           <v-list-item three-line>
             <v-list-item-content>
               <div class="text-overline mb-4">
-                {{ sale.network.name }}
+                ON {{ sale.network.name }}
               </div>
               <v-list-item-title class="text-h5 mb-1">
                 Minted: {{sale.info.totalSupply}} / {{sale.info.maxSupply}}
