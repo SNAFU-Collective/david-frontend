@@ -35,7 +35,15 @@ const routes = [
         meta: {
             title: "Bored David - Sale"
         },
-        component: () => import('../views/BuyView.vue')
+        component: () => import('../views/SaleView.vue')
+    },
+    {
+        path: '/sale/:chainId',
+        name: "Complete Sale",
+        meta: {
+            title: "Bored David - Complete Sale"
+        },
+        component: () => import('../views/CompleteSaleView.vue')
     },
     {
         path: '/wallet',

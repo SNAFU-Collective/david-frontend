@@ -195,7 +195,9 @@ export default {
 
         },
         async updateBoredDavidState(context, payload) {
+
             let chainId = payload.chainId;
+            console.log("updating bored david state for chainId", chainId)
             let contract = payload.contract || context.state.boredDavidState[chainId].contract;
             let commonCost = await contract.commonCost();
             let rareCost = await contract.rareCost();
@@ -232,6 +234,16 @@ export default {
             let airdropAvailable = state.airdropState[state.chainId];
             if (airdropAvailable) {
                 return contract.claimAirdrop();
+            }
+        },
+        mintNfts(context, payload) {
+            let state = context.state;
+            let contract = state.connected.boredDavidContract;
+            let  {rareMint, totalCost, mintNumber} = payload;
+            if(rareMint){
+                return contract.mintRare(mintNumber, {value: totalCost});
+            }else{
+                return contract.mintCommon(mintNumber, {value: totalCost});
             }
         },
         async connectToChain(context, chainId) {
