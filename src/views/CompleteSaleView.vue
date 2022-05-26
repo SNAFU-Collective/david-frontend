@@ -37,10 +37,13 @@
               <v-img src="pfp_no_bg/43.png" width="200px" class="rightMintImage" id="preview4" style="margin-right: 80px "/>
 
               <v-img src="pfp_no_bg/8.png" width="200px" class="leftMintImage" id="preview5" style="margin-left: 160px "/>
-              <v-img src="pfp_no_bg/45.png" width="200px" class="rightMintImage" id="preview6" style="margin-right: 160px "/>
+              <v-img src="pfp_no_bg/49.png" width="200px" class="rightMintImage" id="preview6" style="margin-right: 160px "/>
 
-              <v-img src="pfp_no_bg/26.png" width="200px" class="leftMintImage" id="preview7" style="margin-left: 240px "/>
-              <v-img src="pfp_no_bg/49.png" width="200px" class="rightMintImage" id="preview8" style="margin-right: 240px "/>
+              <v-img src="pfp_no_bg/42.png" width="200px" class="leftMintImage" id="preview7" style="margin-left: 240px "/>
+              <v-img src="pfp_no_bg/45.png" width="200px" class="rightMintImage" id="preview8" style="margin-right: 240px "/>
+
+              <v-img src="pfp_no_bg/21.png" width="200px" class="leftMintImage" id="preview9" style="margin-left: 320px "/>
+              <v-img src="pfp_no_bg/15.png" width="200px" class="rightMintImage" id="preview10" style="margin-right: 320px "/>
             </div>
 
             <v-row justify="center">
@@ -216,14 +219,14 @@ export default {
     },
     addBoredDavidPreview: function () {
       console.log(this.mintNumber)
-      if (this.mintNumber < 9) {
+      if (this.mintNumber < 11) {
         let styleTag = document.getElementById(`preview${this.mintNumber}`);
         styleTag.style.display = "block";
       }
     },
     removeBoredDavidPreview: function () {
       console.log(this.mintNumber)
-      if (this.mintNumber < 8) {
+      if (this.mintNumber < 10) {
         let styleTag = document.getElementById(`preview${this.mintNumber + 1}`);
         styleTag.style.display = "none";
       }
