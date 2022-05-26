@@ -72,10 +72,6 @@ export default {
         }
       }
 
-    if (saleFound) {
-        this.startConfettiEffects()
-      }
-
       return saleInfo;
     },
     loading() {
@@ -93,12 +89,6 @@ export default {
       this.checkAirdrop(this.address).finally(() => {
         this.loading = false;
       });
-    },
-    startConfettiEffects() {
-      this.$confetti.start();
-      setTimeout(() => {
-        this.$confetti.stop();
-      }, 3000);
     },
   },
 };
