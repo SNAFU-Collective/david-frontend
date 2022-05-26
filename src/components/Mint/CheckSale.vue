@@ -10,6 +10,12 @@
       </v-row>
     </div>
     <div v-else>
+      <v-row>
+        <v-col cols="12" class="text-center">
+          <h2> Total minted: {{totalMintedSupply}} / {{ totalMaxSupply }}</h2>
+        </v-col>
+      </v-row>
+
       <v-row no-gutters class="pt-16">
         <v-card
             v-for="(sale, index) in getSaleInfo"
@@ -67,7 +73,7 @@ export default {
         if (network) {
          let info = this.boredDavidState[chainId];
          let saleAvailable = info.totalSupply.lt(info.maxSupply);
-         saleFound = saleFound || saleAvailable
+
           saleInfo.push({
             network: network,
             chainId: chainId,
@@ -78,6 +84,22 @@ export default {
       }
 
       return saleInfo;
+    },
+    totalMaxSupply() {
+      let totalMaxSupply = 0;
+      this.getSaleInfo.forEach(sale => {
+        totalMaxSupply += parseInt(sale.info.maxSupply);
+      });
+
+      return totalMaxSupply;
+    },
+    totalMintedSupply() {
+      let totalMintedSupply = 0;
+      this.getSaleInfo.forEach(sale => {
+        totalMintedSupply += parseInt(sale.info.totalSupply);
+      });
+
+      return totalMintedSupply;
     },
     loading() {
       return this.getSaleInfo.length === 0;
@@ -95,6 +117,7 @@ export default {
         this.loading = false;
       });
     },
+
   },
 };
 </script>
