@@ -225,14 +225,12 @@ export default {
       }
     },
     addBoredDavidPreview: function () {
-      console.log(this.mintNumber)
       if (this.mintNumber < 11) {
         let styleTag = document.getElementById(`preview${this.mintNumber}`);
         styleTag.style.display = "block";
       }
     },
     removeBoredDavidPreview: function () {
-      console.log(this.mintNumber)
       if (this.mintNumber < 10) {
         let styleTag = document.getElementById(`preview${this.mintNumber + 1}`);
         styleTag.style.display = "none";

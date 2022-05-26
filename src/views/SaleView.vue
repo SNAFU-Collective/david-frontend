@@ -1,9 +1,9 @@
 <template>
-  <div class="saleViewDiv">
+  <div :class="$route.path === '/' ? '' : 'saleViewDiv'">
     <v-container style="z-index: 2" class="mt-16 pt-16 ">
       <CheckSale class="mt-16" v-if="!isConnecting"/>
 
-      <v-row class="mt-16">
+      <v-row class="mt-16" :style="$route.path === '/' ? 'display: none;' : 'display: block;'">
         <v-col class="pa-10" md="12">
           <v-row>
             <h3 class="pinkColor">BORED DAVID IS A MULTICHAIN NFT COLLECTION</h3>

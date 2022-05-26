@@ -2,8 +2,9 @@
     <div>
     <HomeParallax/>
 
+      <SaleView/>
+
     <v-container style="z-index: 2">
-<!--      <Giveaway/>-->
       <Welcome id="welcomeSection" class="welcomeSection"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
@@ -19,7 +20,7 @@
 <script>
 import Introduction from "@/components/Introduction"
 import Distribution from "@/components/Distribution"
-import Giveaway from "@/components/Giveaway"
+import SaleView from "@/views/SaleView"
 import VideoKez from "@/components/VideoKez"
 import Bonuses from "@/components/Bonuses"
 import Welcome from "@/components/Welcome"
@@ -38,7 +39,7 @@ export default {
     VideoKez,
     Team,
     FAQ,
-    // Giveaway
+    SaleView
   },
 
 }
