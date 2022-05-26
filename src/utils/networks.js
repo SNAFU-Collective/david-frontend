@@ -1,7 +1,7 @@
 const networks = {
     //Rinkeby
     4: {
-        address: "0x088dd6c3feDEACDE068e12DD427c2E90F83c6141",
+        address: "0xD53AccD487180EBcB568CaC5622E64050E9d5197",
         name: "Rinkeby",
         symbol: "rETH",
         explorer: "https://rinkeby.etherscan.io/tx/",
@@ -19,7 +19,7 @@ const networks = {
     },
     //Goerli
     5: {
-        address: "0xfd56CE073CEbf7bd0D0206D66B3a53ED93BFa9E2",
+        address: "0x477352e3c8F3B77c4cB1f1dc4235Ce13Ae5E60be",
         name: "Goerli",
         symbol: "gETH",
         explorer: "https://goerli.etherscan.io/tx/",
