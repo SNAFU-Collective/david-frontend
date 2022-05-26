@@ -50,13 +50,12 @@
               <h5><b class="blueColor">On {{blockchain.name}}</b></h5>
             </v-row>
 
-            <v-row justify="center" class="mt-10">
+            <v-row justify="center" class="mt-10" style="text-align: center">
               <h4>You don't want to miss out, join the party while you can</h4>
             </v-row>
             <v-row justify="center" class="mt-5">
               <h2> {{ sale.info.totalSupply }} / {{ sale.info.maxSupply }} <strong> ALREADY MINTED</strong></h2>
             </v-row>
-
 
             <div>
               <v-row no-gutters justify="center" class="mt-10">
@@ -249,6 +248,18 @@ export default {
   top:150px;
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .boredDavidPreviewImages{
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) {
+  .boredDavidPreviewImages{
+    display: block;
+  }
+}
+
 
 .raritySwitch label {
   color: #ffffff !important;
