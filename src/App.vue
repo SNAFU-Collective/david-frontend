@@ -197,7 +197,7 @@ body {
 }
 
 #v-app-container {
-  background: linear-gradient(300deg, #000000, #504a4a);
+  background: linear-gradient(300deg, #000000, #404040);
   background-size: 100% 100%;
 
   -webkit-animation: AnimationName 30s ease infinite;
