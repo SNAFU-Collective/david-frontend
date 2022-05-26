@@ -158,7 +158,7 @@ export default {
 
   .backHome {
     text-decoration: unset;
-    color: #ffffff !important;
+    color: #ffffff8c !important;
     font-size: 15px;
     font-weight: 600;
     padding: 0 5px;

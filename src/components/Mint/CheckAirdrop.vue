@@ -1,5 +1,10 @@
 <template>
   <div>
+    <v-row>
+      <v-col cols="12" class="text-left">
+        <h3>Check if you are eligible for the airdrop</h3>
+      </v-col>
+    </v-row>
     <v-row justify="center">
       <v-col cols="8">
         <v-text-field
