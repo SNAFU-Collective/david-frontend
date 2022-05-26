@@ -6,7 +6,7 @@
           <v-row no-gutters
           >
             <v-col offset="1" cols="10" class="text-center">
-              Confirm Airdrop Claim
+              Confirm Bored David Mint
             </v-col>
             <v-col cols="1">
               <v-icon class="pl-3 pb-2" @click="closeModal"> mdi-close</v-icon>
@@ -22,9 +22,16 @@
                 justify="center"
                 style="text-align: center"
             >
-              Continue to obtain your free Bored David NFT!
+              You will receive {{mintNumber}} {{rareMint ? 'rare' : 'common'}} Bored David NFT!
             </v-row>
-
+            <v-row
+                no-gutters
+                class="ont-weight-bold pt-2 pb-0"
+                justify="center"
+                style="text-align: center"
+            >
+            You will pay {{ totalCost | fromWei }} {{symbol}}!
+            </v-row>
             <v-row no-gutters justify="center" class="mb-2">
               <v-btn :disabled="nftClaimed" dark large @click="confirmClaim" class="ma-5">Confirm</v-btn>
             </v-row>
@@ -123,6 +130,22 @@ export default {
       type: Boolean,
       default: false,
     },
+    rareMint: {
+      type: Boolean,
+      default: false,
+    },
+    totalCost: {
+      type: Object,
+      required: true,
+    },
+    symbol: {
+      type: String,
+      required: true,
+    },
+    mintNumber: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     ...mapGetters("connectweb3", {network: "getNetwork", chainId:  "chainId"}),	
@@ -150,7 +173,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions("connectweb3", ["updateData", "claimAirdrop"]),
+    ...mapActions("connectweb3", ["updateData", "mintNfts"]),
     closeModal() {
       this.resetModal()
       this.$emit("close", false)
@@ -158,7 +181,11 @@ export default {
     async confirmClaim() {
       this.loading = true
       try {
-        let tx = await this.claimAirdrop()
+        let tx = await this.mintNfts({
+          rareMint: this.rareMint,
+          totalCost: this.totalCost,
+          mintNumber: this.mintNumber,
+        })
         tx.wait()
             .then((res) => {
               console.log(res.transactionHash);

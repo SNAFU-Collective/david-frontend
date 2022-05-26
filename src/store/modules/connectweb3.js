@@ -27,6 +27,7 @@ export default {
         getUserSigner: (state) => state.connected.signer,
         isConnecting: (state) => state.isConnecting,
         airdropState: (state) => state.airdropState,
+        boredDavidState: (state) => state.boredDavidState,
         chainId: (state) => state.chainId,
         isMetamask: async (state) => {
             if (state.connected.web3 && state.connected.web3.provider.isMetamask && !state.connected.web3.provider.isMetamask()) {
@@ -90,7 +91,7 @@ export default {
             state.account = null;
         },
         setBoredDavidState: (state, payload) => {
-            state.boredDavidState[payload.chainId] = payload;
+            Vue.set(state.boredDavidState, payload.chainId, payload);
         },
         setAirdropState: (state, payload) => {
             Vue.set(state.airdropState, payload.chainId, payload.airdropAvailable);
@@ -128,6 +129,15 @@ export default {
             }
 
             console.log("setting Web3");
+        },
+        updateBoredDavidStateForAll: async function (context) {
+            let networks = getNetworks();
+            for (let i in networks) {
+                let network = networks[i];
+                let provider = new ethers.providers.JsonRpcProvider(network.rpc);
+                let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider);
+                await context.dispatch('updateBoredDavidState', { chainId: i, contract });
+            }
         },
         connectWallet: async function (context) {
             console.log("connecting");
@@ -185,7 +195,9 @@ export default {
 
         },
         async updateBoredDavidState(context, payload) {
+
             let chainId = payload.chainId;
+            console.log("updating bored david state for chainId", chainId)
             let contract = payload.contract || context.state.boredDavidState[chainId].contract;
             let commonCost = await contract.commonCost();
             let rareCost = await contract.rareCost();
@@ -197,7 +209,7 @@ export default {
         //Updates fees, balance, nfts ... to use after transactions!
         updateData(context, chainId) {
             context.dispatch("updateBoredDavidState", { contract: null, chainId: parseInt(chainId) })
-            context.dispatch("checkAirdrop", context.state.connected.address)
+            context.dispatch("checkAirdrop", context.state.account)
         },
         async checkAirdrop(context, address) {
             let networks = getNetworks();
@@ -222,6 +234,16 @@ export default {
             let airdropAvailable = state.airdropState[state.chainId];
             if (airdropAvailable) {
                 return contract.claimAirdrop();
+            }
+        },
+        mintNfts(context, payload) {
+            let state = context.state;
+            let contract = state.connected.boredDavidContract;
+            let  {rareMint, totalCost, mintNumber} = payload;
+            if(rareMint){
+                return contract.mintRare(mintNumber, {value: totalCost});
+            }else{
+                return contract.mintCommon(mintNumber, {value: totalCost});
             }
         },
         async connectToChain(context, chainId) {

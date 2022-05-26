@@ -1,25 +1,5 @@
 <template>
   <div>
-    <v-row justify="center">
-      <v-col cols="8">
-        <v-text-field
-          v-model="address"
-          label="Address"
-          dark
-          prepend-icon="mdi-wallet"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="4">
-        <v-btn
-          light
-          :disabled="!validAddress"
-          @click="checkButton"
-        >
-          Search
-        </v-btn>
-      </v-col>
-    </v-row>
-
     <div v-if="loading">
       <v-row no-gutters justify="center" class="py-4 pt-16">
         <v-progress-circular
@@ -32,7 +12,7 @@
     <div v-else>
       <v-row no-gutters class="pt-16">
         <v-card
-          v-for="(airdrop, index) in getAirdropInfo"
+          v-for="(sale, index) in getSaleInfo"
           :key="index"
           :class="screenWidth > 768 ? index > 0 ? 'ml-10' : 'ml-0' : 'mb-5 mx-2'"
           :width="screenWidth > 768 ? '11vw' : '100%'"
@@ -40,25 +20,21 @@
         >
           <v-card-title>
             <v-row no-gutters justify="center">
-              {{ airdrop.network.name }}
+              {{ sale.network.name }}
             </v-row>
           </v-card-title>
           <v-card-text>
             <v-row no-gutters justify="center">
-              <v-img v-if="airdrop.airdropAvailable" src="/pfp/unveiling.gif" width="50px"
+              <v-img src="/pfp/unveiling.gif" width="50px"
                      transition="slide-y-transition"></v-img>
             </v-row>
             <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
-              {{
-                airdrop.airdropAvailable
-                  ? "You can claim a free NFT on " + airdrop.network.name
-                  : "Not eligible for airdrop"
-              }}
+              {{sale.info.totalSupply}} / {{sale.info.maxSupply}}
             </v-row>
           </v-card-text>
           <v-card-actions>
             <v-row no-gutters justify="center">
-              <v-btn dark v-if="airdrop.airdropAvailable" :to="`/airdrop/${airdrop.chainId}/${address}`"> Claim </v-btn>
+              <v-btn dark :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? 'Buy' : 'Soldout' }} </v-btn>
             </v-row>
           </v-card-actions>
         </v-card>
@@ -69,54 +45,49 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import { ethers } from "ethers";
 import { getNetworks } from "@/utils/networks"
 
 export default {
-  data: function () {
-    return {
-      address: "",
-      loading: false,
-    };
-  },
   mounted: function () {
-    this.address = this.getUserAccount;
-    if (this.validAddress) {
-      this.checkButton();
-    }
+    this.updateBoredDavidStateForAll()
   },
   computed: {
-    ...mapGetters("connectweb3", ["getUserAccount", "airdropState"]),
-    validAddress() {
-      return ethers.utils.isAddress(this.address);
-    },
-    getAirdropInfo() {
+    ...mapGetters("connectweb3", ["getUserAccount", "boredDavidState"]),
+    getSaleInfo() {
       let networks = getNetworks();
-      let airdropInfo = [];
-      let airdropFound = false
-      for (let chainId in this.airdropState) {
+      let saleInfo = [];
+      let saleFound = false
+      for (let chainId in this.boredDavidState) {
         let network = networks[chainId];
         if (network) {
-          airdropFound = airdropFound || this.airdropState[chainId];
-          airdropInfo.push({
+         let info = this.boredDavidState[chainId];
+         let saleAvailable = info.totalSupply.lt(info.maxSupply);
+         saleFound = saleFound || saleAvailable
+          saleInfo.push({
             network: network,
             chainId: chainId,
-            airdropAvailable: this.airdropState[chainId],
+            info,
+            saleAvailable
           });
         }
       }
 
-      if (airdropFound){
+    if (saleFound) {
         this.startConfettiEffects()
       }
-      return airdropInfo;
+
+      return saleInfo;
+    },
+    loading() {
+      return this.getSaleInfo.length === 0;
     },
     screenWidth() {
       return window.innerWidth
     },
   },
+
   methods: {
-    ...mapActions("connectweb3", ["checkAirdrop"]),
+    ...mapActions("connectweb3", ["updateBoredDavidStateForAll"]),
     checkButton() {
       this.loading = true;
       this.checkAirdrop(this.address).finally(() => {

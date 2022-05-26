@@ -8,6 +8,7 @@
     <v-col cols="8" id="subtitle">
        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
        <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
+        <router-link class="backHome" :to="{ name: 'Sale'}">SALE</router-link>
        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
     </v-col> 
 
@@ -30,6 +31,7 @@
           <wallet-status class="mt-5 pb-2 walletHeader"/>
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
           <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
+           <router-link class="backHome" :to="{ name: 'Sale'}">SALE</router-link>
           <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
         </Slide>
       </div>
