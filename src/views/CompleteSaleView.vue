@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index: 2" class="mt-16 pt-16 completeSaleMainDiv">
+  <div style="z-index: 2" class="completeSaleMainDiv pt-16">
     <div v-if="isConnecting || !sale || !sale.info" class="mt-16">
       <v-row no-gutters justify="center" class="py-4">
         <v-progress-circular
@@ -8,27 +8,37 @@
             indeterminate
         ></v-progress-circular>
       </v-row>
+      <v-row no-gutters justify="center" class="py-4">
+       <p>Loading</p>
+      </v-row>
     </div>
     <div v-else style="margin-top: 100px">
       <div v-if="wrongChain" >
-        <v-alert type="error" class="mt-5 mb-5">
-          <span class="body-1">
-            You are not connected to the correct chain.
-          </span>
-          <v-btn
-              dark
-              small
-              class="ml-10"
-              @click="connectToChain(selectedChainId)"
-              style="position: absolute; right: 25px"
-          >
-            Switch to {{ selectedChainId | networkName }}
-          </v-btn>
+        <v-container>
+          <v-alert type="error" class="mt-5 mb-5">
+          <v-row>
+            <v-col lg="9" md="12">
+              <span class="body-1">
+                You are not connected to the correct chain.
+              </span>
+            </v-col>
+            <v-col lg="3" md="12">
+              <v-btn
+                  dark
+                  small
+                  class="ml-10"
+                  @click="connectToChain(selectedChainId)"
+              >
+                Switch to {{ selectedChainId | networkName }}
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-alert>
+        </v-container>
       </div>
 
       <div class="mt-16 mx-16">
-          <div class="mx-16 " id="mint" style="">
+          <div class="mx-lg-16 " id="mint" style="">
             <div style="position: relative;" class="boredDavidPreviewImages">
               <v-img src="pfp_no_bg/3.png" width="200px" class="leftMintImage" id="preview1" style="display: block !important;"/>
               <v-img src="pfp_no_bg/38.png" width="200px" class="rightMintImage" id="preview2"/>
@@ -105,8 +115,6 @@
     <v-container>
       <Bonuses class="homeMargin" style="margin-top: 200px !important;"/>
     </v-container>
-
-
   </div>
 </template>
 

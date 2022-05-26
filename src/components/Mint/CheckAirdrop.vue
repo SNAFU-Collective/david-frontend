@@ -1,29 +1,40 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12" class="text-left">
-        <h3>Check if you are eligible for the airdrop</h3>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-col cols="8">
-        <v-text-field
-          v-model="address"
-          label="Address"
-          dark
-          prepend-icon="mdi-wallet"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="4">
-        <v-btn
-          light
-          :disabled="!validAddress"
-          @click="checkButton"
-        >
-          Search
+<!--    <v-row>-->
+<!--      <v-col cols="12" class="text-left">-->
+<!--        <h3>Check if you are eligible for the airdrop</h3>-->
+<!--      </v-col>-->
+<!--    </v-row>-->
+<!--    <v-row justify="center">-->
+<!--      <v-col cols="8">-->
+<!--        <v-text-field-->
+<!--          v-model="address"-->
+<!--          label="Address"-->
+<!--          dark-->
+<!--          prepend-icon="mdi-wallet"-->
+<!--        ></v-text-field>-->
+<!--      </v-col>-->
+<!--      <v-col cols="4">-->
+<!--        <v-btn-->
+<!--          light-->
+<!--          :disabled="!validAddress"-->
+<!--          @click="checkButton"-->
+<!--        >-->
+<!--          Search-->
+<!--        </v-btn>-->
+<!--      </v-col>-->
+<!--    </v-row>-->
+
+    <div v-if="!validAddress">
+      <v-row justify="center">
+        <p>Connect your wallet to search available airdrops.</p>
+      </v-row>
+      <v-row justify="center">
+        <v-btn @click="connectWallet" style="margin-bottom: 10px">
+          Connect wallet
         </v-btn>
-      </v-col>
-    </v-row>
+      </v-row>
+    </div>
 
     <div v-if="loading">
       <v-row no-gutters justify="center" class="py-4 pt-16">
@@ -33,9 +44,12 @@
           indeterminate
         ></v-progress-circular>
       </v-row>
+      <v-row no-gutters justify="center" class="py-4 pt-16">
+        <p>Searching airdrops</p>
+      </v-row>
     </div>
     <div v-else>
-      <v-row no-gutters class="pt-16">
+      <v-row no-gutters class="pt-5">
         <v-card
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
@@ -121,7 +135,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions("connectweb3", ["checkAirdrop"]),
+    ...mapActions("connectweb3", ["checkAirdrop", "connectWallet"]),
     checkButton() {
       this.loading = true;
       this.checkAirdrop(this.address).finally(() => {

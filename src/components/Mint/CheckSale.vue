@@ -8,6 +8,9 @@
           indeterminate
         ></v-progress-circular>
       </v-row>
+      <v-row no-gutters justify="center" class="py-4">
+        <p>Loading</p>
+      </v-row>
     </div>
     <div v-else>
       <v-row>

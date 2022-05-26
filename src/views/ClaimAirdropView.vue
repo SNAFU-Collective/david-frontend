@@ -8,16 +8,30 @@
             indeterminate
         ></v-progress-circular>
       </v-row>
+      <v-row no-gutters justify="center" class="py-4">
+        <p>Loading</p>
+      </v-row>
     </div>
     <div v-else>
       <div v-if="wrongChain">
         <v-alert type="error" class="mt-5 mb-5">
-          <span class="body-1">
-            You are not connected to the correct chain.
-          </span>
-          <v-btn dark small class="ml-10" @click="connectToChain(claimChainId)" style="position: absolute; right: 25px">
-            Switch to {{ claimChainId | networkName }}
-          </v-btn>
+          <v-row>
+            <v-col lg="9" md="12">
+              <span class="body-1">
+                You are not connected to the correct chain.
+              </span>
+            </v-col>
+            <v-col lg="3" md="12">
+              <v-btn
+                  dark
+                  small
+                  class="ml-10"
+                  @click="connectToChain(claimChainId)"
+              >
+                Switch to {{ claimChainId | networkName }}
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-alert>
       </div>
       <div v-else-if="wrongAddress">

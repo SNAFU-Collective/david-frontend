@@ -48,6 +48,9 @@
                       color="#303030"
                   ></v-progress-circular>
                 </v-row>
+                <v-row no-gutters justify="center" class="py-4">
+                  <p>Loading</p>
+                </v-row>
               </template>
               <v-row class="px-2 subtext chainLogo">
                 <v-tooltip bottom>
