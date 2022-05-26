@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index: 2" class="mt-16 pt-16">
+  <div style="z-index: 2" class="mt-16 pt-16 completeSaleMainDiv">
     <div v-if="isConnecting || !sale || !sale.info" class="mt-16">
       <v-row no-gutters justify="center" class="py-4">
         <v-progress-circular
@@ -28,7 +28,7 @@
       </div>
 
       <div class="mt-16 mx-16">
-          <div class=" " id="mint" style="">
+          <div class="mx-16 " id="mint" style="">
             <div style="position: relative;" class="boredDavidPreviewImages">
               <v-img src="pfp_no_bg/3.png" width="200px" class="leftMintImage" id="preview1" style="display: block !important;"/>
               <v-img src="pfp_no_bg/38.png" width="200px" class="rightMintImage" id="preview2"/>
@@ -47,7 +47,7 @@
             </div>
 
             <v-row justify="center">
-              <h5><b class="blueColor">On {{blockchain.name}}</b></h5>
+              <h4><b class="blueColor">Mint on {{blockchain.name}}</b></h4>
             </v-row>
 
             <v-row justify="center" class="mt-10" style="text-align: center">
@@ -122,7 +122,7 @@ export default {
     return {
       showCompleteSaleModal: false,
       mintNumber: 1,
-      buyRare: false,
+      buyRare: true,
     }
   },
   mounted: function () {
@@ -263,5 +263,13 @@ export default {
 
 .raritySwitch label {
   color: #ffffff !important;
+}
+
+.completeSaleMainDiv {
+  min-height: 800px;
+  background-image: url("../../public/background/bg2.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 </style>

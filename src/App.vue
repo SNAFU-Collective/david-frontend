@@ -1,9 +1,9 @@
 <template>
   <v-app style="color: #fff" id="v-app-container">
     <Header style="z-index: 3" />
-    <router-view :key="$route.fullPath" style="z-index: 2"> </router-view>
+    <router-view :key="$route.fullPath" style="z-index: 2; padding-bottom: 50px"> </router-view>
 
-    <Footer class="homeMargin" />
+    <Footer />
 
    <div :style="$route.path === '/' ? 'display: block;' : 'display: none;'">
      <v-img

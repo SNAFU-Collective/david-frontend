@@ -13,6 +13,7 @@
       <v-row>
         <v-col cols="12" class="text-center">
           <h2> {{totalMintedSupply}} / {{ totalMaxSupply }} NFTs ALREADY MINTED</h2>
+          <h4> Choose the blockchain where you want to mint Bored David NFTs.</h4>
         </v-col>
       </v-row>
 
@@ -20,14 +21,14 @@
         <v-card
             v-for="(sale, index) in getSaleInfo"
             :key="index"
-            class="mx-auto"
+            class="mx-auto mint-card"
             max-width="344"
             outlined
         >
           <v-list-item three-line>
             <v-list-item-content>
               <div class="text-overline mb-4">
-                ON {{ sale.network.name }}
+                {{ sale.network.name }}
               </div>
               <v-list-item-title class="text-h5 mb-1">
                 Minted: {{sale.info.totalSupply}} / {{sale.info.maxSupply}}
@@ -46,7 +47,8 @@
           <v-card-actions>
             <v-btn outlined
                    rounded
-                   text :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? 'Buy' : 'Soldout' }} </v-btn>
+                   class="mt-3"
+                    :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? `Buy on ${sale.network.name}` : 'Soldout' }} </v-btn>
           </v-card-actions>
         </v-card>
       </v-row>
@@ -123,4 +125,9 @@ export default {
 </script>
 
 <style>
+@media screen and (max-width: 767px) {
+  .mint-card {
+   margin-top: 20px;
+  }
+}
 </style>

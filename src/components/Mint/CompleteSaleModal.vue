@@ -43,7 +43,7 @@
           <v-row no-gutters
           >
             <v-col offset="1" cols="10" class="text-center">
-              Confirm Airdrop Claim
+              Confirm Bored David Mint
             </v-col>
             <v-col cols="1">
               <v-icon class="pl-3 pb-2" @click="closeModal"> mdi-close</v-icon>
