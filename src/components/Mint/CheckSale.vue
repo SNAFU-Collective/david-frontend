@@ -12,7 +12,7 @@
     <div v-else>
       <v-row>
         <v-col cols="12" class="text-center">
-          <h2> Total minted: {{totalMintedSupply}} / {{ totalMaxSupply }}</h2>
+          <h2> {{totalMintedSupply}} / {{ totalMaxSupply }} NFTs ALREADY MINTED</h2>
         </v-col>
       </v-row>
 
