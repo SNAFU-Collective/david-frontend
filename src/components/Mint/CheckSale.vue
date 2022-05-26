@@ -12,30 +12,35 @@
     <div v-else>
       <v-row no-gutters class="pt-16">
         <v-card
-          v-for="(sale, index) in getSaleInfo"
-          :key="index"
-          :class="screenWidth > 768 ? index > 0 ? 'ml-10' : 'ml-0' : 'mb-5 mx-2'"
-          :width="screenWidth > 768 ? '11vw' : '100%'"
-          dark
+            v-for="(sale, index) in getSaleInfo"
+            :key="index"
+            class="mx-auto"
+            max-width="344"
+            outlined
         >
-          <v-card-title>
-            <v-row no-gutters justify="center">
-              {{ sale.network.name }}
-            </v-row>
-          </v-card-title>
-          <v-card-text>
-            <v-row no-gutters justify="center">
-              <v-img src="/pfp/unveiling.gif" width="50px"
-                     transition="slide-y-transition"></v-img>
-            </v-row>
-            <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
-              {{sale.info.totalSupply}} / {{sale.info.maxSupply}}
-            </v-row>
-          </v-card-text>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <div class="text-overline mb-4">
+                {{ sale.network.name }}
+              </div>
+              <v-list-item-title class="text-h5 mb-1">
+                Minted: {{sale.info.totalSupply}} / {{sale.info.maxSupply}}
+              </v-list-item-title>
+              <v-list-item-subtitle>There are still {{sale.info.maxSupply - sale.info.totalSupply}} NFTs left to be minted on  {{ sale.network.name }}</v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar
+                tile
+                size="80"
+                color="grey"
+            > <v-img :src="`/projects/ethereum.jpg`" width="50px"
+                     transition="slide-y-transition"></v-img></v-list-item-avatar>
+          </v-list-item>
+
           <v-card-actions>
-            <v-row no-gutters justify="center">
-              <v-btn dark :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? 'Buy' : 'Soldout' }} </v-btn>
-            </v-row>
+            <v-btn outlined
+                   rounded
+                   text :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? 'Buy' : 'Soldout' }} </v-btn>
           </v-card-actions>
         </v-card>
       </v-row>
