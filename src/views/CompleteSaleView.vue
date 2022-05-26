@@ -1,10 +1,10 @@
 <template>
   <v-container style="z-index: 2" class="mt-16 pt-16">
-    <div v-if="isConnecting || !sale" || !sale.info>
+    <div v-if="isConnecting || !sale || !sale.info">
       <v-row no-gutters justify="center" class="py-4">
         <v-progress-circular
           :size="80"
-          color="black"
+          color="white"
           indeterminate
         ></v-progress-circular>
       </v-row>
