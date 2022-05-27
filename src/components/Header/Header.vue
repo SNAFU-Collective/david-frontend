@@ -2,7 +2,7 @@
   <div class="headerMain">
     <div id="desktopHeader">
       <v-col cols="1" id="pinnedLeftHeader">
-          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png" style="image-rendering: pixelated;"/></router-link>
+          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png" style="image-rendering: -webkit-optimize-contrast;"/></router-link>
       </v-col>
 
     <v-col cols="8" id="subtitle">
