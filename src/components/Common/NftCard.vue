@@ -48,9 +48,49 @@
           </a>
         </v-row>
 
-        <v-row style="display: flex; padding-top: 10px; padding-bottom: 5px" class="px-2">
-          <span style="width: 60%; text-align: left" class="truncate blueColor"><strong>#{{ nft.id }}</strong></span>
-          <span style="width: 60%; text-align: left" class="truncate pinkColor"><strong>{{ blockchain.name }}</strong></span>
+        <v-row style="padding-top: 10px; padding-bottom: 5px" class="px-2">
+          <v-col cols="6">
+            <v-row justify="start">
+              <span class=" pinkColor"><strong>#{{ nft.id }}</strong></span>
+            </v-row>
+            <v-row justify="start">
+              <span class=" blueColor"><strong>On {{ blockchain.name }}</strong></span>
+            </v-row>
+          </v-col>
+          <v-col cols="6">
+            <v-row justify="end">
+              <v-menu
+                  right
+                  offset-y
+                  max-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                      light
+                      icon
+                      v-bind="attrs"
+                      v-on="on"
+                  >
+                    <v-icon>mdi-dots-vertical</v-icon>
+                  </v-btn>
+                </template>
+
+                <v-list>
+                  <v-list-item class="click-pointer">
+                    <v-list-item-title @click="goToMarketplace">View on marketplace</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title>Tweet it</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title>Set as profile pic</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-row>
+
+          </v-col>
+
         </v-row>
       </v-card-text>
 
@@ -90,6 +130,9 @@ export default {
     goTo(url) {
       console.log(url)
       window.open(url, '_blank')
+    },
+    goToMarketplace() {
+      this.goTo(this.blockchain.marketplace_url + this.nft.id)
     },
     toggle() {
       this.fullscreen = !this.fullscreen
@@ -177,4 +220,10 @@ export default {
   }
 }
 
+.click-pointer {
+  cursor: pointer;
+}
+.click-pointer:hover {
+background-color: #c0c0c0;
+}
 </style>
