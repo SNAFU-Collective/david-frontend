@@ -2,14 +2,14 @@
   <div class="headerMain">
     <div id="desktopHeader">
       <v-col cols="1" id="pinnedLeftHeader">
-          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png"/></router-link>
+          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png" style="image-rendering: pixelated;"/></router-link>
       </v-col>
 
     <v-col cols="8" id="subtitle">
        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
        <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
         <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
-       <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
+       <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
     </v-col> 
 
       <v-col cols="3">
@@ -32,7 +32,7 @@
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
           <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
            <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
-          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
+          <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
         </Slide>
       </div>
     </div>

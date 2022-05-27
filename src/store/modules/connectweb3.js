@@ -118,6 +118,8 @@ export default {
                 if (chain) {
                     state.boredDavidContract = await new ethers.Contract(chain.address, BOREDABI.abi, signer);
                 }
+
+                context.dispatch("nfts/getNftsFromUser", null, {root: true})
             } else {
                 for (let i in networks) {
                     let network = networks[i];
@@ -210,6 +212,7 @@ export default {
         updateData(context, chainId) {
             context.dispatch("updateBoredDavidState", { contract: null, chainId: parseInt(chainId) })
             context.dispatch("checkAirdrop", context.state.account)
+            context.dispatch("nfts/getNftsFromUser", null, {root: true})
         },
         async checkAirdrop(context, address) {
             let networks = getNetworks();

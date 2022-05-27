@@ -1,11 +1,8 @@
 <template>
-  <div style="min-width: 100%; margin-top: 100px">
+  <div style="min-width: 100%; padding-top: 100px" class="walletPage">
     <v-container>
 
-      <v-row justify="center" style="margin-top: 80px; margin-left: 80px;margin-right: 80px; display: grid">
-        <v-avatar left style="width: 200px !important; height: 200px !important;">
-          <v-img src="/pfp/unknown.jpeg"/>
-        </v-avatar>
+      <v-row justify="center" style="margin-top: 80px; display: grid">
         <v-chip
             color="#e4e4e4"
             text-color="black"
@@ -13,7 +10,7 @@
             class="mt-5"
             v-if="isConnected"
         >
-          {{ account | abbreviateAddress }}
+          Connected to: {{ account | abbreviateAddress }}
           <span class="px-3">|</span>
           <button
               type="button"
@@ -26,21 +23,49 @@
         </v-chip>
       </v-row>
 
-      <v-row v-if="isConnected" justify="center" style=" margin-top: 25px; margin-bottom: 25px">
-        <v-btn color="blue" style="color:#fff;" @click="openChat">Check messages <v-icon class="ml-2">mdi-chat</v-icon></v-btn>
-      </v-row>
-
       <div v-if="!isConnected">
         <Login/>
       </div>
 
       <div v-if="isConnected">
-        <div class="collectionSection" style="min-height: 500px">
+        <v-row class="collectionSection mt-16" justify="center">
+          <div v-if="nftsLoading">
+            <v-row no-gutters justify="center" class="py-4 pt-16">
+              <v-progress-circular
+                  :size="80"
+                  color="white"
+                  indeterminate
+              ></v-progress-circular>
+            </v-row>
+            <v-row no-gutters justify="center" class="py-4 pt-16">
+              <p>Loading your collection</p>
+            </v-row>
+          </div>
+          <div v-else-if="!nftsLoading" justify="center">
+            <v-row justify="center">
+              <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in userNfts"
+                        :key="nft.id"
+                        :nft="nft" class="ma-1"/>
+            </v-row>
 
-        </div>
+            <v-row  justify="center" class="mt-16 pt-16 ">
+              <h1 class="pinkColor text-center">Share your NFTs on Twitter!</h1>
+            </v-row>
+            <v-row  justify="center" class="pt-6 pb-16">
+              <h2 class="blueColor text-center">#BetterBoredThanBoring #BoredDavid</h2>
+            </v-row>
+          </div>
+          <div v-else-if="userNfts.length === 0" class="text-body-2 my-50 mt-10 mb-10" style="text-align: center">
+               <span style="font-size: 13px; text-align: center">
+                No NFTs found on this wallet. <br/>
+                <router-link class="blueColor" :to="{ name: 'Sale'}">Buy now</router-link>
+               </span>
+          </div>
+        </v-row>
 
       </div>
     </v-container>
+
   </div>
 </template>
 
@@ -51,28 +76,17 @@ import {mapActions, mapState} from "vuex"
 import WalletStatus from "../components/Wallet/WalletStatus"
 import {mapFields} from "vuex-map-fields"
 import NftCard from "../components/Common/NftCard.vue"
+import axios from "axios"
 
 export default {
   components: {
-    // NftCard,
+    NftCard,
     Login,
     // CollectionInfo
   },
   data() {
     return {
       showModal: false,
-      currentPage: 1,
-      maxPerPage: 10,
-      showReadMore: true,
-      currentTag: 'all',
-      allNFTs: [],
-      tab: null,
-      items: [
-        {tab: 'My Collection', id: 1},
-        {tab: 'Wrapped NFTs', id: 2},
-        {tab: 'Claim', id: 3},
-        {tab: 'Wallet', id: 4},
-      ],
     }
   },
   methods: {
@@ -83,26 +97,20 @@ export default {
       alert('Failed to copy the text to the clipboard')
       console.log(e);
     },
-    openChat() {
-      window.open('https://chat.blockscan.com/index', '_blank')
-    },
-    async loadMore() {
-      this.currentPage += 1
-
-      await setTimeout(() => {
-        //scroll down only on desktop
-        if (window.innerWidth > 768) {
-          window.scrollTo({
-            left: 0,
-            top: document.body.scrollHeight || document.documentElement.scrollHeight,
-            behavior: 'smooth',
-          })
-        }
-      }, 500)
-    },
   },
   computed: {
     ...mapFields("connectweb3", ["isConnected", "account", 'chainId']),
+    ...mapState("nfts", {
+      nfts(state) {
+        return state[this.account]
+      },
+      nftsLoading(state) {
+        return state[this.account] == undefined
+      },
+    }),
+    userNfts() {
+      return this.nfts
+    },
   },
 }
 </script>
@@ -145,5 +153,17 @@ export default {
 
 .boxRow {
   display: flex;
+}
+
+.walletPage {
+  min-height: 800px;
+  background-image: url("../../public/background/bg2.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.v-card__subtitle, .v-card__text, .v-card__title {
+  padding: 12px !important;
 }
 </style>

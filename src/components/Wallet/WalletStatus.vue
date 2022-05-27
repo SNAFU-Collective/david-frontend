@@ -16,10 +16,6 @@
         <v-chip
             style="border: #A7A7A7; cursor: pointer; background-color: #f3f3f3;"
         >
-          <v-avatar left style="width: 50px !important; height: 50px !important; margin-left: -15px; padding-right: 5px">
-<!--            <v-icon color="#fff" size="20px">mdi-account</v-icon>-->
-            <v-img src="/pfp/unknown.jpeg"/>
-          </v-avatar>
           <span style="color: #303030; font-weight: 500">{{ account | abbreviateAddress }}</span>
         </v-chip>
         </router-link>

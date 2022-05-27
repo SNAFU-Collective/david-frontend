@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import connectweb3 from "./modules/connectweb3"
+import nfts from "./modules/nfts"
 
 import { getField, updateField } from 'vuex-map-fields';
 
@@ -19,5 +20,6 @@ export default new Vuex.Store({
   },
   modules: {
     connectweb3,
+    nfts
   }
 })
