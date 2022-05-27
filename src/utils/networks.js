@@ -6,6 +6,7 @@ const networks = {
         symbol: "rETH",
         explorer: "https://rinkeby.etherscan.io/tx/",
         rpc: "https://rinkeby.infura.io/v3/86ba5916ce4349e09b223f0185ca3723",
+        logo: "projects/ethereum.jpg",
         testnet: true
     },
     //Ropsten
@@ -15,6 +16,7 @@ const networks = {
         symbol: "rETH",
         explorer: "https://ropsten.etherscan.io/tx/",
         rpc: "https://ropsten.infura.io/v3/86ba5916ce4349e09b223f0185ca3723",
+        logo: "projects/ethereum.jpg",
         testnet: true
     },
     //Goerli
@@ -24,6 +26,7 @@ const networks = {
         symbol: "gETH",
         explorer: "https://goerli.etherscan.io/tx/",
         rpc: "https://goerli.infura.io/v3/86ba5916ce4349e09b223f0185ca3723",
+        logo: "projects/ethereum.jpg",
         testnet: true
     }
 }

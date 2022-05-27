@@ -9,7 +9,7 @@
        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
        <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
         <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
-       <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
+       <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
     </v-col> 
 
       <v-col cols="3">
@@ -32,7 +32,7 @@
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
           <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
            <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
-          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>
+          <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
         </Slide>
       </div>
     </div>
