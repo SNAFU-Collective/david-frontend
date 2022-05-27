@@ -20,10 +20,6 @@
             <v-row>
               <img :src="nft.metadata.image" class="overlayNftImage"/>
             </v-row>
-            <v-row class="mt-10 pl-1">
-              <span class="truncateLong"><b>ID: {{ nft.id }}</b></span>
-              <span >Minted on {{ blockchain.name }}</span>
-            </v-row>
 
           </v-overlay>
 
@@ -206,7 +202,7 @@ export default {
   }
 
   .overlayNftImage {
-    max-width:400px
+    max-width:600px
   }
 }
 @media screen and (max-width: 768px) {
@@ -214,7 +210,7 @@ export default {
     display: none;
   }
   .overlayNftImage {
-    max-width:500px
+    max-width:400px
   }
 }
 
