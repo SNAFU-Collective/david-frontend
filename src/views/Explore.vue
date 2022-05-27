@@ -11,10 +11,10 @@
         </v-row>
       </div>
 
-      <v-row justify="center" class="pt-10 ">
-        <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in nfts"
+      <v-row justify="center" class="pt-10">
+        <NftCard  style="margin-top: 50px !important;" :cardSize=170 v-for="nft in nfts"
                   :key="nft.id"
-                  :network_id="nft.blockchain.id"
+                  :network_id="parseInt(nft.blockchain.id)"
                   :nft="nft" class="ma-1"/>
       </v-row>
 

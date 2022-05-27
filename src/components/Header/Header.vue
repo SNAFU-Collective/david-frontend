@@ -337,6 +337,7 @@ export default {
     position: absolute;
     bottom: 20px;
     right: 10px;
+    padding-right: 0px !important;
   }
 
 }
