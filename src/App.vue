@@ -230,4 +230,8 @@ a.customLink {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
+
+.nftCard .v-card__text {
+  padding: 12px !important;
+}
 </style>
