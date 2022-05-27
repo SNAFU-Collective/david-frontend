@@ -10,7 +10,8 @@
        <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
         <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
        <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
-    </v-col> 
+       <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+    </v-col>
 
       <v-col cols="3">
         <wallet-status class="mt-5 pb-2 walletHeader"/>
@@ -32,6 +33,7 @@
           <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
           <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
           <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
+          <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
 
           <wallet-status class="mt-5 pb-2 walletHeader mobileWallet"/>
         </Slide>

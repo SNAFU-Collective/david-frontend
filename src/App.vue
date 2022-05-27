@@ -222,4 +222,12 @@ a.customLink {
   border-bottom: 2px solid white;
   text-decoration: none;
 }
+
+.darkBg {
+  min-height: 800px;
+  background-image: url("../public/background/bg2.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
 </style>

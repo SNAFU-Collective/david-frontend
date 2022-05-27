@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index: 2" class="completeSaleMainDiv pt-16">
+  <div style="z-index: 2" class="darkBg pt-16">
     <div v-if="isConnecting || !sale || !sale.info" class="mt-16">
       <v-row no-gutters justify="center" class="py-4">
         <v-progress-circular
@@ -269,13 +269,5 @@ export default {
 
 .raritySwitch label {
   color: #ffffff !important;
-}
-
-.completeSaleMainDiv {
-  min-height: 800px;
-  background-image: url("../../public/background/bg2.png");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div style="min-width: 100%; padding-top: 100px" class="walletPage">
+  <div style="min-width: 100%; padding-top: 100px" class="darkBg">
     <v-container>
 
       <v-row justify="center" style="margin-top: 80px; display: grid">
@@ -45,6 +45,7 @@
             <v-row justify="center">
               <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in userNfts"
                         :key="nft.id"
+                        :network_id="nft.network_id"
                         :nft="nft" class="ma-1"/>
             </v-row>
 
@@ -153,14 +154,6 @@ export default {
 
 .boxRow {
   display: flex;
-}
-
-.walletPage {
-  min-height: 800px;
-  background-image: url("../../public/background/bg2.png");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .v-card__subtitle, .v-card__text, .v-card__title {

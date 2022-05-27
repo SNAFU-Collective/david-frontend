@@ -1,5 +1,5 @@
 <template>
-  <div :class="$route.path === '/' ? '' : 'saleViewDiv'">
+  <div :class="$route.path === '/' ? '' : 'darkBg'">
     <v-container style="z-index: 2" class="mt-16 pt-16 ">
       <CheckSale class="mt-16" v-if="!isConnecting"/>
 
@@ -46,11 +46,5 @@ export default {
 </script>
 
 <style>
-.saleViewDiv {
-  min-height: 800px;
-  background-image: url("../../public/background/bg2.png");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
+
 </style>

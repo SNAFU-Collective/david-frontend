@@ -52,6 +52,14 @@ const routes = [
             title: "Bored David - Wallet"
         },
         component: () => import('../views/Wallet.vue')
+    },
+    {
+        path: '/explore',
+        name: "Explore",
+        meta: {
+            title: "Bored David - NFTs"
+        },
+        component: () => import('../views/Explore.vue')
     }
 ]
 

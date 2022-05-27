@@ -18,13 +18,13 @@
             </v-btn>
 
             <v-row>
-              <img :src="nft.metadata.image" class="overlayNftImage"/>
+              <img :src="nft.metadata ? nft.metadata.image : '/pfp/unveiling.gif'" class="overlayNftImage"/>
             </v-row>
 
           </v-overlay>
 
           <a @click="toggle">
-            <v-img  :src="nft.metadata.image" :height="cardSize || 250" :width="cardSize || 250">
+            <v-img :src="nft.metadata ? nft.metadata.image : '/pfp/unveiling.gif'" :height="cardSize || 250" :width="cardSize || 250">
               <template v-slot:placeholder>
                 <v-row
                     class="fill-height ma-0"
@@ -97,6 +97,10 @@ export default {
       type: Object,
       required: true,
     },
+    network_id: {
+      type: Number,
+      required: true,
+    },
     cardSize: {
       type: Number,
       required: false,
@@ -108,7 +112,7 @@ export default {
   computed:{
     blockchain: function () {
       let networks = getNetworks()
-      return networks[this.nft.network_id]
+      return networks[this.network_id]
     },
   },
   watch: {
