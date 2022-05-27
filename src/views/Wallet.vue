@@ -2,7 +2,7 @@
   <div style="min-width: 100%; padding-top: 100px" class="walletPage">
     <v-container>
 
-      <v-row justify="center" style="margin-top: 80px; margin-left: 80px;margin-right: 80px; display: grid">
+      <v-row justify="center" style="margin-top: 80px; display: grid">
         <v-chip
             color="#e4e4e4"
             text-color="black"
@@ -29,9 +29,6 @@
 
       <div v-if="isConnected">
         <v-row class="collectionSection mt-16" justify="center">
-          <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in userNfts"
-                   :key="nft.id"
-                   :nft="nft" class="ma-1"/>
           <div v-if="nftsLoading">
             <v-row no-gutters justify="center" class="py-4 pt-16">
               <v-progress-circular
@@ -44,10 +41,24 @@
               <p>Loading your collection</p>
             </v-row>
           </div>
+          <div v-else-if="!nftsLoading" justify="center">
+            <v-row justify="center">
+              <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in userNfts"
+                        :key="nft.id"
+                        :nft="nft" class="ma-1"/>
+            </v-row>
+
+            <v-row  justify="center" class="mt-16 pt-16 ">
+              <h1 class="pinkColor text-center">Share your NFTs on Twitter!</h1>
+            </v-row>
+            <v-row  justify="center" class="pt-6 pb-16">
+              <h2 class="blueColor text-center">#BetterBoredThanBoring #BoredDavid</h2>
+            </v-row>
+          </div>
           <div v-else-if="userNfts.length === 0" class="text-body-2 my-50 mt-10 mb-10" style="text-align: center">
                <span style="font-size: 13px; text-align: center">
-              No NFTs found on this wallet. <br/>
-             Buy now.
+                No NFTs found on this wallet. <br/>
+                <router-link class="blueColor" :to="{ name: 'Sale'}">Buy now</router-link>
                </span>
           </div>
         </v-row>

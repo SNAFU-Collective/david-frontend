@@ -79,21 +79,12 @@
                   <v-list-item class="click-pointer">
                     <v-list-item-title @click="goToMarketplace">View on marketplace</v-list-item-title>
                   </v-list-item>
-                  <v-list-item>
-                    <v-list-item-title>Tweet it</v-list-item-title>
-                  </v-list-item>
-                  <v-list-item>
-                    <v-list-item-title>Set as profile pic</v-list-item-title>
-                  </v-list-item>
                 </v-list>
               </v-menu>
             </v-row>
-
           </v-col>
-
         </v-row>
       </v-card-text>
-
     </v-card>
   </v-row>
 </template>
