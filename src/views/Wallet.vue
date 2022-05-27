@@ -3,9 +3,6 @@
     <v-container>
 
       <v-row justify="center" style="margin-top: 80px; margin-left: 80px;margin-right: 80px; display: grid">
-        <v-avatar left style="width: 200px !important; height: 200px !important;">
-          <v-img src="/pfp/unknown.jpeg"/>
-        </v-avatar>
         <v-chip
             color="#e4e4e4"
             text-color="black"
@@ -13,7 +10,7 @@
             class="mt-5"
             v-if="isConnected"
         >
-          {{ account | abbreviateAddress }}
+          Connected to: {{ account | abbreviateAddress }}
           <span class="px-3">|</span>
           <button
               type="button"
@@ -31,7 +28,7 @@
       </div>
 
       <div v-if="isConnected">
-        <v-row class="collectionSection" justify="center">
+        <v-row class="collectionSection mt-16" justify="center">
           <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in userNfts"
                    :key="nft.id"
                    :nft="nft" class="ma-1"/>
@@ -79,11 +76,6 @@ export default {
   data() {
     return {
       showModal: false,
-      currentPage: 1,
-      maxPerPage: 10,
-      showReadMore: true,
-      currentTag: 'all',
-      allNFTs: [],
     }
   },
   methods: {
@@ -93,23 +85,6 @@ export default {
     onError: function (e) {
       alert('Failed to copy the text to the clipboard')
       console.log(e);
-    },
-    openChat() {
-      window.open('https://chat.blockscan.com/index', '_blank')
-    },
-    async loadMore() {
-      this.currentPage += 1
-
-      await setTimeout(() => {
-        //scroll down only on desktop
-        if (window.innerWidth > 768) {
-          window.scrollTo({
-            left: 0,
-            top: document.body.scrollHeight || document.documentElement.scrollHeight,
-            behavior: 'smooth',
-          })
-        }
-      }, 500)
     },
   },
   computed: {
@@ -175,5 +150,9 @@ export default {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.v-card__subtitle, .v-card__text, .v-card__title {
+  padding: 12px !important;
 }
 </style>

@@ -3,32 +3,30 @@
     <v-card :ripple="true" class="mx-auto nftCard" :max-width="cardSize || 250">
       <v-card-text style="white-space: pre; background-color: #F5F5F5">
         <v-row justify="center">
-          <v-dialog
-              v-model="fullscreen"
-              width="600px"
+          <v-overlay
+              :value="fullscreen"
+              :opacity="0.95"
+              @click="fullscreen = false"
           >
-            <v-card style="text-align: center">
-              <v-row style="text-align: left" class="pa-2">
-                <v-col cols="10">
-                  <v-card-title>
-                    <span class="truncateLong">{{ nft.id }}</span>
-                  </v-card-title>
-                  <v-card-subtitle>
-                    <pre class="nftDescription">{{ blockchain.name }}</pre>
-                  </v-card-subtitle>
-                </v-col>
-                <v-col cols="2" style="margin-top: 15px; text-align: right; padding-right: 25px;">
-                  <v-btn
-                      icon
-                      @click="fullscreen = false"
-                  >
-                    <v-icon>mdi-close</v-icon>
-                  </v-btn>
-                </v-col>
-              </v-row>
-              <img  :src="nft.metadata.image"  class="fullscreenImage"/>
-            </v-card>
-          </v-dialog>
+            <v-btn
+                icon
+                style=""
+                @click="fullscreen = false"
+                class="closeButton"
+            >
+              <v-icon style="font-size: 50px">mdi-close</v-icon>
+            </v-btn>
+
+            <v-row>
+              <img :src="nft.metadata.image" style="max-width:600px"/>
+            </v-row>
+            <v-row class="mt-10 pl-1">
+              <span class="truncateLong"><b>ID: {{ nft.id }}</b></span>
+              <span >Minted on {{ blockchain.name }}</span>
+            </v-row>
+
+          </v-overlay>
+
           <a @click="toggle">
             <v-img  :src="nft.metadata.image" :height="cardSize || 250" :width="cardSize || 250">
               <template v-slot:placeholder>
@@ -46,24 +44,13 @@
                   <p>Loading</p>
                 </v-row>
               </template>
-<!--              <v-row class="px-2 subtext chainLogo">-->
-<!--                <v-tooltip bottom>-->
-<!--                  <template v-slot:activator="{ on, attrs }">-->
-<!--                    <v-avatar v-bind="attrs" v-on="on" left class="mr-2" size="20"-->
-<!--                              @click="goTo(`${chains[0].explorer_url}/token/${chains[0].address}/instance/${metadata.id}/token-transfers`)">-->
-<!--                      <v-img :src="chains[0].logo"/>-->
-<!--                    </v-avatar>-->
-<!--                  </template>-->
-<!--                  <span>on Gnosis Chain</span>-->
-<!--                </v-tooltip>-->
-<!--              </v-row>-->
             </v-img>
           </a>
         </v-row>
 
         <v-row style="display: flex; padding-top: 10px; padding-bottom: 5px" class="px-2">
-          <span style="width: 60%; text-align: left" class="truncate"><strong>#{{ nft.id }}</strong></span>
-          <span style="width: 60%; text-align: left" class="truncate"><strong>{{ blockchain.name }}</strong></span>
+          <span style="width: 60%; text-align: left" class="truncate blueColor"><strong>#{{ nft.id }}</strong></span>
+          <span style="width: 60%; text-align: left" class="truncate pinkColor"><strong>{{ blockchain.name }}</strong></span>
         </v-row>
       </v-card-text>
 
@@ -174,6 +161,20 @@ export default {
     max-height: 350px;
   }
 }
+.closeButton {
 
+}
+@media screen and (min-width: 768px) {
+  .closeButton {
+    position: fixed !important;
+    top: 50%;
+    right: 30% ;
+  }
+}
+@media screen and (max-width: 768px) {
+  .closeButton {
+    display: none;
+  }
+}
 
 </style>
