@@ -18,7 +18,7 @@
             </v-btn>
 
             <v-row>
-              <img :src="nft.metadata.image" style="max-width:600px"/>
+              <img :src="nft.metadata.image" class="overlayNftImage"/>
             </v-row>
             <v-row class="mt-10 pl-1">
               <span class="truncateLong"><b>ID: {{ nft.id }}</b></span>
@@ -204,10 +204,17 @@ export default {
     top: 50%;
     right: 30% ;
   }
+
+  .overlayNftImage {
+    max-width:400px
+  }
 }
 @media screen and (max-width: 768px) {
   .closeButton {
     display: none;
+  }
+  .overlayNftImage {
+    max-width:500px
   }
 }
 
