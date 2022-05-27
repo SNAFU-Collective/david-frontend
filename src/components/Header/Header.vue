@@ -28,11 +28,12 @@
       <div id="menuMobile">
         <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
                :width=windowWidth>
-          <wallet-status class="mt-5 pb-2 walletHeader"/>
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
           <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
-           <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
+          <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
           <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
+
+          <wallet-status class="mt-5 pb-2 walletHeader mobileWallet"/>
         </Slide>
       </div>
     </div>
@@ -328,6 +329,12 @@ export default {
     font-size: 18px;
     padding-bottom: 5px;
     color: white;
+  }
+
+  .mobileWallet {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
   }
 
 }

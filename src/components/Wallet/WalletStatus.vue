@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex">
     <div v-if="!isConnected" cols="1" >
-      <v-btn @click="connectWallet" style="margin-bottom: 10px">
+      <v-btn @click="connectWallet" style="margin-bottom: 10px" class="connectWalletBtn">
         Connect wallet
       </v-btn>
     </div>
@@ -129,6 +129,11 @@ a.modalSocials:hover {
   .bodyLink {
     color: #303030 !important;
     font-weight: bold
+  }
+
+  .connectWalletBtn {
+    height: 64px !important;
+    min-width: 400px !important;
   }
 }
 </style>
