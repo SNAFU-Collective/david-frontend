@@ -15,7 +15,7 @@
     <div v-else>
       <v-row>
         <v-col cols="12" class="text-center">
-          <h2> {{totalMintedSupply}} / {{ totalMaxSupply }} NFTs ALREADY MINTED</h2>
+          <h2 class="pinkColor"> {{totalMintedSupply}} / {{ totalMaxSupply }} NFTs ALREADY MINTED</h2>
           <h4> Choose the blockchain where you want to mint Bored David NFTs.</h4>
         </v-col>
       </v-row>

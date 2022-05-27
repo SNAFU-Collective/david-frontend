@@ -1,8 +1,8 @@
 <template>
-    <div>
+  <div>
     <HomeParallax/>
 
-      <SaleView/>
+    <SaleView/>
 
     <v-container style="z-index: 2">
       <Welcome id="welcomeSection" class="welcomeSection"/>
@@ -14,7 +14,7 @@
       <FAQ class="homeMargin"/>
     </v-container>
 
-    </div>
+  </div>
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
     VideoKez,
     Team,
     FAQ,
-    SaleView
+    SaleView,
   },
 
 }
