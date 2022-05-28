@@ -47,10 +47,10 @@
         <v-row style="padding-top: 10px; padding-bottom: 5px" class="px-2">
           <v-col cols="6">
             <v-row justify="start">
-              <span class=" pinkColor"><strong>#{{ nft.id }}</strong></span>
+              <span class=" pinkColor"><strong>{{ nft.id }}</strong></span>
             </v-row>
             <v-row justify="start">
-              <span class=" blueColor"><strong>On {{ blockchain.name }}</strong></span>
+              <span class=" blueColor" style="font-size: 10px;"><strong>On {{ blockchain.name }}</strong></span>
             </v-row>
           </v-col>
           <v-col cols="6">
