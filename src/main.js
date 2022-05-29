@@ -31,9 +31,6 @@ const providerOptions = {
             },
         },
     },
-    binancechainwallet: {
-        package: true
-    },
     'custom-coinbase': {
         display: {
             logo: '/projects/coinbase-wallet.png',
