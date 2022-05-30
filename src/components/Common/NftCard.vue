@@ -75,6 +75,9 @@
                   <v-list-item class="click-pointer">
                     <v-list-item-title @click="goToMarketplace">View on marketplace</v-list-item-title>
                   </v-list-item>
+                  <v-list-item class="click-pointer">
+                    <v-list-item-title @click="goToExplorer">View on explorer</v-list-item-title>
+                  </v-list-item>
                 </v-list>
               </v-menu>
             </v-row>
@@ -133,6 +136,9 @@ export default {
     },
     goToMarketplace() {
       this.goTo(this.blockchain.marketplace_url + this.nft.id)
+    },
+    goToExplorer() {
+      this.goTo(this.blockchain.nft_explorer_url + this.nft.id)
     },
     toggle() {
       this.fullscreen = !this.fullscreen
