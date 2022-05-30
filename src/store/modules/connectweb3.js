@@ -39,7 +39,6 @@ export default {
         isCorrectNetwork: (state) => {
             let chainId = state.chainId;
             let networks = getNetworks();
-            console.log('networks', networks)
             let chain = networks[parseInt(chainId)];
             if (!chain) {
                 return false
@@ -113,7 +112,6 @@ export default {
                 state.signer = signer
                 context.state.account = (await signer.getAddress());
                 context.state.chainId = parseInt((await web3.getNetwork()).chainId)
-                //console.log('Chain ID: ', context.state.chainId)
                 let chain = networks[parseInt(context.state.chainId)];
                 if (chain) {
                     state.boredDavidContract = await new ethers.Contract(chain.address, BOREDABI.abi, signer);
@@ -169,6 +167,7 @@ export default {
                 provider.on("chainChanged", (chainId) => {
                     context.state.chainId = parseInt(chainId)
                     console.log('Chain ID: ', context.state.chainId)
+                    context.dispatch("connectWallet");
                 });
 
                 // Subscribe to provider disconnection

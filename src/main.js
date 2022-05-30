@@ -71,8 +71,6 @@ Vue.filter('fromWei', function (value) {
 })
 
 Vue.filter('networkName', function (value) {
-    console.log('networknamevalue', value)
-
     let networks = getNetworks()
 
     let chain = networks[parseInt(value)]
