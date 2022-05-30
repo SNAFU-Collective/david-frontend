@@ -203,7 +203,7 @@ export default {
       return 0
     },
     hasEnoughBalance: function () {
-      if (this.sale) {
+      if (this.sale && this.getBalance) {
         return this.getBalance.gte(this.totalCost)
       }
       return false
