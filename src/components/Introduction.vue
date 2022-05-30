@@ -51,7 +51,7 @@
         </v-avatar>
 
         <p class="mt-5">
-          Want to receive the airdrop? <a href="https://discord.gg/kvbxMfUyQD" target="_blank" class="customLink">Get in touch with us</a>.
+          Want to receive the airdrop? <a href="https://discord.gg/hWH9WFskXc" target="_blank" class="customLink">Get in touch with us</a>.
         </p>
       </v-row>
     </v-col>
