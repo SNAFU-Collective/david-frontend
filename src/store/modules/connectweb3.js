@@ -45,14 +45,6 @@ export default {
             }
             return true
         },
-        getSymbol: (state) => {
-            let networks = getNetworks();
-
-            let chain = networks[parseInt(state.chainId)]
-            if (chain) {
-                return chain.symbol;
-            }
-        },
         getNetwork: (state) => {
             let networks = getNetworks();
 
@@ -62,23 +54,8 @@ export default {
             }
             return null;
         },
-        getCommonCost: (state) => {
-            if (state.boredDavidState && state.boredDavidState.commonCost) {
-                return state.boredDavidState.commonCost;
-            }
-            return 0;
-        },
-        getRareCost: (state) => {
-            if (state.boredDavidState && state.boredDavidState.rareCost) {
-                return state.boredDavidState.rareCost;
-            }
-            return 0;
-        },
-        isAirdropEligible: (state) => {
-            if (state.boredDavidState) {
-                return state.boredDavidState.airdropAvailable;
-            }
-            return false;
+        getBalance: (state) => {
+            return state.connected.balance;
         }
     },
     mutations: {
@@ -94,6 +71,9 @@ export default {
         },
         setAirdropState: (state, payload) => {
             Vue.set(state.airdropState, payload.chainId, payload.airdropAvailable);
+        },
+        setBalance: (state, payload) => {
+            Vue.set(state.connected, 'balance', payload.balance);
         }
 
     },
@@ -116,8 +96,8 @@ export default {
                 if (chain) {
                     state.boredDavidContract = await new ethers.Contract(chain.address, BOREDABI.abi, signer);
                 }
-
-                context.dispatch("nfts/getNftsFromUser", null, {root: true})
+                context.dispatch('updateBalance');
+                context.dispatch("nfts/getNftsFromUser", null, { root: true })
             } else {
                 for (let i in networks) {
                     let network = networks[i];
@@ -137,6 +117,15 @@ export default {
                 let provider = new ethers.providers.JsonRpcProvider(network.rpc);
                 let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider);
                 await context.dispatch('updateBoredDavidState', { chainId: i, contract });
+            }
+        },
+        async updateBalance(context) {
+            if (context.state.connected && context.state.connected.signer) {
+                context.state.connected.signer.getBalance().then(async function (balance) {
+                    await context.commit('setBalance', { balance });
+                });
+            } else {
+                await context.commit('setBalance', { balance: 0 });
             }
         },
         connectWallet: async function (context) {
@@ -211,7 +200,8 @@ export default {
         updateData(context, chainId) {
             context.dispatch("updateBoredDavidState", { contract: null, chainId: parseInt(chainId) })
             context.dispatch("checkAirdrop", context.state.account)
-            context.dispatch("nfts/getNftsFromUser", null, {root: true})
+            context.dispatch("nfts/getNftsFromUser", null, { root: true })
+            context.dispatch('updateBalance');
         },
         async checkAirdrop(context, address) {
             let networks = getNetworks();
@@ -241,11 +231,11 @@ export default {
         mintNfts(context, payload) {
             let state = context.state;
             let contract = state.connected.boredDavidContract;
-            let  {rareMint, totalCost, mintNumber} = payload;
-            if(rareMint){
-                return contract.mintRare(mintNumber, {value: totalCost});
-            }else{
-                return contract.mintCommon(mintNumber, {value: totalCost});
+            let { rareMint, totalCost, mintNumber } = payload;
+            if (rareMint) {
+                return contract.mintRare(mintNumber, { value: totalCost });
+            } else {
+                return contract.mintCommon(mintNumber, { value: totalCost });
             }
         },
         async connectToChain(context, chainId) {

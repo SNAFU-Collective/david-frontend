@@ -96,7 +96,7 @@ Vue.filter('truncatePrice', (value) => {
         return value
     }
 
-    let price = Number(value).toFixed(3)
+    let price = Number(value).toFixed(6)
     return parseFloat(price.slice(0, -1))
 })
 
