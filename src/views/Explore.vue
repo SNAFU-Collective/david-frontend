@@ -60,7 +60,7 @@
       </div>
 
       <v-row justify="start" class="pt-10">
-        <NftCard style="margin-top: 50px !important;" :cardSize=170 v-for="nft in nfts"
+        <NftCard style="margin-top: 50px !important;" :cardSize="screenWidth > 768 ? 200 : 170" v-for="nft in nfts"
                  :key="nft.id"
                  :network_id="parseInt(nft.blockchain.id)"
                  :nft="nft" class="ma-1"/>
@@ -198,7 +198,12 @@ export default {
 
     await this.loadMore()
     },
-  }
+  },
+  computed: {
+    screenWidth() {
+      return window.innerWidth
+    },
+  },
 }
 </script>
 

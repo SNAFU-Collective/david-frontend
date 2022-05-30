@@ -87,7 +87,7 @@ export default {
                     })
                 }
             }
-            console.log('results',results)
+
              context.commit("setNfts", { address:payload.address, results });
         },
     }

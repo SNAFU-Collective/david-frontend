@@ -43,10 +43,17 @@
           </div>
           <div v-else-if="!nftsLoading" justify="center">
             <v-row justify="center">
-              <NftCard  style="margin-top: 50px !important;" :cardSize=200 v-for="nft in userNfts"
+              <NftCard  style="margin-top: 50px !important;" :cardSize="screenWidth > 768 ? 200 : 170" v-for="nft in userNfts"
                         :key="nft.id"
-                        :network_id="nft.network_id"
+                        :network_id="parseInt(nft.network_id)"
                         :nft="nft" class="ma-1"/>
+            </v-row>
+
+            <v-row v-if="userNfts.length === 0" class=" mt-10 mb-10" style="text-align: center" justify="center">
+               <span style=" text-align: center">
+                No NFT found on this wallet. <br/>
+                <router-link class="blueColor" :to="{ name: 'Sale'}">Buy now</router-link>
+               </span>
             </v-row>
 
             <v-row  justify="center" class="mt-16 pt-16 ">
@@ -56,12 +63,7 @@
               <h2 class="blueColor text-center">#BetterBoredThanBoring #BoredDavid</h2>
             </v-row>
           </div>
-          <div v-else-if="userNfts.length === 0" class="text-body-2 my-50 mt-10 mb-10" style="text-align: center">
-               <span style="font-size: 13px; text-align: center">
-                No NFTs found on this wallet. <br/>
-                <router-link class="blueColor" :to="{ name: 'Sale'}">Buy now</router-link>
-               </span>
-          </div>
+
         </v-row>
 
       </div>
@@ -111,6 +113,9 @@ export default {
     }),
     userNfts() {
       return this.nfts
+    },
+    screenWidth() {
+      return window.innerWidth
     },
   },
 }

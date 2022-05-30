@@ -50,7 +50,7 @@
               <span class=" pinkColor"><strong>{{ nft.id }}</strong></span>
             </v-row>
             <v-row justify="start">
-              <span class=" blueColor" style="font-size: 10px;"><strong>On {{ blockchain.name }}</strong></span>
+              <span class=" blueColor" style="font-size: 10px;"><strong>On {{ blockchain.name }} {{nftWaitingForUnveiling ? ' | Waiting for unveiling' : ''}}</strong></span>
             </v-row>
           </v-col>
           <v-col cols="6">
@@ -114,6 +114,15 @@ export default {
       let networks = getNetworks()
       return networks[this.network_id]
     },
+    nftWaitingForUnveiling() {
+      if (!this.nft.metadata)
+        return true
+
+      if (this.nft.metadata.name === "Bored David - Waiting For Unveil")
+        return true
+
+      return false
+    }
   },
   watch: {
   },
