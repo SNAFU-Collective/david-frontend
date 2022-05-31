@@ -65,9 +65,6 @@
           </div>
 
         </v-row>
-        <v-row  justify="center" class="mt-16 pt-16 ">
-          <h4 class="pinkColor text-center">NFT Index is temporary not working on: Binance Smart Chain, Polygon and Avalanche. Please use <a href="https://nftrade.com/" target="_blank">NFTrader</a> to view your NFTs on those chains.</h4>
-        </v-row>
       </div>
     </v-container>
   </div>
