@@ -11,7 +11,7 @@
       <Bonuses class="homeMargin"/>
       <Team id="teamSection"/>
       <VideoKez class="homeMargin"/>
-<!--      <FAQ class="homeMargin"/>-->
+      <FAQ class="homeMargin"/>
     </v-container>
 
   </div>
@@ -38,7 +38,7 @@ export default {
     Bonuses,
     VideoKez,
     Team,
-    // FAQ,
+    FAQ,
     SaleView,
   },
 

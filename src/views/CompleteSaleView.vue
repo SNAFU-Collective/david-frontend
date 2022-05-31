@@ -127,7 +127,8 @@
     </div>
 
     <v-container>
-      <Bonuses class="homeMargin" style="margin-top: 200px !important;"/>
+      <Bonuses class="homeMargin" style="margin-top: 150px !important;"/>
+      <FAQ class="homeMargin"/>
     </v-container>
   </div>
 </template>
@@ -137,9 +138,10 @@ import {mapGetters, mapActions} from "vuex"
 import {getNetworks} from "@/utils/networks"
 import CompleteSaleModal from '../components/Mint/CompleteSaleModal.vue'
 import Bonuses from "@/components/Bonuses"
+import FAQ from "@/components/FAQ"
 
 export default {
-  components: {CompleteSaleModal, Bonuses},
+  components: {CompleteSaleModal, Bonuses, FAQ},
   data: function () {
     return {
       showCompleteSaleModal: false,

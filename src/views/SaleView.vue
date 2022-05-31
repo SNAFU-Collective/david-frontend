@@ -23,7 +23,7 @@
           </v-row>
           <v-row class="mt-10" style="text-align: justify;">
             <p>
-              The address of the smart contract of Bored David is the same across all the chains: <b class="blueColor">0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c</b>.
+              The address of the smart contract of Bored David is the same across all the chains:
             </p>
           </v-row>
           <v-row class="mt-10" style="text-align: justify;">
@@ -39,6 +39,11 @@
           <v-row class="mt-10" style="text-align: justify;">
             <p>
              <b class="pinkColor">Only trust when interacting with this address.</b>
+            </p>
+          </v-row>
+          <v-row class="mt-10" style="text-align: justify;">
+            <p>
+              Want to read more about the technical stuff? Read <a href="https://medium.com/@snafu-collective/bored-david-technical-paper-8c5163386ceb" target="_blank">this article</a>.
             </p>
           </v-row>
         </v-col>

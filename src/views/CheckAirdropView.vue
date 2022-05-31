@@ -4,6 +4,7 @@
       <v-img class="mt-6" src="/banners/community-giveaway.png"></v-img>
 
       <CheckAirdrop class="mt-16" v-if="!isConnecting"/>
+      <FAQ style="margin-top: 250px"/>
     </v-container>
   </div>
 </template>
@@ -11,9 +12,10 @@
 <script>
 import CheckAirdrop from '../components/Mint/CheckAirdrop.vue'
 import {mapGetters} from 'vuex'
+import FAQ from "@/components/FAQ"
 
 export default {
-  components: {CheckAirdrop},
+  components: {CheckAirdrop, FAQ},
   computed: {
     ...mapGetters("connectweb3", ["isConnecting"]),
   },
