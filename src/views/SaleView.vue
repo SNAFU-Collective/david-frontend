@@ -38,7 +38,7 @@
           </v-row>
           <v-row class="mt-10" style="text-align: justify;">
             <p>
-             <b class="pinkColor">Only trust NFTs coming from this address.</b>
+             <b class="pinkColor">Only trust when interacting with this address.</b>
             </p>
           </v-row>
         </v-col>

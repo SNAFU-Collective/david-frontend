@@ -17,7 +17,7 @@
           <b class="blueColor">All Bored David NFTs</b> will also <b class="blueColor">give you access</b> to the  <a href="https://vote.nftsnafu.org/" target="_blank" class="customLink">SNAFU DAO</a>.
         </p>
         <p>
-          <b class="blueColor">Do you have some interesting ideas on how we could use Bored Davids?</b><br/> Join our <a href="https://discord.com/invite/kvbxMfUyQD" target="_blank" class="customLink">discord</a> and share it with us, we are always listening to our community for doing cool stuff!
+          <b class="blueColor">Do you have some interesting ideas on how we could use Bored Davids?</b><br/> Join our <a href="https://discord.gg/hWH9WFskXc" target="_blank" class="customLink">discord</a> and share it with us, we are always listening to our community for doing cool stuff!
         </p>
       </v-row>
     </v-col>
