@@ -85,17 +85,22 @@
               <v-row  justify="center" class="mt-10">
                 <h3> Price: {{ totalCost | fromWei }} {{ symbol }}</h3>
               </v-row>
+              
               <v-row justify="center" class="mt-15">
                 <v-col cols="12" style="justify-content: center; display: contents" >
                   <v-btn
                       light
                       x-large
                       @click="() => (showCompleteSaleModal = true)"
-                      :disabled="wrongChain"
+                      :disabled="wrongChain || !hasEnoughBalance"
                   >
                     Buy
                   </v-btn>
                 </v-col>
+              </v-row>
+              
+              <v-row  justify="center" class="mt-10">
+                <h4> Your balance: {{ getBalance | fromWei | truncatePrice }} {{ symbol }}</h4>
               </v-row>
             </div>
 
@@ -144,6 +149,7 @@ export default {
       "isConnecting",
       "chainId",
       "boredDavidState",
+      "getBalance",
     ]),
     selectedChainId: function () {
       return this.$route.params.chainId
@@ -195,6 +201,12 @@ export default {
         return cost.mul(this.mintNumber)
       }
       return 0
+    },
+    hasEnoughBalance: function () {
+      if (this.sale && this.getBalance) {
+        return this.getBalance.gte(this.totalCost)
+      }
+      return false
     },
     symbol: function () {
       if (this.sale) {
