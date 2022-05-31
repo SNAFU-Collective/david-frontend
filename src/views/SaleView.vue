@@ -21,6 +21,26 @@
               Each chain has its max supply of Bored Davids.
             </p>
           </v-row>
+          <v-row class="mt-10" style="text-align: justify;">
+            <p>
+              The address of the smart contract of Bored David is the same across all the chains: <b class="blueColor">0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c</b>.
+            </p>
+          </v-row>
+          <v-row class="mt-10" style="text-align: justify;">
+            <ul>
+              <li>Ethereum: <a href="https://etherscan.io/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
+              <li>Polygon: <a href="https://polygonscan.com/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
+              <li>Binance: <a href="https://bscscan.com/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
+              <li>Avalanche: <a href="https://snowtrace.io/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
+              <li>Aurora: <a href="https://aurorascan.dev/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a4" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
+              <li>Gnosis: <a href="https://blockscout.com/xdai/mainnet/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
+            </ul>
+          </v-row>
+          <v-row class="mt-10" style="text-align: justify;">
+            <p>
+             <b class="pinkColor">Only trust NFTs coming from this address.</b>
+            </p>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>

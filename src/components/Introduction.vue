@@ -19,7 +19,7 @@
             <template v-slot:activator="{ on, attrs }">
               <v-img :src="blockchain.logo" @click="goTo(blockchain.website)" v-bind="attrs" v-on="on"/>
             </template>
-            <span>{{blockchain.name}}</span>
+            <span>{{blockchain.name}} - Click to see Smart Contract</span>
           </v-tooltip>
 
         </v-avatar>
@@ -80,32 +80,32 @@ export default {
       blockchains: [
         {
           name: 'Ethereum',
-          website: 'https://ethereum.org/it/',
+          website: 'https://etherscan.io/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C',
           logo: '/projects/ethereum.jpg',
         },
         {
           name: 'Gnosis Chain',
-          website: 'https://gnosischain.world/',
+          website: 'https://blockscout.com/xdai/mainnet/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C',
           logo: '/projects/gnosis.jpg',
         },
         {
           name: 'Polygon',
-          website: 'https://polygon.technology/',
+          website: 'https://polygonscan.com/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C',
           logo: '/projects/polygon.jpg',
         },
         {
           name: 'Avalanche',
-          website: 'https://www.avax.network/',
+          website: 'https://snowtrace.io/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c',
           logo: '/projects/avalanche.jpg',
         },
         {
           name: 'Binance Smart Chain',
-          website: 'https://www.bnbchain.world/en/smartChain',
+          website: 'https://bscscan.com/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c',
           logo: '/projects/binance.jpg',
         },
         {
           name: 'Aurora',
-          website: 'https://aurorascan.dev/',
+          website: 'https://aurorascan.dev/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c',
           logo: '/projects/aurora.svg',
         },
       ],
