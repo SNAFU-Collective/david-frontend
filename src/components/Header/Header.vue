@@ -8,7 +8,7 @@
     <v-col cols="8" id="subtitle">
        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
        <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
-        <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
+        <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
        <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
        <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
     </v-col>
@@ -31,7 +31,7 @@
                :width=windowWidth>
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
           <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
-          <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
+          <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
           <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
           <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
 

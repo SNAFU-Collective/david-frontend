@@ -107,7 +107,7 @@
                     @click="() => (showCompleteSaleModal = true)"
                     :disabled="wrongChain || !hasEnoughBalance"
                 >
-                  Buy
+                  Mint
                 </v-btn>
               </v-col>
             </v-row>
