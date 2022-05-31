@@ -53,6 +53,9 @@ export default {
                 let token = boredDavidState[i] && boredDavidState[i].contract ? boredDavidState[i].contract : await new ethers.Contract(networks[i].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[i].rpc))
 
                 let nfts = (await token.walletOfOwner(payload.address)).toString()
+                if (nfts === '')
+                    continue
+
                 nfts = nfts.split(',')
                 nfts.forEach((nft) => {
                     token.tokenURI(nft).then(async uri => {
