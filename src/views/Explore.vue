@@ -114,9 +114,9 @@ export default {
         'Avalanche',
         'Aurora',
         'Binance Smart Chain',
-        'Rinkeby',
-        'Ropsten',
-        'Goerli',
+        // 'Rinkeby',
+        // 'Ropsten',
+        // 'Goerli',
       ],
       availableRarities: [
         'All',
