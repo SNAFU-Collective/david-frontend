@@ -55,22 +55,17 @@ export default {
                 let nfts = (await token.walletOfOwner(payload.address)).toString()
                 nfts = nfts.split(',')
                 nfts.forEach((nft) => {
-
-                        token.tokenURI(nft).then(async uri => {
-                            let metadata = await axios.get(uri)
-                            results.push({
-                                id: nft,
-                                metadata: metadata.data,
-                                network_id: i,
-                            })
+                    token.tokenURI(nft).then(async uri => {
+                        let metadata = await axios.get(uri)
+                        results.push({
+                            id: nft,
+                            metadata: metadata.data,
+                            network_id: i,
                         })
-
-
+                    })
                 })
             }
-
-
-            console.log(results)
+            
             context.commit("setNfts", {address: payload.address, results})
         },
     },
