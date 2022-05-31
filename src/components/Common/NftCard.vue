@@ -18,13 +18,13 @@
             </v-btn>
 
             <v-row>
-              <img :src="nft.metadata ? nft.metadata.image : '/pfp/unveiling.gif'" class="overlayNftImage"/>
+              <img :src="nftWaitingForUnveiling ? '/pfp/unveiling.gif' : nft.metadata.image" class="overlayNftImage"/>
             </v-row>
 
           </v-overlay>
 
           <a @click="toggle">
-            <v-img :src="nft.metadata ? nft.metadata.image : '/pfp/unveiling.gif'" :height="cardSize || 250" :width="cardSize || 250">
+            <v-img :src="nftWaitingForUnveiling ? '/pfp/unveiling.gif' : nft.metadata.image" :height="cardSize || 250" :width="cardSize || 250">
               <template v-slot:placeholder>
                 <v-row
                     class="fill-height ma-0"
@@ -124,7 +124,7 @@ export default {
       if (this.nft.metadata.name && this.nft.metadata.name === "Bored David - Waiting For Unveil")
         return true
 
-      if (this.nft.unveiled ==! undefined && this.nft.unveiled === false)
+      if (!this.nft.unveiled)
         return true
 
       return false
