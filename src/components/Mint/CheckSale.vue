@@ -27,6 +27,7 @@
             class="mx-auto mint-card"
             max-width="344"
             outlined
+            style="margin-top: 20px"
         >
           <v-list-item three-line>
             <v-list-item-content>
@@ -43,7 +44,7 @@
                 tile
                 size="80"
                 color="grey"
-            > <v-img :src="`/projects/ethereum.jpg`" width="50px"
+            > <v-img :src="sale.network.logo" width="50px" style="background-color: white;"
                      transition="slide-y-transition"></v-img></v-list-item-avatar>
           </v-list-item>
 
