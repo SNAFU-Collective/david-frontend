@@ -156,19 +156,19 @@ export default {
           this.filters += '&blockchain_network_id=1'
           break
         case 'Gnosis Chain':
-          this.filters += '&blockchain_network_id=1'
+          this.filters += '&blockchain_network_id=100'
           break
         case 'Polygon':
-          this.filters += '&blockchain_network_id=1'
+          this.filters += '&blockchain_network_id=137'
           break
         case 'Avalanche':
-          this.filters += '&blockchain_network_id=1'
+          this.filters += '&blockchain_network_id=43114'
           break
         case 'Aurora':
-          this.filters += '&blockchain_network_id=1'
+          this.filters += '&blockchain_network_id=1313161554'
           break
         case 'Binance Smart Chain':
-          this.filters += '&blockchain_network_id=1'
+          this.filters += '&blockchain_network_id=56'
           break
         case 'Rinkeby':
           this.filters += '&blockchain_network_id=4'

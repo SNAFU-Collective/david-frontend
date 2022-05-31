@@ -65,7 +65,7 @@ export default {
                     })
                 })
             }
-            
+
             context.commit("setNfts", {address: payload.address, results})
         },
     },
