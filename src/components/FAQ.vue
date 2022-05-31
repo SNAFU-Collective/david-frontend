@@ -33,28 +33,42 @@ export default {
       panel: [0],
       faqs: [
         {
-          question: 'Where can I buy Bored David?',
-          answer: 'You will be able to mint Bored David NFTs on this website when the minting will start.'
+          question: 'How many NFTs there are in total?',
+          answer: 'There are a total of 6666 unique Bored David NFTs divided into 6 batches (randomly). Each blockchain will use its own batch of NFTs. We will support a total of 6 different blockchains: Ethereum, Gnosis Chain, Binance Smart Chain, Avalanche, Polygon, and Aurora.'
         },
         {
-          question: 'When can I buy Bored David?',
-          answer: 'COMMON NFTs will be available to claim and mint at the end of May 2022.'
+          question: 'Is there a time limit to claim my airdrop?',
+          answer: 'The addresses of the users that participated in the giveaway quests are whitelisted to free mint the nft. BUT this won’t last forever. Since the supply is not high even if you are whitelisted to free mint if the collection goes sold out on that particular chain then you won’t be able to claim your NFT. This is why you should claim your NFTs immediately in order to not risk losing them.'
         },
         {
-          question: 'When can I buy RARE NFTs?',
-          answer: 'Mint date of RARE NFTs will be defined, but it will for sure be after all the common NFTs will be claimed/minted.'
+          question: 'What\'s the difference between common and rare NFTs?',
+          answer: 'When minting the NFT you have two choices you need to make: the blockchain where you want to mint your NFT AND the rarity of the NFT.\n' +
+              '\n' +
+              'Bored David NFTs have two rarities: COMMON and RARE.\n' +
+              '\n' +
+              'COMMON NFTs will give you access to the SNAFU DAO.\n' +
+              '\n' +
+              'RARE NFTs will make you a curator of the SNAFU Collections + other benefits that we can define together with the community (eg: royalties, etc.).'
         },
         {
-          question: 'Can I buy with credit card?',
-          answer: 'No. You will need to use the default currency of the blockchain where you want to mint the NFT on (eg: ETH on Ethereum, xDAI on Gnosis Chain, AVAX on Avalanche, etc. If you want to buy with credit card you will need to first use other services to onboard, eg: https://ramp.network/'
+          question: 'Is there a difference in the attributes of RARE NFTs vs COMMON?',
+          answer: 'No. The only difference will be an “R” banner at the bottom right of the image.'
         },
         {
-          question: 'How can I claim airdropped NFT?',
-          answer: 'We will add a section to this webapp where you will be able to see the airdrops you can claim and mint the NFT. Remember: the NFT won\'t be sent to you, you will need to manually mint it for free.'
+          question: 'What\'s the currency to buy NFTs?',
+          answer: 'The prices are the same across all the blockchains but you will need to pay in the native currency of the blockchain (ETH on Ethereum, xDAI on Gnosis Chain, MATIC on Polygon, BNB on Binance Smart Chain, ETH on Aurora).'
         },
         {
-          question: 'What\'s the roadmap?',
-          answer: 'First thing is to integrate the pfp collection inside the SNAFU Dapp to allow users set Bored David profile images; Then we will create a discord channel where collectors with rare NFTs will be able to vote for artworks to mint. In the meanwhile we will do tons of giveaways, raffles, meme contests, etc.'
+          question: 'What does it mean "Waiting for unveiling"?',
+          answer: 'When you buy an NFT you will have a “waiting for unveiling” GIF. This means that the metadata of the NFT you bought isn’t updated yet so you still won’t know the attributes of your NFT.\n' +
+              '\n' +
+              'We will uneil NFTs each hour.\n' +
+              '\n' +
+              'On Ethereum network the unveiling could have some delay due to congestion or high gas fees.'
+        },
+        {
+          question: 'How can I bridge money between the different blockchains?',
+          answer: 'You can use several bridges to do this. We recomend Connext (https://bridge.connext.network/) and Rainbow Bridge for Aurora (https://rainbowbridge.app/transfer). '
         },
       ]
     }

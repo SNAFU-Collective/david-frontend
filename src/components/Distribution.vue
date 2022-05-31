@@ -6,15 +6,14 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          There will be a maximum of <b class="blueColor">25000 unique Bored Davids</b>, minted proportionally across multiple blockchains.<br/>
+          There will be a maximum of <b class="blueColor">6666 unique Bored Davids</b>, minted proportionally across multiple blockchains.<br/>
           We will reserve the following percentages:<br/>
         </p>
           <ul style="text-align: start;">
-            <li><b class="blueColor">10000 COMMON NFTs</b> airdropped to the community;</li>
-            <li><b class="blueColor">5000 COMMON NFTs</b> reserved for Pool Together, Farming and Giveaways;</li>
-            <li><b class="blueColor">2500 COMMON NFTs</b> reserved for sale;</li>
-            <li><b class="blueColor">2500 COMMON NFTs</b> reserved for the team;</li>
-            <li><b class="blueColor">5000 RARE NFTs</b> reserved for sale.</li>
+            <li><b class="blueColor">3100 COMMON NFTs</b> airdropped to the community;</li>
+            <li><b class="blueColor">3000 COMMON / RARE NFTs</b> reserved for sale;</li>
+            <li><b class="blueColor">450 COMMON NFTs</b> reserved for the team;</li>
+            <li><b class="blueColor">116 COMMON NFTs</b> reserved for Pool Together, Farming and Giveaways;</li>
           </ul>
       </v-row>
     </v-col>

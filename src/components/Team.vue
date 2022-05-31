@@ -84,8 +84,8 @@ export default {
   .closeButton {
     display: none;
   }
-  .teamImage {
-    width: 45% !important;
-  }
+  /*.teamImage {*/
+  /*  width: 45% !important;*/
+  /*}*/
 }
 </style>

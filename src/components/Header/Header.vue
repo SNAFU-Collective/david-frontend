@@ -1,38 +1,43 @@
 <template>
   <div class="headerMain">
     <div id="desktopHeader">
-      <v-col cols="10" id="pinnedLeftHeader">
-          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png"/></router-link>
+      <v-col cols="1" id="pinnedLeftHeader">
+          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png" style="image-rendering: -webkit-optimize-contrast;"/></router-link>
       </v-col>
 
-<!--      <v-col cols="8" id="subtitle">-->
-<!--        <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
-<!--        <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
-<!--      </v-col>-->
+    <v-col cols="8" id="subtitle">
+       <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
+       <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
+        <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
+       <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
+       <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+    </v-col>
 
-      <v-col cols="2">
-<!--        <wallet-status class="mt-5 pb-2 walletHeader"/>-->
-        <h2 style="color: white">MINTING 31 MAY!</h2>
+      <v-col cols="3">
+        <wallet-status class="mt-5 pb-2 walletHeader"/>
       </v-col>
 
     </div>
 
     <div id="mobileHeader">
-      <v-col cols="6" id="mobileLogoContainer">
+      <div id="mobileHeaderContainer">
+        <v-col cols="6" id="mobileLogoContainer">
           <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
-      </v-col>
-      <v-col cols="6" style="text-align: right">
-        <h2 style="color: white">MINTING 31 MAY!</h2>
-      </v-col>
-<!--      <v-col cols="1" id="menuMobile">-->
-<!--        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"-->
-<!--               :width=windowWidth>-->
-<!--          <wallet-status class="mt-5 pb-2 walletHeader"/>-->
-<!--          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>-->
-<!--          <router-link class="backHome" :to="{ name: 'Wallet'}">MY PROFILE</router-link>-->
-<!--        </Slide>-->
-<!--      </v-col>-->
+        </v-col>
+      </div>
 
+      <div id="menuMobile">
+        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
+               :width=windowWidth>
+          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
+          <router-link class="backHome" :to="{ name: 'Airdrop'}">AIRDROP</router-link>
+          <router-link class="backHome" :to="{ name: 'Sale'}">BUY</router-link>
+          <router-link class="backHome" :to="{ name: 'Wallet'}">MY COLLECTION</router-link>
+          <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+
+          <wallet-status class="mt-5 pb-2 walletHeader mobileWallet"/>
+        </Slide>
+      </div>
     </div>
   </div>
 </template>
@@ -43,8 +48,8 @@ import WalletStatus from '../Wallet/WalletStatus.vue'
 
 export default {
   components: {
-    // WalletStatus,
-    // Slide
+     WalletStatus,
+    Slide
   },
   methods: {
     handleOpenMenu() {
@@ -156,7 +161,7 @@ export default {
 
   .backHome {
     text-decoration: unset;
-    color: #ffffff !important;
+    color: #ffffff8c !important;
     font-size: 15px;
     font-weight: 600;
     padding: 0 5px;
@@ -296,7 +301,7 @@ export default {
     top: 0;
     transition: .5s;
     z-index: 1000;
-    opacity: 0.9;
+    opacity: 1;
   }
 
   .bm-item-list > * {
@@ -326,6 +331,13 @@ export default {
     font-size: 18px;
     padding-bottom: 5px;
     color: white;
+  }
+
+  .mobileWallet {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    padding-right: 0px !important;
   }
 
 }

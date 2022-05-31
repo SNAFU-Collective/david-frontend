@@ -1,13 +1,12 @@
 
 import { ethers } from "ethers";
-import ERC1155ABI from "../../assets/abis/ERC1155.json";
-import SNAFU20 from "@/assets/abis/SNAFU20Pair.json";
-import SNAFU721 from "@/assets/abis/SNAFU721.json"
-import FARM from "@/assets/abis/UNIFTY_FARM.json"
+import Vue from "vue";
+import BOREDABI from "@/assets/abis/BoredDavid.json"
 
-import { snafu20Address, snafuNftAddress, snafu721Address, xdaiRPC, commonFarmAddress } from "../../utils/constants"
-
+import { getNetworks } from "../../utils/networks";
 import { getField, updateField } from 'vuex-map-fields';
+import detectEthereumProvider from '@metamask/detect-provider';
+
 
 export default {
     namespaced: true,
@@ -17,14 +16,19 @@ export default {
         isConnected: false,
         isLoaded: false,
         account: null,
-        isLoading: false,
+        isConnecting: false,
         chainId: null,
+        boredDavidState: {},
+        airdropState: {},
     },
     getters: {
         getField,
-        getCommonFarm: (state) => state.commonFarm,
         getUserAccount: (state) => state.account,
         getUserSigner: (state) => state.connected.signer,
+        isConnecting: (state) => state.isConnecting,
+        airdropState: (state) => state.airdropState,
+        boredDavidState: (state) => state.boredDavidState,
+        chainId: (state) => state.chainId,
         isMetamask: async (state) => {
             if (state.connected.web3 && state.connected.web3.provider.isMetamask && !state.connected.web3.provider.isMetamask()) {
                 return false
@@ -32,32 +36,54 @@ export default {
                 return true
             }
         },
-        isXdai: (state) => {
-            if (state.chainId === 100 || state.chainId === '0x64') {
-                return true
-            } else {
+        isCorrectNetwork: (state) => {
+            let chainId = state.chainId;
+            let networks = getNetworks();
+            let chain = networks[parseInt(chainId)];
+            if (!chain) {
                 return false
             }
+            return true
+        },
+        getNetwork: (state) => {
+            let networks = getNetworks();
+
+            let chain = networks[parseInt(state.chainId)]
+            if (chain) {
+                return chain;
+            }
+            return null;
+        },
+        getBalance: (state) => {
+            return state.connected.balance;
         }
     },
     mutations: {
         updateField,
         setConnected: (state, payload) => state.isConnected = payload,
-        setSnafuSupply: (state, payload) => state.snafuSupply = payload,
-        setSnafuLockedSupply: (state, payload) => state.snafuLockedSupply = payload,
-        setSnafuCirculatingSupply: (state, payload) => state.snafuCirculatingSupply = payload,
-        setSnafuFee: (state, payload) => state.snafuFee = payload,
 
         disconnectWallet: async function (state) {
             state.connected = {};
             state.account = null;
+        },
+        setBoredDavidState: (state, payload) => {
+            Vue.set(state.boredDavidState, payload.chainId, payload);
+        },
+        setAirdropState: (state, payload) => {
+            Vue.set(state.airdropState, payload.chainId, payload.airdropAvailable);
+        },
+        setBalance: (state, payload) => {
+            Vue.set(state.connected, 'balance', payload.balance);
         }
+
     },
     actions: {
         setWeb3: async function (context, payload) {
             let { web3, connected } = payload;
             let state = context.state;
             console.log("connected", connected)
+            let networks = getNetworks();
+
 
             if (connected) {
                 state = context.state.connected;
@@ -65,27 +91,46 @@ export default {
                 let signer = await web3.getSigner();
                 state.signer = signer
                 context.state.account = (await signer.getAddress());
-                context.state.chainId = (await web3.getNetwork()).chainId
-                //console.log('Chain ID: ', context.state.chainId)
-
-                state.snafuNft = await new ethers.Contract(snafuNftAddress, ERC1155ABI, signer);
-                state.snafu721 = await new ethers.Contract(snafu721Address, SNAFU721.output.abi, signer);
-                state.snafu20 = await new ethers.Contract(snafu20Address, SNAFU20, signer);
-                state.commonFarm = await new ethers.Contract(commonFarmAddress, FARM, signer);
+                context.state.chainId = parseInt((await web3.getNetwork()).chainId)
+                let chain = networks[parseInt(context.state.chainId)];
+                if (chain) {
+                    state.boredDavidContract = await new ethers.Contract(chain.address, BOREDABI.abi, signer);
+                }
+                context.dispatch('updateBalance');
+                context.dispatch("nfts/getNftsFromUser", null, { root: true })
             } else {
-                state.web3 = web3;
-                state.snafuNft = await new ethers.Contract(snafuNftAddress, ERC1155ABI, web3);
-                state.snafu721 = await new ethers.Contract(snafu721Address, SNAFU721.output.abi, web3);
-                state.snafu20 = await new ethers.Contract(snafu20Address, SNAFU20, web3);
-                state.commonFarm = await new ethers.Contract(commonFarmAddress, FARM, web3);
-                context.dispatch("updateSnafu20Supply");
-                context.dispatch("updateSnafu20Fee");
+                for (let i in networks) {
+                    let network = networks[i];
+                    let provider = new ethers.providers.JsonRpcProvider(network.rpc);
+                    let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider);
+                    context.dispatch('updateBoredDavidState', { chainId: i, contract });
+                }
+
             }
 
             console.log("setting Web3");
         },
+        updateBoredDavidStateForAll: async function (context) {
+            let networks = getNetworks();
+            for (let i in networks) {
+                let network = networks[i];
+                let provider = new ethers.providers.JsonRpcProvider(network.rpc);
+                let contract = await new ethers.Contract(network.address, BOREDABI.abi, provider);
+                await context.dispatch('updateBoredDavidState', { chainId: i, contract });
+            }
+        },
+        async updateBalance(context) {
+            if (context.state.connected && context.state.connected.signer) {
+                context.state.connected.signer.getBalance().then(async function (balance) {
+                    await context.commit('setBalance', { balance });
+                });
+            } else {
+                await context.commit('setBalance', { balance: 0 });
+            }
+        },
         connectWallet: async function (context) {
             console.log("connecting");
+            context.state.isConnecting = true;
 
             let provider, hasProvider
             try {
@@ -100,7 +145,6 @@ export default {
                 const web3 = new ethers.providers.Web3Provider(provider);
                 await context.dispatch("setWeb3", { web3, connected: true });
                 context.commit("setConnected", true)
-                context.dispatch("updateSnafu20Balance");
 
 
                 // eslint-disable-next-line no-unused-vars
@@ -110,8 +154,9 @@ export default {
 
                 // Subscribe to chainId change
                 provider.on("chainChanged", (chainId) => {
-                    context.state.chainId = chainId
+                    context.state.chainId = parseInt(chainId)
                     console.log('Chain ID: ', context.state.chainId)
+                    context.dispatch("connectWallet");
                 });
 
                 // Subscribe to provider disconnection
@@ -121,6 +166,8 @@ export default {
                     context.dispatch("disconnectWallet");
                 });
             }
+            context.state.isConnecting = false;
+
         },
         disconnectWallet: async function (context) {
             await this._vm.$web3Modal.clearCachedProvider();
@@ -128,9 +175,8 @@ export default {
             context.commit("setConnected", false)
         },
         startWeb3: async function (context) {
-            let web3 = new ethers.providers.JsonRpcProvider(xdaiRPC);
 
-            context.dispatch("setWeb3", { web3, connected: false });
+            context.dispatch("setWeb3", { web3: null, connected: false });
 
             if (this._vm.$web3Modal.cachedProvider) {
                 //This is case where someone already connected
@@ -138,62 +184,93 @@ export default {
             }
 
         },
-        async updateSnafu20Balance(context) {
-            let contract = context.state.snafu20;
-            let account = context.state.account;
-        },
-        async updateSnafu20Supply(context) {
-            let contract = context.state.snafu20;
-            console.log("updatingSupply")
-            let supply = await contract.totalSupply();
-            context.commit("setSnafuSupply", supply.toString());
-            context.dispatch("updateSnafu20LockedSupply");
-        },
-        async updateSnafu20LockedSupply(context) {
-            const stakingPoolAddress = '0x09aAB5cE8e2F5f7De524FC000971c57f9E5E2B55'
-            let contract = context.state.snafu20;
+        async updateBoredDavidState(context, payload) {
 
-            let vestedBalance = await contract.balanceOf(stakingPoolAddress);
-            context.commit("setSnafuLockedSupply", vestedBalance.toString());
-
-            let circulatingSupply = ethers.utils.formatEther(context.state.snafuSupply) - ethers.utils.formatEther(vestedBalance)
-            context.commit("setSnafuCirculatingSupply", (ethers.utils.parseUnits(circulatingSupply.toString())).toString());
-        },
-        async updateSnafu20Fee(context) {
-            let contract = context.state.snafu20;
-            console.log("updatingFee")
-            let fee = await contract.fee();
-            context.commit("setSnafuFee", fee.toString());
-        },
-        async addSnafuToMetamask(context) {
-            const tokenAddress = snafu20Address
-            const tokenSymbol = 'SNAFU';
-            const tokenDecimals = 18;
-            const tokenImage = 'https://gateway.pinata.cloud/ipfs/QmYFnC1RxAvNzWFmtR5CQYWBz8pgzDidqQKg8o1WVqppEq';
-
-            try {
-                await context.state.connected.web3.provider.request({
-                    method: 'wallet_watchAsset',
-                    params: {
-                        type: 'ERC20', // Initially only supports ERC20, but eventually more!
-                        options: {
-                            address: tokenAddress, // The address that the token is at.
-                            symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
-                            decimals: tokenDecimals, // The number of decimals in the token
-                            image: tokenImage, // A string url of the token logo
-                        },
-                    },
-                });
-            } catch (error) {
-                console.log(error);
-            }
+            let chainId = payload.chainId;
+            console.log("updating bored david state for chainId", chainId)
+            let contract = payload.contract || context.state.boredDavidState[chainId].contract;
+            let commonCost = await contract.commonCost();
+            let rareCost = await contract.rareCost();
+            let maxMintAmount = await contract.maxMintAmount();
+            let maxSupply = await contract.maxSupply();
+            let totalSupply = await contract.totalSupply();
+            context.commit("setBoredDavidState", { contract, chainId, commonCost, rareCost, maxMintAmount, maxSupply, totalSupply });
         },
         //Updates fees, balance, nfts ... to use after transactions!
-        updateData(context){
-            context.dispatch("updateSnafu20Fee")
-            context.dispatch("updateSnafu20Supply")
-            context.dispatch("updateSnafu20LockedSupply")
-            context.dispatch("updateSnafu20Balance")
+        updateData(context, chainId) {
+            context.dispatch("updateBoredDavidState", { contract: null, chainId: parseInt(chainId) })
+            context.dispatch("checkAirdrop", context.state.account)
+            context.dispatch("nfts/getNftsFromUser", null, { root: true })
+            context.dispatch('updateBalance');
+        },
+        async checkAirdrop(context, address) {
+            let networks = getNetworks();
+            for (let i in networks) {
+                let contract = context.state.boredDavidState[i] && context.state.boredDavidState[i].contract ? context.state.boredDavidState[i].contract : await new ethers.Contract(networks[i].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[i].rpc));
+                let airdropAvailable = await contract.eligibleForAirdrop(address);
+                context.commit("setAirdropState", { chainId: i, address, airdropAvailable });
+            }
+        },
+        async checkAirdropForChain(context, payload) {
+            let chainId = payload.chainId;
+            let address = payload.address;
+            let networks = getNetworks();
+
+            let contract = context.state.boredDavidState[chainId] && context.state.boredDavidState[chainId].contract ? context.state.boredDavidState[chainId].contract : await new ethers.Contract(networks[chainId].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[chainId].rpc));
+            let airdropAvailable = await contract.eligibleForAirdrop(address);
+            context.commit("setAirdropState", { chainId, address, airdropAvailable });
+        },
+        claimAirdrop(context) {
+            let state = context.state;
+            let contract = state.connected.boredDavidContract;
+            let airdropAvailable = state.airdropState[state.chainId];
+            if (airdropAvailable) {
+                return contract.claimAirdrop();
+            }
+        },
+        mintNfts(context, payload) {
+            let state = context.state;
+            let contract = state.connected.boredDavidContract;
+            let { rareMint, totalCost, mintNumber } = payload;
+            if (rareMint) {
+                return contract.mintRare(mintNumber, { value: totalCost });
+            } else {
+                return contract.mintCommon(mintNumber, { value: totalCost });
+            }
+        },
+        async connectToChain(context, chainId) {
+            const provider = await detectEthereumProvider();
+            let networks = getNetworks();
+            let network = networks[chainId];
+            if (network) {
+                provider.request({
+                    method: 'wallet_switchEthereumChain',
+                    params: [{ chainId: `0x${Number(chainId).toString(16)}` }],
+                })
+                    .then((res) => {
+                        console.log('switch', res)
+                    })
+                    .catch((e) => {
+                        if (e.code === 4902) {
+                            provider.request({
+                                method: 'wallet_addEthereumChain',
+                                params: [
+                                    {
+                                        chainId: `0x${Number(chainId).toString(16)}`,
+                                        chainName: network.name,
+                                        nativeCurrency: {
+                                            name: network.symbol,
+                                            symbol: network.symbol, // 2-6 characters long
+                                            decimals: 18,
+                                        },
+                                        rpcUrls: [network.rpc],
+                                        blockExplorerUrls: [network.explorer],
+                                    },
+                                ],
+                            })
+                        }
+                    })
+            }
         }
     },
 }
