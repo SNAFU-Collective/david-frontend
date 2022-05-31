@@ -54,7 +54,7 @@
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
           :class="screenWidth > 768 ? index > 0 ? 'ml-5' : 'ml-0' : 'mb-5 mx-2'"
-          :width="screenWidth > 768 ? '9.5vw' : '100%'"
+          :width="screenWidth > 768 ? '11vw' : '100%'"
           style="margin-top: 20px"
           dark
         >
