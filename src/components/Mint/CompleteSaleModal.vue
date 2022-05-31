@@ -22,7 +22,7 @@
                 justify="center"
                 style="text-align: center"
             >
-              You will receive {{mintNumber}} {{rareMint ? 'rare' : 'common'}} Bored David NFT!
+              You will receive {{mintNumber}} {{rareMint ? 'RARE' : 'COMMON'}} Bored David NFT!
             </v-row>
             <v-row
                 no-gutters

@@ -9,103 +9,112 @@
         ></v-progress-circular>
       </v-row>
       <v-row no-gutters justify="center" class="py-4">
-       <p>Loading</p>
+        <p>Loading</p>
       </v-row>
     </div>
     <div v-else style="margin-top: 100px">
-      <div v-if="wrongChain" >
+      <div v-if="wrongChain">
         <v-container>
           <v-alert type="error" class="mt-5 mb-5">
-          <v-row>
-            <v-col lg="9" md="12">
+            <v-row>
+              <v-col lg="9" md="12">
               <span class="body-1">
                 You are not connected to the correct chain.
               </span>
-            </v-col>
-            <v-col lg="3" md="12">
-              <v-btn
-                  dark
-                  small
-                  class="ml-10"
-                  @click="connectToChain(selectedChainId)"
-              >
-                Switch to {{ selectedChainId | networkName }}
-              </v-btn>
-            </v-col>
-          </v-row>
-        </v-alert>
+              </v-col>
+              <v-col lg="3" md="12">
+                <v-btn
+                    dark
+                    small
+                    class="ml-10"
+                    @click="connectToChain(selectedChainId)"
+                >
+                  Switch to {{ selectedChainId | networkName }}
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-alert>
         </v-container>
       </div>
 
       <div class="mt-16 mx-16">
-          <div class="mx-lg-16 " id="mint" style="">
-            <div style="position: relative;" class="boredDavidPreviewImages">
-              <v-img src="pfp_no_bg/3.png" width="200px" class="leftMintImage" id="preview1" style="display: block !important;"/>
-              <v-img src="pfp_no_bg/38.png" width="200px" class="rightMintImage" id="preview2"/>
+        <div class="mx-lg-16 " id="mint" style="">
+          <div style="position: relative;" class="boredDavidPreviewImages">
+            <v-img src="pfp_no_bg/3.png" width="200px" class="leftMintImage" id="preview1"
+                   style="display: block !important;"/>
+            <v-img src="pfp_no_bg/38.png" width="200px" class="rightMintImage" id="preview2"/>
 
-              <v-img src="pfp_no_bg/4.png" width="200px" class="leftMintImage" id="preview3" style="margin-left: 80px "/>
-              <v-img src="pfp_no_bg/43.png" width="200px" class="rightMintImage" id="preview4" style="margin-right: 80px "/>
+            <v-img src="pfp_no_bg/4.png" width="200px" class="leftMintImage" id="preview3" style="margin-left: 80px "/>
+            <v-img src="pfp_no_bg/43.png" width="200px" class="rightMintImage" id="preview4"
+                   style="margin-right: 80px "/>
 
-              <v-img src="pfp_no_bg/8.png" width="200px" class="leftMintImage" id="preview5" style="margin-left: 160px "/>
-              <v-img src="pfp_no_bg/49.png" width="200px" class="rightMintImage" id="preview6" style="margin-right: 160px "/>
+            <v-img src="pfp_no_bg/8.png" width="200px" class="leftMintImage" id="preview5" style="margin-left: 160px "/>
+            <v-img src="pfp_no_bg/49.png" width="200px" class="rightMintImage" id="preview6"
+                   style="margin-right: 160px "/>
 
-              <v-img src="pfp_no_bg/42.png" width="200px" class="leftMintImage" id="preview7" style="margin-left: 240px "/>
-              <v-img src="pfp_no_bg/45.png" width="200px" class="rightMintImage" id="preview8" style="margin-right: 240px "/>
+            <v-img src="pfp_no_bg/42.png" width="200px" class="leftMintImage" id="preview7"
+                   style="margin-left: 240px "/>
+            <v-img src="pfp_no_bg/45.png" width="200px" class="rightMintImage" id="preview8"
+                   style="margin-right: 240px "/>
 
-              <v-img src="pfp_no_bg/21.png" width="200px" class="leftMintImage" id="preview9" style="margin-left: 320px "/>
-              <v-img src="pfp_no_bg/15.png" width="200px" class="rightMintImage" id="preview10" style="margin-right: 320px "/>
-            </div>
-
-            <v-row justify="center">
-              <h4><b class="blueColor">Mint on {{blockchain.name}}</b></h4>
-            </v-row>
-
-            <v-row justify="center" class="mt-10" style="text-align: center">
-              <h4>You don't want to miss out, join the party while you can</h4>
-            </v-row>
-            <v-row justify="center" class="mt-5">
-              <h2> {{ sale.info.totalSupply }} / {{ sale.info.maxSupply }} <strong> ALREADY MINTED</strong></h2>
-            </v-row>
-
-            <div>
-              <v-row no-gutters justify="center" class="mt-10">
-                <v-switch class="raritySwitch" v-model="buyRare" label="Become an Art Curator" color="blue">bla</v-switch>
-              </v-row>
-              <v-row justify="center">
-                <v-col cols="12"  style="justify-content: center; display: contents">
-                  <v-btn @click="decrementMintNumber" icon x-large class="mx-5" color="white">
-                    <v-icon>mdi-minus</v-icon>
-                  </v-btn>
-                  <h1 class=""> {{ mintNumber }} </h1>
-                  <v-btn @click="incrementMintNumber" icon x-large class="mx-5" color="white">
-                    <v-icon>mdi-plus</v-icon>
-                  </v-btn>
-                </v-col>
-              </v-row>
-              <v-row  justify="center" class="mt-10">
-                <h3> Price: {{ totalCost | fromWei }} {{ symbol }}</h3>
-              </v-row>
-              
-              <v-row justify="center" class="mt-15">
-                <v-col cols="12" style="justify-content: center; display: contents" >
-                  <v-btn
-                      light
-                      x-large
-                      @click="() => (showCompleteSaleModal = true)"
-                      :disabled="wrongChain || !hasEnoughBalance"
-                  >
-                    Buy
-                  </v-btn>
-                </v-col>
-              </v-row>
-              
-              <v-row  justify="center" class="mt-10">
-                <h4> Your balance: {{ getBalance | fromWei | truncatePrice }} {{ symbol }}</h4>
-              </v-row>
-            </div>
-
-            </div>
+            <v-img src="pfp_no_bg/21.png" width="200px" class="leftMintImage" id="preview9"
+                   style="margin-left: 320px "/>
+            <v-img src="pfp_no_bg/15.png" width="200px" class="rightMintImage" id="preview10"
+                   style="margin-right: 320px "/>
           </div>
+
+          <v-row justify="center">
+            <h4><b class="blueColor">Mint on {{ blockchain.name }}</b></h4>
+          </v-row>
+
+          <v-row justify="center" class="mt-10" style="text-align: center">
+            <h4>You don't want to miss out, join the party while you can</h4>
+          </v-row>
+          <v-row justify="center" class="mt-5">
+            <h2> {{ sale.info.totalSupply }} / {{ sale.info.maxSupply }} <strong> ALREADY MINTED</strong></h2>
+          </v-row>
+
+          <div>
+            <v-row no-gutters justify="center" class="mt-10">
+              <v-switch class="raritySwitch" v-model="buyRare" label="Become an Art Curator (RARE NFT)"
+                        color="blue"></v-switch>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="12" style="justify-content: center; display: contents">
+                <v-btn @click="decrementMintNumber" icon x-large class="mx-5" color="white">
+                  <v-icon>mdi-minus</v-icon>
+                </v-btn>
+                <h1 class=""> {{ mintNumber }} </h1>
+                <v-btn @click="incrementMintNumber" icon x-large class="mx-5" color="white">
+                  <v-icon>mdi-plus</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row justify="center" class="mt-10">
+              <h3> Price: {{ totalCost | fromWei }} {{ symbol }}</h3>
+            </v-row>
+
+            <v-row v-if="!hasEnoughBalance" justify="center" class="mt-10">
+              <h4 class="pinkColor" style="text-align: center"> You don't have enough money! <br> Your balance is
+                {{ getBalance | fromWei | truncatePrice }} {{ symbol }}</h4>
+            </v-row>
+
+            <v-row justify="center" class="mt-15">
+              <v-col cols="12" style="justify-content: center; display: contents">
+                <v-btn
+                    light
+                    x-large
+                    @click="() => (showCompleteSaleModal = true)"
+                    :disabled="wrongChain || !hasEnoughBalance"
+                >
+                  Buy
+                </v-btn>
+              </v-col>
+            </v-row>
+
+          </div>
+        </div>
+      </div>
 
       <complete-sale-modal
           :show="showCompleteSaleModal"
@@ -238,42 +247,43 @@ export default {
     },
     addBoredDavidPreview: function () {
       if (this.mintNumber < 11) {
-        let styleTag = document.getElementById(`preview${this.mintNumber}`);
-        styleTag.style.display = "block";
+        let styleTag = document.getElementById(`preview${this.mintNumber}`)
+        styleTag.style.display = "block"
       }
     },
     removeBoredDavidPreview: function () {
       if (this.mintNumber < 10) {
-        let styleTag = document.getElementById(`preview${this.mintNumber + 1}`);
-        styleTag.style.display = "none";
+        let styleTag = document.getElementById(`preview${this.mintNumber + 1}`)
+        styleTag.style.display = "none"
       }
-    }
+    },
   },
 }
 </script>
 
 <style>
-.leftMintImage{
+.leftMintImage {
   position: absolute;
   left: 0;
-  top:150px;
+  top: 150px;
   display: none;
 }
 
 .rightMintImage {
   position: absolute;
   right: 0;
-  top:150px;
+  top: 150px;
   display: none;
 }
 
 @media screen and (max-width: 768px) {
-  .boredDavidPreviewImages{
+  .boredDavidPreviewImages {
     display: none;
   }
 }
+
 @media screen and (min-width: 769px) {
-  .boredDavidPreviewImages{
+  .boredDavidPreviewImages {
     display: block;
   }
 }
