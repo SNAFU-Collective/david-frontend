@@ -121,7 +121,10 @@ export default {
       if (!this.nft.metadata)
         return true
 
-      if (this.nft.metadata.name === "Bored David - Waiting For Unveil")
+      if (this.nft.metadata.name && this.nft.metadata.name === "Bored David - Waiting For Unveil")
+        return true
+
+      if (this.nft.unveiled ==! undefined && this.nft.unveiled === false)
         return true
 
       return false

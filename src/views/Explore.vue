@@ -59,7 +59,7 @@
         </v-row>
       </div>
 
-      <v-row justify="start" class="pt-10">
+      <v-row v-if="nfts.length > 0" justify="start" class="pt-10">
         <NftCard style="margin-top: 50px !important;" :cardSize="screenWidth > 768 ? 200 : 170" v-for="nft in nfts"
                  :key="nft.id"
                  :network_id="parseInt(nft.blockchain.id)"
