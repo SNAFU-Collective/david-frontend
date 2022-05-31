@@ -52,45 +52,25 @@ export default {
                 let boredDavidState = await context.rootGetters["connectweb3/boredDavidState"]
                 let token = boredDavidState[i] && boredDavidState[i].contract ? boredDavidState[i].contract : await new ethers.Contract(networks[i].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[i].rpc))
 
-                let account = payload.address
-                const sentLogs = await token.queryFilter(
-                    token.filters.Transfer(account, null), networks[i].starting_block,
-                )
-                const receivedLogs = await token.queryFilter(
-                    token.filters.Transfer(null, account), networks[i].starting_block,
-                )
+                let nfts = (await token.walletOfOwner(payload.address)).toString()
+                nfts = nfts.split(',')
+                nfts.forEach((nft) => {
 
-                const logs = sentLogs.concat(receivedLogs)
-                    .sort(
-                        (a, b) =>
-                            a.blockNumber - b.blockNumber ||
-                            a.transactionIndex - b.TransactionIndex,
-                    )
-
-                const owned = new Set()
-
-                for (const log of logs) {
-                    const {from, to, tokenId} = log.args
-
-                    if (addressEqual(to, account)) {
-                        owned.add(tokenId.toString())
-                    } else if (addressEqual(from, account)) {
-                        owned.delete(tokenId.toString())
-                    }
-                }
-
-                for (const nft of owned) {
-                    token.tokenURI(nft).then(async uri => {
-                        let metadata = await axios.get(uri)
-                        results.push({
-                            id: nft,
-                            metadata: metadata.data,
-                            network_id: i,
+                        token.tokenURI(nft).then(async uri => {
+                            let metadata = await axios.get(uri)
+                            results.push({
+                                id: nft,
+                                metadata: metadata.data,
+                                network_id: i,
+                            })
                         })
-                    })
-                }
+
+
+                })
             }
 
+
+            console.log(results)
             context.commit("setNfts", {address: payload.address, results})
         },
     },
