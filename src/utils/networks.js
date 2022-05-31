@@ -90,7 +90,7 @@ const networks = {
         explorer: "https://polygonscan.com/tx/",
         nft_explorer_url: "https://polygonscan.com/token/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C",
         rpc: "https://polygon-rpc.com/",
-        marketplace_url: "https://opensea.io/assets/matic/0x477352e3c8F3B77c4cB1f1dc4235Ce13Ae5E60be/",
+        marketplace_url: "https://opensea.io/assets/matic/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C/",
         logo: "projects/polygon.jpg",
         starting_block: 28961978,
         testnet: false

@@ -52,7 +52,7 @@
             <v-row v-if="userNfts.length === 0" class=" mt-10 mb-10" style="text-align: center" justify="center">
                <span style=" text-align: center">
                 No NFT found on this wallet. <br/>
-                <router-link class="blueColor" :to="{ name: 'Sale'}">Buy now</router-link>
+                <router-link class="blueColor" :to="{ name: 'Sale'}">Mint now</router-link>
                </span>
             </v-row>
 
@@ -60,7 +60,7 @@
               <h1 class="pinkColor text-center">Share your NFTs on Twitter!</h1>
             </v-row>
             <v-row  justify="center" class="pt-6 pb-16">
-              <h2 class="blueColor text-center">#BetterBoredThanBoring #BoredDavid</h2>
+              <h2 class="blueColor text-center">#BetterBoredThanBoring #BoredDavid #NFTItalia</h2>
             </v-row>
           </div>
 
