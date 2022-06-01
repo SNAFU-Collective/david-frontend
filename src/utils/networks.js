@@ -77,7 +77,7 @@ const networks = {
         symbol: "AVAX",
         explorer: "https://snowtrace.io/tx/",
         nft_explorer_url: "https://snowtrace.io/token/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C?a=",
-        rpc: "https://rpc.ankr.com/avalanche",
+        rpc: "https://api.avax.network/ext/bc/C/rpc",
         marketplace_url: "https://nftrade.com/assets/avalanche/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C/",
         logo: "projects/avalanche.jpg",
         starting_block: 15384298,
