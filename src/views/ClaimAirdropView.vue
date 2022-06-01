@@ -44,40 +44,42 @@
       </div>
 
       <div v-if="isClaimable" class="mt-10">
-        <h3>Congratulations!</h3>
-        <h3>You are eligible to mint for free a <b class="blueColor">common</b> Bored David NFT on the <b class="blueColor">{{ claimChainId | networkName }}</b> blockchain.</h3>
-
-        <v-card
-            dark
-            :class="screenWidth > 768 ? 'mt-5' : 'mb-5 mx-2 mt-5'"
-            :width="screenWidth > 768 ? '11vw' : '100%'"
-        >
-          <v-card-title>
-            <v-row no-gutters justify="center">
-              {{ claimChainId | networkName }}
-            </v-row>
-          </v-card-title>
-          <v-card-text>
-            <v-row no-gutters justify="center">
-              <v-img src="/pfp/unveiling.gif" width="50px"
-                     transition="slide-y-transition"></v-img>
-            </v-row>
-            <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
-              You can claim a free NFT on {{ claimChainId | networkName }}
-            </v-row>
-          </v-card-text>
-          <v-card-actions>
-            <v-row no-gutters justify="center">
-              <v-btn dark v-if="isClaimable" @click="() => showClaimAirdropModal = true" :disabled="wrongChain">
-                Mint
-              </v-btn>
-            </v-row>
-          </v-card-actions>
-        </v-card>
-
+        <v-row justify="center">
+          <h3 style="text-align: center">Congratulations! <br> You are eligible to mint for free a <b class="blueColor">common</b>
+            Bored David NFT on the <b class="blueColor">{{ claimChainId | networkName }}</b> blockchain.</h3>
+        </v-row>
+        <v-row justify="center">
+          <v-card
+              dark
+              :class="screenWidth > 768 ? 'mt-5' : 'mb-5 mx-2 mt-5'"
+              :width="screenWidth > 768 ? '14vw' : '100%'"
+          >
+            <v-card-title>
+              <v-row no-gutters justify="center">
+                {{ claimChainId | networkName }}
+              </v-row>
+            </v-card-title>
+            <v-card-text>
+              <v-row no-gutters justify="center">
+                <v-img src="/pfp/unveiling.gif" width="50px"
+                       transition="slide-y-transition"></v-img>
+              </v-row>
+              <v-row no-gutters justify="center" style="text-align: center" class="pt-5">
+                You can claim a free NFT on {{ claimChainId | networkName }}
+              </v-row>
+            </v-card-text>
+            <v-card-actions>
+              <v-row no-gutters justify="center">
+                <v-btn dark v-if="isClaimable" @click="() => showClaimAirdropModal = true" :disabled="wrongChain">
+                  Mint
+                </v-btn>
+              </v-row>
+            </v-card-actions>
+          </v-card>
+        </v-row>
 
       </div>
-        <claim-airdrop-modal :show="showClaimAirdropModal" @close="handleCloseClaimModal"/>
+      <claim-airdrop-modal :show="showClaimAirdropModal" @close="handleCloseClaimModal"/>
     </div>
   </v-container>
 </template>
