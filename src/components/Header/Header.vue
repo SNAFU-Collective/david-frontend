@@ -116,6 +116,11 @@ export default {
     align-content: center;
     align-items: center;
     padding: 0 20px;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   #menuMobile {
