@@ -49,19 +49,19 @@
       </v-row>
     </div>
     <div v-else-if="!loading && validAddress">
-      <v-row justify="center">You are elegible to claim {{totalAirdrops}} NFTs</v-row>
-      <v-row no-gutters class="pt-5">
+      <v-row justify="center" ><h2>You are elegible to claim {{totalAirdrops}} NFTs</h2></v-row>
+      <v-row no-gutters class="pt-5" justify="center">
 
         <v-card
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
-          :class="screenWidth > 768 ? index > 0 ? 'ml-5' : 'ml-0' : 'mb-5 mx-2'"
-          :width="screenWidth > 768 ? '11vw' : '100%'"
+          class='mb-5 mx-2'
+          :width="screenWidth > 768 ? '14vw' : '100%'"
           style="margin-top: 20px"
           dark
         >
           <v-card-title>
-            <v-row no-gutters justify="center">
+            <v-row no-gutters justify="center" style="font-size: 12px;  text-transform: uppercase;" class="blueColor">
               {{ airdrop.network.name }}
             </v-row>
           </v-card-title>
@@ -74,7 +74,7 @@
               {{
                 airdrop.airdropAvailable
                   ? "You can claim a free NFT on " + airdrop.network.name
-                  : "Not eligible for airdrop"
+                  : "Not eligible"
               }}
             </v-row>
           </v-card-text>
