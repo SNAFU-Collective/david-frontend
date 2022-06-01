@@ -44,11 +44,6 @@ export default {
             let results = []
 
             for (let i in networks) {
-                //TODO: we are having block limit issues with BSC when performing this code
-                //https://github.com/bnb-chain/bsc/issues/113
-                if (networks[i].symbol === 'BNB' || networks[i].symbol === 'MATIC' || networks[i].symbol === 'AVAX')
-                    continue
-
                 let boredDavidState = await context.rootGetters["connectweb3/boredDavidState"]
                 let token = boredDavidState[i] && boredDavidState[i].contract ? boredDavidState[i].contract : await new ethers.Contract(networks[i].address, BOREDABI.abi, new ethers.providers.JsonRpcProvider(networks[i].rpc))
 

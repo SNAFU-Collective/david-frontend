@@ -100,9 +100,9 @@ const networks = {
         name: "Aurora",
         symbol: "ETH",
         explorer: "https://aurorascan.dev/tx/",
-        nft_explorer_url: "https://aurorascan.dev/token/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C",
+        nft_explorer_url: "https://aurorascan.dev/token/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C?a=",
         rpc: "https://mainnet.aurora.dev",
-        marketplace_url: "https://endemic.app/token/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C-",
+        marketplace_url: "https://endemic.app/token/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c-",
         logo: "projects/aurora.svg",
         starting_block: 66699925,
         testnet: false
