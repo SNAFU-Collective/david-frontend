@@ -1,29 +1,29 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12" class="text-left">
-        <h3>Check if you are eligible for the airdrop</h3>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-col cols="8">
-        <v-text-field
-          v-model="address"
-          label="Address"
-          dark
-          prepend-icon="mdi-wallet"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="4">
-        <v-btn
-          light
-          :disabled="!validAddress"
-          @click="checkButton"
-        >
-          Search
-        </v-btn>
-      </v-col>
-    </v-row>
+<!--    <v-row>-->
+<!--      <v-col cols="12" class="text-left">-->
+<!--        <h3>Check if you are eligible for the airdrop</h3>-->
+<!--      </v-col>-->
+<!--    </v-row>-->
+<!--    <v-row justify="center">-->
+<!--      <v-col cols="8">-->
+<!--        <v-text-field-->
+<!--          v-model="address"-->
+<!--          label="Address"-->
+<!--          dark-->
+<!--          prepend-icon="mdi-wallet"-->
+<!--        ></v-text-field>-->
+<!--      </v-col>-->
+<!--      <v-col cols="4">-->
+<!--        <v-btn-->
+<!--          light-->
+<!--          :disabled="!validAddress"-->
+<!--          @click="checkButton"-->
+<!--        >-->
+<!--          Search-->
+<!--        </v-btn>-->
+<!--      </v-col>-->
+<!--    </v-row>-->
 
     <div v-if="!validAddress">
       <v-row justify="center">
@@ -48,8 +48,10 @@
         <p>Searching airdrops</p>
       </v-row>
     </div>
-    <div v-else>
+    <div v-else-if="!loading && validAddress">
+      <v-row justify="center">You are elegible to claim {{totalAirdrops}} NFTs</v-row>
       <v-row no-gutters class="pt-5">
+
         <v-card
           v-for="(airdrop, index) in getAirdropInfo"
           :key="index"
@@ -96,7 +98,7 @@ export default {
   data: function () {
     return {
       address: "",
-      loading: false,
+      loading: false
     };
   },
   mounted: function () {
@@ -130,6 +132,17 @@ export default {
         this.startConfettiEffects()
       }
       return airdropInfo;
+    },
+    totalAirdrops() {
+      let networks = this.getAirdropInfo
+      let total = 0
+      networks.forEach((network) => {
+        if (network.airdropAvailable) {
+          total++
+        }
+      });
+
+      return total
     },
     screenWidth() {
       return window.innerWidth
