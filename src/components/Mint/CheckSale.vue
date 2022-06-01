@@ -52,7 +52,7 @@
             <v-btn outlined
                    rounded
                    class="mt-3"
-                    :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? `Buy on ${sale.network.name}` : 'Soldout' }} </v-btn>
+                    :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? `Mint on ${sale.network.name}` : 'Soldout' }} </v-btn>
           </v-card-actions>
         </v-card>
       </v-row>
