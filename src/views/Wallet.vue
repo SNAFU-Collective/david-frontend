@@ -60,7 +60,7 @@
               <h1 class="pinkColor text-center">Share your NFTs on Twitter!</h1>
             </v-row>
             <v-row  justify="center" class="pt-6 pb-16">
-              <h2 class="blueColor text-center">#BetterBoredThanBoring #BoredDavid #NFTItalia</h2>
+              <h2 class="blueColor text-center">#NFTItalia #BoredDavid</h2>
             </v-row>
           </div>
 
