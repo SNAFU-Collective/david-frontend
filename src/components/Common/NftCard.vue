@@ -45,15 +45,15 @@
         </v-row>
 
         <v-row style="padding-top: 10px; padding-bottom: 5px" class="px-2">
-          <v-col cols="6">
+          <v-col cols="10">
             <v-row justify="start">
               <span class=" pinkColor"><strong>{{ nft.id }}</strong></span>
             </v-row>
             <v-row justify="start">
-              <span class=" blueColor" style="font-size: 10px;"><strong>On {{ blockchain.name }} {{nftWaitingForUnveiling ? ' | Waiting for unveiling' : ''}}</strong></span>
+              <span class=" blueColor blockchainSpan" style="font-size: 10px;"><strong>On {{ blockchain.name }} {{nftWaitingForUnveiling ? ' | Minting' : ''}}</strong></span>
             </v-row>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="2">
             <v-row justify="end">
               <v-menu
                   right
@@ -241,5 +241,12 @@ export default {
 }
 .click-pointer:hover {
 background-color: #c0c0c0;
+}
+
+.blockchainSpan {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 </style>
