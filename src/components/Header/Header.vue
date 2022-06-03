@@ -1,6 +1,6 @@
 <template>
   <div class="headerMain">
-    <div id="desktopHeader">
+    <div id="desktopHeader" class="stickHeader">
       <v-col cols="1" id="pinnedLeftHeader">
           <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png" style="image-rendering: -webkit-optimize-contrast;"/></router-link>
       </v-col>
@@ -19,14 +19,14 @@
 
     </div>
 
-    <div id="mobileHeader">
+    <div id="mobileHeader" class="stickHeader">
       <div id="mobileHeaderContainer">
         <v-col cols="6" id="mobileLogoContainer">
           <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
         </v-col>
       </div>
 
-      <div id="menuMobile">
+      <div id="menuMobile" >
         <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
                :width=windowWidth>
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
@@ -108,6 +108,13 @@ export default {
   width: 100%;
   top: 0;
 }
+.stickHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 @media screen and (min-width: 769px) {
   #desktopHeader {
     background: rgb(0,0,0);
@@ -116,12 +123,9 @@ export default {
     align-content: center;
     align-items: center;
     padding: 0 20px;
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
   }
+
+
 
   #menuMobile {
     display: none;
