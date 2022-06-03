@@ -144,7 +144,8 @@ export default {
       this.isLastPage = res.data.pagination.lastPage === res.data.pagination.page
       this.loading = false
     },
-    async filter() {
+    async filter(e) {
+      e.preventDefault();
       this.nfts = []
       this.page = 0
       this.filters = ''
