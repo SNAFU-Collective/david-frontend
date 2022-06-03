@@ -10,7 +10,6 @@
               <v-col
                   cols="12"
                   md="4"
-                  offset-md="2"
               >
                 <v-select
                     v-model="filteredBlockchain"
@@ -35,6 +34,20 @@
                     required
                 ></v-select>
               </v-col>
+
+              <v-col
+                  cols="12"
+                  md="4"
+              >
+                <v-text-field
+                    hide-details="auto"
+                    v-model="filteredId"
+                    label="ID #"
+                    filled
+                    dark
+                    required
+                ></v-text-field>
+              </v-col>
             </v-row>
             <v-row justify="center">
               <v-btn
@@ -52,8 +65,9 @@
 
       <div v-if="!loading" class=" mt-16">
         <v-row justify="center">
-          <h3>There are {{ total }} NFTs minted <span v-if="searchedBlockchain">on <span class="blueColor">{{searchedBlockchain}} </span></span>
-            <span v-if="searchedRarity">with <span class="blueColor">{{searchedRarity}}</span> rarity</span>
+          <h3>There are {{ total }} NFTs minted <span v-if="searchedBlockchain">on <span
+              class="blueColor">{{ searchedBlockchain }} </span></span>
+            <span v-if="searchedRarity">with <span class="blueColor">{{ searchedRarity }}</span> rarity</span>
           </h3>
         </v-row>
         <v-row justify="center">
@@ -82,7 +96,9 @@
       </div>
 
       <v-row justify="center">
-        <v-btn v-if="!loading && !isLastPage && total > 0 && !isLastPage" @click="loadMore()" class="mt-10" text dark style="background-color: #ffffff08;">Load more</v-btn>
+        <v-btn v-if="!loading && !isLastPage && total > 0 && !isLastPage" @click="loadMore()" class="mt-10" text dark
+               style="background-color: #ffffff08;">Load more
+        </v-btn>
       </v-row>
     </v-container>
   </div>
@@ -109,6 +125,7 @@ export default {
       searchedRarity: null,
       filteredBlockchain: '',
       filteredRarity: '',
+      filteredId: null,
       availableBlockchains: [
         'All',
         'Ethereum',
@@ -126,7 +143,7 @@ export default {
         'Common',
         'Rare',
       ],
-      filters: ''
+      filters: '',
     }
   },
   async beforeMount() {
@@ -148,7 +165,7 @@ export default {
       this.loading = false
     },
     async filter(e) {
-      e.preventDefault();
+      e.preventDefault()
       this.nfts = []
       this.page = 0
       this.filters = ''
@@ -204,7 +221,11 @@ export default {
           break
       }
 
-    await this.loadMore()
+      if (this.filteredId) {
+        this.filters += '&id=' + this.filteredId
+      }
+
+      await this.loadMore()
     },
   },
   computed: {
