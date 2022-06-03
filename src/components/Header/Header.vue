@@ -26,9 +26,9 @@
         </v-col>
       </div>
 
-      <div id="menuMobile" >
+      <div id="menuMobile" class="slideHeader">
         <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
-               :width=windowWidth>
+               :width=windowWidth >
           <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
           <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop'}">CLAIM AIRDROP</router-link>
           <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
@@ -315,13 +315,14 @@ export default {
 
   .bm-item-list > * {
     display: flex;
-    padding: .7em 1.5em !important;
+    padding: 0.7em 1.5em!important;
     text-decoration: none;
     font-size: 27px;
-    padding-top: 6px !important;
+    padding-top: 6px!important;
     justify-content: flex-end;
     font-weight: 500;
     letter-spacing: 2px;
+    white-space: nowrap;
   }
 
   .bm-item-list {
@@ -347,6 +348,13 @@ export default {
     bottom: 20px;
     right: 10px;
     padding-right: 0px !important;
+  }
+
+  .bm-menu {
+    background-image: url("https://i.ibb.co/2c8c8sK/bg2.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
   }
 
 }
