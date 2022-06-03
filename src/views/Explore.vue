@@ -65,7 +65,7 @@
 
       <div v-if="!loading" class=" mt-16">
         <v-row justify="center">
-          <h3>There are {{ total }} NFTs minted <span v-if="searchedBlockchain">on <span
+          <h3>There are {{ total }} NFTs <span v-if="searchedBlockchain">on <span
               class="blueColor">{{ searchedBlockchain }} </span></span>
             <span v-if="searchedRarity">with <span class="blueColor">{{ searchedRarity }}</span> rarity</span>
           </h3>
