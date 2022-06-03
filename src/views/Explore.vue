@@ -80,7 +80,7 @@
       </div>
 
       <v-row justify="center">
-        <v-btn v-if="!loading && !isLastPage && total > 0 && !isLastPage" @click="loadMore()" class="mt-10">Load more</v-btn>
+        <v-btn v-if="!loading && !isLastPage && total > 0 && !isLastPage" @click="loadMore()" class="mt-10" text dark style="background-color: #ffffff08;">Load more</v-btn>
       </v-row>
     </v-container>
   </div>
