@@ -52,7 +52,9 @@
 
       <div v-if="!loading" class=" mt-16">
         <v-row justify="center">
-          <h3>There are {{ total }} minted NFTs</h3>
+          <h3>There are {{ total }} NFTs minted <span v-if="searchedBlockchain">on <span class="blueColor">{{searchedBlockchain}} </span></span>
+            <span v-if="searchedRarity">with <span class="blueColor">{{searchedRarity}}</span> rarity</span>
+          </h3>
         </v-row>
         <v-row justify="center">
           <h6>*List updated each 30 minutes</h6>
@@ -103,7 +105,8 @@ export default {
       loading: true,
       isLastPage: false,
       nfts: [],
-      //filters
+      searchedBlockchain: null,
+      searchedRarity: null,
       filteredBlockchain: '',
       filteredRarity: '',
       availableBlockchains: [
@@ -149,9 +152,11 @@ export default {
       this.nfts = []
       this.page = 0
       this.filters = ''
+      this.searchedBlockchain = this.filteredBlockchain
 
       switch (this.filteredBlockchain) {
         case 'All':
+          this.searchedBlockchain = null
           break
         case 'Ethereum':
           this.filters += '&blockchain_network_id=1'
@@ -184,8 +189,10 @@ export default {
           break
       }
 
+      this.searchedRarity = this.filteredRarity
       switch (this.filteredRarity) {
         case 'All':
+          this.searchedRarity = null
           break
         case 'Common':
           this.filters += '&rarity=0'
