@@ -1,7 +1,7 @@
 <template>
   <v-row class="allWidthOnMobile"  style=" align-items: center;">
     <v-col class="pa-10" md="5">
-      <v-img src="/pfp/si1rare.png" ></v-img>
+      <v-img src="/banners/curator.jpg" id="curator"></v-img>
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row>
@@ -9,7 +9,7 @@
       </v-row>
       <v-row class="mt-10" style="text-align: justify;">
         <p>
-          Become a SNAFU CURATOR: decide if an NFT is worth to be minted and sold on the SNAFU platform. Own a  <b class="blueColor">RARE Bored David NFT</b> and drive your passion for art even further!
+          Become a SNAFU ART CURATOR: decide if an NFT is worth to be minted and sold on the SNAFU platform. Own a  <b class="blueColor">RARE Bored David NFT</b> and drive your passion for art even further!
           <br/>
           Validate artist's artworks, give feedbacks and preview the NFTs before the other collectors.
         </p>
@@ -50,5 +50,8 @@ export default {
   .onlyDesktop {
     display: none;
   }
+}
+#curator > div.v-image__image.v-image__image--cover {
+  background-position: left center !important;
 }
 </style>

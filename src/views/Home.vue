@@ -51,9 +51,9 @@
 
     <v-container style="z-index: 2">
       <Welcome id="welcomeSection" class="welcomeSection"/>
+      <Bonuses class="homeMargin"/>
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
-      <Bonuses class="homeMargin"/>
       <Team id="teamSection"/>
       <VideoKez class="homeMargin"/>
       <FAQ class="homeMargin"/>
