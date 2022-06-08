@@ -60,6 +60,14 @@ const routes = [
             title: "Bored David - NFTs"
         },
         component: () => import('../views/Explore.vue')
+    },
+    {
+        path: '/social',
+        name: "Social",
+        meta: {
+            title: "Bored David - Social"
+        },
+        component: () => import('../views/Social.vue')
     }
 ]
 

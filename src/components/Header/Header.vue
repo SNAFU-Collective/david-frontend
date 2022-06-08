@@ -11,6 +11,7 @@
         <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
        <router-link class="backHome" :to="{ name: 'Wallet'}">WALLET</router-link>
        <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+       <router-link class="backHome" :to="{ name: 'Social'}">SOCIAL</router-link>
     </v-col>
 
       <v-col cols="3">
@@ -34,6 +35,7 @@
           <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
           <router-link class="backHome" :to="{ name: 'Wallet'}">WALLET</router-link>
           <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+          <router-link class="backHome" :to="{ name: 'Social'}">SOCIAL</router-link>
 
           <wallet-status class="mt-5 pb-2 walletHeader mobileWallet"/>
         </Slide>
