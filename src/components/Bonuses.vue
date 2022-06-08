@@ -1,7 +1,7 @@
 <template>
   <v-row class="allWidthOnMobile"  style=" align-items: center;">
     <v-col class="pa-10" md="5">
-      <v-img src="/banners/curator.jpg" id="curator"></v-img>
+      <v-img src="/banners/curator.png"></v-img>
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row>
