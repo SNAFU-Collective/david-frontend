@@ -2,7 +2,6 @@
   <div style="min-height: 800px" class="darkBg">
     <v-container>
 
-
       <v-row justify="center" class="pt-16 mt-16">
         <v-form ref="form" class="mt-16">
           <v-container>
@@ -49,7 +48,186 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-            <v-row justify="center">
+            <v-expansion-panels dark flat accordion="false" popout>
+              <v-expansion-panel>
+                <v-expansion-panel-header style="text-align: center">
+                  More filters
+                </v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <v-row>
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredBackground"
+                          :items="availableFilters.backgrounds"
+                          label="Background"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredShadow"
+                          :items="availableFilters.shadows"
+                          label="Shadow"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredDress"
+                          :items="availableFilters.dresses"
+                          label="Dress"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredEyebrows"
+                          :items="availableFilters.eyebrowses"
+                          label="Eyebrows"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredEyeProp"
+                          :items="availableFilters.eyes_props"
+                          label="Eyes Props"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredEyes"
+                          :items="availableFilters.eyeses"
+                          label="Eyes"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredHair"
+                          :items="availableFilters.hairs"
+                          label="Hair"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredHat"
+                          :items="availableFilters.hats"
+                          label="Hat"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredMouth"
+                          :items="availableFilters.mouths"
+                          label="Mouth"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredNose"
+                          :items="availableFilters.noses"
+                          label="Nose"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredProp"
+                          :items="availableFilters.props"
+                          label="Prop"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                    <v-col
+                        cols="6"
+                        md="3"
+                    >
+                      <v-select
+                          v-model="filteredSkin"
+                          :items="availableFilters.skins"
+                          label="Skin"
+                          filled
+                          dark
+                          required
+                      ></v-select>
+                    </v-col>
+
+                  </v-row>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
+            <v-row justify="center" class="mt-8">
               <v-btn
                   type="submit"
                   color="white"
@@ -126,6 +304,18 @@ export default {
       filteredBlockchain: '',
       filteredRarity: '',
       filteredId: null,
+      filteredBackground: null,
+      filteredShadow: null,
+      filteredDress: null,
+      filteredEyebrows: null,
+      filteredEyeProp: null,
+      filteredEyes: null,
+      filteredHair: null,
+      filteredHat: null,
+      filteredMouth: null,
+      filteredNose: null,
+      filteredProp: null,
+      filteredSkin: null,
       availableBlockchains: [
         'All',
         'Ethereum',
@@ -143,11 +333,17 @@ export default {
         'Common',
         'Rare',
       ],
+      availableFilters: {},
       filters: '',
     }
   },
   async beforeMount() {
-    let res = await axios.get(process.env.VUE_APP_API_ENDPOINT + "/api/v1/nft?page=" + this.page)
+    //get filters
+    let res = await axios.get(process.env.VUE_APP_API_ENDPOINT + "/api/v1/nft/attributes")
+    this.availableFilters = res.data
+
+    //get nfts
+    res = await axios.get(process.env.VUE_APP_API_ENDPOINT + "/api/v1/nft?page=" + this.page)
     this.nfts = res.data.data
     this.total = res.data.pagination.total
     this.page = res.data.pagination.page
@@ -224,6 +420,20 @@ export default {
       if (this.filteredId) {
         this.filters += '&id=' + this.filteredId
       }
+
+      this.filters += this.filteredBackground ? '&background=' + this.filteredBackground : ''
+      this.filters += this.filteredShadow ? '&shadow=' + this.filteredShadow : ''
+      this.filters += this.filteredDress ? '&dress=' + this.filteredDress : ''
+      this.filters += this.filteredEyebrows ? '&eyebrows=' + this.filteredEyebrows : ''
+      this.filters += this.filteredEyeProp ? '&eye_prop=' + this.filteredEyeProp : ''
+      this.filters += this.filteredEyes ? '&eyes=' + this.filteredEyes : ''
+      this.filters += this.filteredHair ? '&hair=' + this.filteredHair : ''
+      this.filters += this.filteredHat ? '&hat=' + this.filteredHat : ''
+      this.filters += this.filteredMouth ? '&mouth=' + this.filteredMouth : ''
+      this.filters += this.filteredNose ? '&nose=' + this.filteredNose : ''
+      this.filters += this.filteredProp ? '&prop=' + this.filteredProp : ''
+      this.filters += this.filteredSkin ? '&skin=' + this.filteredSkin : ''
+
 
       await this.loadMore()
     },
