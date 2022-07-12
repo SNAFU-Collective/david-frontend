@@ -224,6 +224,17 @@
                     </v-col>
 
                   </v-row>
+
+                  <v-row justify="left" class="mt-1 mb-1">
+                    <v-btn
+                        color="text"
+                        text
+                        @click="reset"
+                    >
+                      Reset
+                    </v-btn>
+
+                  </v-row>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -359,6 +370,20 @@ export default {
       this.page = res.data.pagination.page
       this.isLastPage = res.data.pagination.lastPage === res.data.pagination.page
       this.loading = false
+    },
+    async reset() {
+      this.filteredBackground = null
+      this.filteredShadow = null
+      this.filteredDress = null
+      this.filteredEyebrows = null
+      this.filteredEyeProp = null
+      this.filteredEyes = null
+      this.filteredHair = null
+      this.filteredHat = null
+      this.filteredMouth = null
+      this.filteredNose = null
+      this.filteredProp = null
+      this.filteredSkin = null
     },
     async filter(e) {
       e.preventDefault()
