@@ -48,7 +48,7 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-            <v-expansion-panels dark flat accordion="false" popout>
+            <v-expansion-panels dark flat accordion="false" popout class="mt-3">
               <v-expansion-panel>
                 <v-expansion-panel-header style="text-align: center">
                   More filters
