@@ -146,7 +146,7 @@ export default {
     return {
       showCompleteSaleModal: false,
       mintNumber: 1,
-      buyRare: true,
+      buyRare: false,
     }
   },
   mounted: function () {
