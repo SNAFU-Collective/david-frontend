@@ -15,9 +15,9 @@
         top: 0;" src="/background/graffiti_3.png"/>
 
       <v-card-text class="mt-5 mb-10">
-        <v-row justify="center" class="mb-5 mt-10">
-          <h3>FOLLOW US</h3>
-        </v-row>
+<!--        <v-row justify="center" class="mb-5 mt-10">-->
+<!--          <h3>FOLLOW US</h3>-->
+<!--        </v-row>-->
 <!--        <v-tooltip bottom>-->
 <!--          <template v-slot:activator="{ on, attrs }">-->
 <!--            <v-btn-->
