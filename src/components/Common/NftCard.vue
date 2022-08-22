@@ -18,13 +18,13 @@
             </v-btn>
 
             <v-row>
-              <img :src="nftWaitingForUnveiling ? '/pfp/unveiling.gif' : nft.metadata.image" class="overlayNftImage"/>
+              <img :src="nftWaitingForUnveiling ? '/pfp/unveiling.gif' : fixGateway(nft.metadata.image)" class="overlayNftImage"/>
             </v-row>
 
           </v-overlay>
 
           <a @click="toggle">
-            <v-img :src="nftWaitingForUnveiling ? '/pfp/unveiling.gif' : nft.metadata.image" :height="cardSize || 250" :width="cardSize || 250">
+            <v-img :src="nftWaitingForUnveiling ? '/pfp/unveiling.gif' : fixGateway(nft.metadata.image)" :height="cardSize || 250" :width="cardSize || 250">
               <template v-slot:placeholder>
                 <v-row
                     class="fill-height ma-0"
@@ -146,6 +146,12 @@ export default {
     toggle() {
       this.fullscreen = !this.fullscreen
     },
+    fixGateway() {
+      if (this.nft.metadata.image.startsWith("https://ipfs.infura.io")) {
+        return this.nft.metadata.image.replace("https://ipfs.infura.io", "https://boreddavid.infura-ipfs.io")
+      }
+      return this.nft.metadata.image
+    }
   },
   data() {
     return {

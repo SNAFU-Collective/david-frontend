@@ -54,6 +54,11 @@ export default {
                 nfts = nfts.split(',')
                 nfts.forEach((nft) => {
                     token.tokenURI(nft).then(async uri => {
+                        //hotfix
+                        if (uri.startsWith("https://ipfs.infura.io")) {
+                            uri = uri.replace("https://ipfs.infura.io", "https://boreddavid.infura-ipfs.io")
+                        }
+
                         let metadata = await axios.get(uri)
                         results.push({
                             id: nft,
