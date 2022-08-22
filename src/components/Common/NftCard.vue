@@ -150,6 +150,9 @@ export default {
       if (this.nft.metadata.image.startsWith("https://ipfs.infura.io")) {
         return this.nft.metadata.image.replace("https://ipfs.infura.io", "https://boreddavid.infura-ipfs.io")
       }
+      if (this.nft.metadata.image.startsWith("ipfs://")) {
+        return this.nft.metadata.image.replace("ipfs://", "https://boreddavid.infura-ipfs.io/ipfs/")
+      }
       return this.nft.metadata.image
     }
   },

@@ -58,6 +58,9 @@ export default {
                         if (uri.startsWith("https://ipfs.infura.io")) {
                             uri = uri.replace("https://ipfs.infura.io", "https://boreddavid.infura-ipfs.io")
                         }
+                        if (uri.startsWith("ipfs://")) {
+                            uri = uri.replace("ipfs://", "https://boreddavid.infura-ipfs.io/ipfs/")
+                        }
 
                         let metadata = await axios.get(uri)
                         results.push({
