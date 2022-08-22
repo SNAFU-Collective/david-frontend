@@ -80,10 +80,9 @@
             </v-row>
           </v-card-text>
           <v-card-actions>
-            <!-- Disabled -->
-<!--            <v-row no-gutters justify="center">-->
-<!--              <v-btn dark v-if="airdrop.airdropAvailable" :to="`/airdrop/${airdrop.chainId}/${address}`"> Claim </v-btn>-->
-<!--            </v-row>-->
+            <v-row no-gutters justify="center">
+              <v-btn dark v-if="airdrop.airdropAvailable" :to="`/airdrop/${airdrop.chainId}/${address}`"> Claim </v-btn>
+            </v-row>
           </v-card-actions>
         </v-card>
       </v-row>

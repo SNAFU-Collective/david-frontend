@@ -49,10 +49,10 @@
           </v-list-item>
 
           <v-card-actions>
-<!--            <v-btn outlined-->
-<!--                   rounded-->
-<!--                   class="mt-3"-->
-<!--                    :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? `Mint on ${sale.network.name}` : 'Soldout' }} </v-btn>-->
+            <v-btn outlined
+                   rounded
+                   class="mt-3"
+                    :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? `Mint on ${sale.network.name}` : 'Soldout' }} </v-btn>
           </v-card-actions>
         </v-card>
       </v-row>
