@@ -62,6 +62,13 @@
             <v-row  justify="center" class="pt-6 pb-16">
               <h2 class="blueColor text-center">#NFTItalia #BoredDavid</h2>
             </v-row>
+
+            <v-row  justify="center">
+              <h5 class=" text-center">What does it mean "Waiting for unveiling"?</h5>
+            </v-row>
+            <v-row  justify="center">
+              <h5 class=" text-center">When you buy an NFT you will have a “waiting for unveiling” GIF. This means that the metadata of the NFT you bought isn’t updated yet so you still won’t know the attributes of your NFT. We will unveil NFTs each hour. On Ethereum network the unveiling could have some delay due to congestion or high gas fees.</h5>
+            </v-row>
           </div>
 
         </v-row>

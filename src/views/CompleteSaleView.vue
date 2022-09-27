@@ -75,10 +75,10 @@
           </v-row>
 
           <div>
-            <v-row no-gutters justify="center" class="mt-10">
-              <v-switch class="raritySwitch" v-model="buyRare" label="Become an Art Curator (RARE NFT)"
-                        color="blue"></v-switch>
-            </v-row>
+<!--            <v-row no-gutters justify="center" class="mt-10">-->
+<!--              <v-switch class="raritySwitch" v-model="buyRare" label="Become an Art Curator (RARE NFT)"-->
+<!--                        color="blue"></v-switch>-->
+<!--            </v-row>-->
             <v-row justify="center">
               <v-col cols="12" style="justify-content: center; display: contents">
                 <v-btn @click="decrementMintNumber" icon x-large class="mx-5" color="white">
