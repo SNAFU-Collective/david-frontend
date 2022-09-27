@@ -127,7 +127,6 @@
     </div>
 
     <v-container>
-      <Bonuses class="homeMargin" style="margin-top: 150px !important;"/>
       <FAQ class="homeMargin"/>
     </v-container>
   </div>
@@ -141,7 +140,7 @@ import Bonuses from "@/components/Bonuses"
 import FAQ from "@/components/FAQ"
 
 export default {
-  components: {CompleteSaleModal, Bonuses, FAQ},
+  components: {CompleteSaleModal, FAQ},
   data: function () {
     return {
       showCompleteSaleModal: false,

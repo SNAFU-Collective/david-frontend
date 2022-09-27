@@ -2,56 +2,60 @@
   <div>
     <HomeParallax/>
 
-    <SaleView/>
-    <v-container class="mt-16">
-      <v-col class="pa-10" md="12">
-        <v-row>
-          <h3 class="pinkColor">BORED DAVID IS A MULTICHAIN NFT COLLECTION</h3>
-        </v-row>
-        <v-row class="mt-10" style="text-align: justify;">
-          <p>
-            We think art shouldn't have barriers, so it's crazy to create artificial ones. We decided to
-            mint Bored David where our community is and where it can be accessible to all: <b class="blueColor">Ethereum, Gnosis Chain,
-            Avalanche, Polygon, Binance Smart Chain and Aurora</b>.
-          </p>
-        </v-row>
-        <v-row class="mt-10" style="text-align: justify;">
-          <p>
-            All NFTs are generated uniquely in the same generation batch, then distributed to the community separately through different chains.
-            Each chain has its max supply of Bored Davids.
-          </p>
-        </v-row>
-        <v-row class="mt-10" style="text-align: justify;">
-          <p>
-            The address of the smart contract of Bored David is the same across all the chains:
-          </p>
-        </v-row>
-        <v-row class="mt-10" style="text-align: justify;">
-          <ul>
-            <li>Ethereum: <a href="https://etherscan.io/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
-            <li>Polygon: <a href="https://polygonscan.com/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
-            <li>Binance: <a href="https://bscscan.com/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
-            <li>Avalanche: <a href="https://snowtrace.io/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
-            <li>Aurora: <a href="https://aurorascan.dev/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a4" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
-            <li>Gnosis: <a href="https://blockscout.com/xdai/mainnet/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank">0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C</a></li>
-          </ul>
-        </v-row>
-        <v-row class="mt-10" style="text-align: justify;">
-          <p>
-            <b class="pinkColor">Only trust when interacting with this address.</b>
-          </p>
-        </v-row>
-        <v-row class="mt-10" style="text-align: justify;">
-          <p>
-            Want to read more about the technical stuff? Read <a href="https://medium.com/@snafu-collective/bored-david-technical-paper-8c5163386ceb" target="_blank">this article</a>.
-          </p>
-        </v-row>
-      </v-col>
-    </v-container>
-
     <v-container style="z-index: 2">
       <Welcome id="welcomeSection" class="welcomeSection"/>
-      <Bonuses class="homeMargin"/>
+
+
+          <div v-if="!loading && getSaleInfo" class="mt-12">
+            <v-row>
+              <v-col cols="12" class="text-center">
+                <h2 class="pinkColor"> {{totalMintedSupply}} / {{ totalMaxSupply }} NFTs ALREADY MINTED ON ETHEREUM</h2>
+                <h4> Mint your Bored David on Ethereum right now!</h4>
+              </v-col>
+            </v-row>
+            <v-row style="align-items: center">
+              <v-col class="pa-10" md="6">
+                <v-img src="/gif/bd-gif.gif"></v-img>
+              </v-col>
+              <v-col md="6">
+                <v-card
+                    v-for="(sale, index) in getSaleInfo"
+                    :key="index"
+                    class="mx-auto mint-card"
+                    max-width="400"
+                    outlined
+                    style="margin-top: 20px"
+                >
+                  <v-list-item three-line>
+                    <v-list-item-content>
+                      <div class="text-overline mb-4">
+                        {{ sale.network.name }}
+                      </div>
+                      <v-list-item-title class="text-h5 mb-1">
+                        Minted: {{sale.info.totalSupply}} / {{sale.info.maxSupply}}
+                      </v-list-item-title>
+                      <v-list-item-subtitle>There are still {{sale.info.maxSupply - sale.info.totalSupply}} NFTs left to be minted on  {{ sale.network.name }}</v-list-item-subtitle>
+                    </v-list-item-content>
+
+                    <v-list-item-avatar
+                        tile
+                        size="80"
+                        color="grey"
+                    > <v-img :src="sale.network.logo" width="50px" style="background-color: white;"
+                             transition="slide-y-transition"></v-img></v-list-item-avatar>
+                  </v-list-item>
+
+                  <v-card-actions>
+                    <v-btn outlined
+                           rounded
+                           class="mt-3"
+                           :disabled="!sale.saleAvailable" :to="`/sale/${sale.chainId}`"> {{ sale.saleAvailable ? `Mint now` : 'Soldout' }} </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </div>
+
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
       <Team id="teamSection"/>
@@ -72,6 +76,8 @@ import Welcome from "@/components/Welcome"
 import FAQ from "@/components/FAQ"
 import Team from "@/components/Team"
 import HomeParallax from "@/components/HomeParallax"
+import {mapActions, mapGetters} from "vuex"
+import { getNetworks } from "@/utils/networks"
 
 export default {
   name: 'Home',
@@ -80,13 +86,74 @@ export default {
     HomeParallax,
     Introduction,
     Distribution,
-    Bonuses,
+    // Bonuses,
     VideoKez,
     Team,
     FAQ,
-    SaleView,
+    // SaleView,
+  },
+  mounted: function () {
+    this.updateBoredDavidStateForAll()
+  },
+  computed: {
+    ...mapGetters("connectweb3", ["getUserAccount", "boredDavidState"]),
+    getSaleInfo() {
+      let networks = getNetworks();
+      let saleInfo = [];
+      let saleFound = false
+      // force only ethereum
+      let network = networks[1];
+      if (network) {
+        let info = this.boredDavidState[1];
+        if (!info)
+          return
+
+        let saleAvailable = info.totalSupply.lt(info.maxSupply);
+
+        saleInfo.push({
+          network: network,
+          chainId: 1,
+          info,
+          saleAvailable
+        });
+      }
+
+      return saleInfo;
+    },
+    totalMaxSupply() {
+      let totalMaxSupply = 0;
+      this.getSaleInfo.forEach(sale => {
+        totalMaxSupply += parseInt(sale.info.maxSupply);
+      });
+
+      return totalMaxSupply;
+    },
+    totalMintedSupply() {
+      let totalMintedSupply = 0;
+      this.getSaleInfo.forEach(sale => {
+        totalMintedSupply += parseInt(sale.info.totalSupply);
+      });
+
+      return totalMintedSupply;
+    },
+    loading() {
+      return !this.getSaleInfo || this.getSaleInfo.length === 0;
+    },
+    screenWidth() {
+      return window.innerWidth
+    },
   },
 
+  methods: {
+    ...mapActions("connectweb3", ["updateBoredDavidStateForAll"]),
+    checkButton() {
+      this.loading = true;
+      this.checkAirdrop(this.address).finally(() => {
+        this.loading = false;
+      });
+    },
+
+  },
 }
 </script>
 

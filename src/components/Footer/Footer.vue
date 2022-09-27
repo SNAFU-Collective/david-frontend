@@ -15,42 +15,42 @@
         top: 0;" src="/background/graffiti_3.png"/>
 
       <v-card-text class="mt-5 mb-10">
-<!--        <v-row justify="center" class="mb-5 mt-10">-->
-<!--          <h3>FOLLOW US</h3>-->
-<!--        </v-row>-->
-<!--        <v-tooltip bottom>-->
-<!--          <template v-slot:activator="{ on, attrs }">-->
-<!--            <v-btn-->
-<!--                class="mx-4 white&#45;&#45;text"-->
-<!--                icon-->
-<!--                v-bind="attrs"-->
-<!--                v-on="on"-->
-<!--                @click="goTo('https://twitter.com/bored_david_nft')"-->
-<!--            >-->
-<!--              <v-icon size="24px">-->
-<!--                mdi-twitter-->
-<!--              </v-icon>-->
-<!--            </v-btn>-->
-<!--          </template>-->
-<!--          <span>Follow us on Twitter</span>-->
-<!--        </v-tooltip>-->
+        <v-row justify="center" class="mb-5 mt-10">
+          <h3>FOLLOW US</h3>
+        </v-row>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                v-bind="attrs"
+                v-on="on"
+                @click="goTo('https://twitter.com/bored_david_nft')"
+            >
+              <v-icon size="24px">
+                mdi-twitter
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Follow us on Twitter</span>
+        </v-tooltip>
 
-<!--        <v-tooltip bottom>-->
-<!--          <template v-slot:activator="{ on, attrs }">-->
-<!--            <v-btn-->
-<!--                class="mx-4 white&#45;&#45;text"-->
-<!--                icon-->
-<!--                @click="goTo('https://discord.gg/hWH9WFskXc')"-->
-<!--                v-bind="attrs"-->
-<!--                v-on="on"-->
-<!--            >-->
-<!--              <v-icon size="24px">-->
-<!--                mdi-discord-->
-<!--              </v-icon>-->
-<!--            </v-btn>-->
-<!--          </template>-->
-<!--          <span>Chat with us on SNAFU Discord</span>-->
-<!--        </v-tooltip>-->
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+                class="mx-4 white--text"
+                icon
+                @click="goTo('https://discord.gg/hWH9WFskXc')"
+                v-bind="attrs"
+                v-on="on"
+            >
+              <v-icon size="24px">
+                cib-discord
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Chat with us on SNAFU Discord</span>
+        </v-tooltip>
       </v-card-text>
 
       <v-divider></v-divider>
