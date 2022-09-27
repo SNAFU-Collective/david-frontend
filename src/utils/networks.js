@@ -78,7 +78,7 @@ const networks = {
         explorer: "https://avascan.info/blockchain/c/tx/",
         nft_explorer_url: "https://avascan.info/blockchain/c/erc721/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C/nft/",
         rpc: "https://api.avax.network/ext/bc/C/rpc",
-        marketplace_url: "https://nftrade.com/assets/avalanche/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C/",
+        marketplace_url: "https://marketplace.kalao.io/nft/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c_",
         logo: "projects/avalanche.jpg",
         starting_block: 15384298,
         testnet: false
