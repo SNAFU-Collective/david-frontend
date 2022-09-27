@@ -25,6 +25,21 @@
         </v-avatar>
       </v-row>
 
+      <v-row class="mt-10">
+        <h5>EXCHANGE ON</h5>
+      </v-row>
+      <v-row>
+        <v-avatar v-for="(marketplace, index) in marketplaces" :key="index" size="50" class="pointerOnHover ma-1">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-img :src="marketplace.logo" @click="goTo(marketplace.website)" v-bind="attrs" v-on="on"/>
+            </template>
+            <span>{{marketplace.name}}</span>
+          </v-tooltip>
+
+        </v-avatar>
+      </v-row>
+
     </v-col>
     <v-col md="6" offset-md="1" sm="12" xs="12" class="pa-10">
       <v-row class="" >
@@ -84,15 +99,16 @@ export default {
           logo: '/projects/ethereum.jpg',
         },
         {
-          name: 'Gnosis Chain',
-          website: 'https://blockscout.com/xdai/mainnet/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C',
-          logo: '/projects/gnosis.jpg',
-        },
-        {
           name: 'Polygon',
           website: 'https://polygonscan.com/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C',
           logo: '/projects/polygon.jpg',
         },
+        {
+          name: 'Gnosis Chain',
+          website: 'https://blockscout.com/xdai/mainnet/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C',
+          logo: '/projects/gnosis.jpg',
+        },
+
         {
           name: 'Avalanche',
           website: 'https://snowtrace.io/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c',
@@ -107,6 +123,38 @@ export default {
           name: 'Aurora',
           website: 'https://aurorascan.dev/address/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c',
           logo: '/projects/aurora.svg',
+        },
+      ],
+      marketplaces: [
+        {
+          name: 'Opensea - Ethereum',
+          website: 'https://opensea.io/collection/bored-david',
+          logo: '/projects/opensea.png',
+        },
+        {
+          name: 'Opensea - Polygon',
+          website: 'https://opensea.io/collection/bored-david-on-polygon',
+          logo: '/projects/opensea-polygon.png',
+        },
+        {
+          name: 'Eporio - Gnosis Chain',
+          website: 'https://epor.io/browse?type=listings&network=xDai&collection=boreddavid',
+          logo: '/projects/eporio.png',
+        },
+        {
+          name: 'Kalao - Avalanche',
+          website: 'https://marketplace.kalao.io/collection/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c',
+          logo: '/projects/kalao.png',
+        },
+        {
+          name: 'NFTrade - Binance Smart Chain',
+          website: 'https://nftrade.com/assets/bsc/0x8b8af1072e8cf40cf75ad6efdf9fe999a47e285c?traitIds=',
+          logo: '/projects/nfttrade.png',
+        },
+        {
+          name: 'Endemic - Aurora',
+          website: 'https://endemic.app/collection/bored-david-on-aurora',
+          logo: '/projects/endemic-logo.png',
         },
       ],
       airdroppedProjects: [
