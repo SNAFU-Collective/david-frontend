@@ -26,7 +26,7 @@
       </v-row>
 
       <v-row class="mt-10">
-        <h5>EXCHANGE ON</h5>
+        <h5>TRADED ON</h5>
       </v-row>
       <v-row>
         <v-avatar v-for="(marketplace, index) in marketplaces" :key="index" size="50" class="pointerOnHover ma-1">

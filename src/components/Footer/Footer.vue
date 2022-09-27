@@ -44,9 +44,7 @@
                 v-bind="attrs"
                 v-on="on"
             >
-              <v-icon size="24px">
-                cib-discord
-              </v-icon>
+              <b-icon-discord  font-scale="1.7px"></b-icon-discord>
             </v-btn>
           </template>
           <span>Chat with us on SNAFU Discord</span>

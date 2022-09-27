@@ -14,6 +14,7 @@ import Vuethereum from "vuethereum"
 import VueClipboard from 'vue-clipboard2'
 import VueConfetti from 'vue-confetti'
 import WalletLink from '@coinbase/wallet-sdk'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 Vue.config.productionTip = false
 
@@ -21,6 +22,9 @@ Vue.use(VueAxios, axios)
 Vue.use(Vuethereum)
 Vue.use(VueClipboard)
 Vue.use(VueConfetti)
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 
 const providerOptions = {
     walletconnect: {
