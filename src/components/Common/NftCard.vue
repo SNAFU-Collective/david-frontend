@@ -148,10 +148,10 @@ export default {
     },
     fixGateway() {
       if (this.nft.metadata.image.startsWith("https://ipfs.infura.io")) {
-        return this.nft.metadata.image.replace("https://ipfs.infura.io", "https://gateway.ipfs.io/ipfs/")
+        return this.nft.metadata.image.replace("https://ipfs.infura.io", "https://boreddavid.mypinata.cloud")
       }
       if (this.nft.metadata.image.startsWith("ipfs://")) {
-        return this.nft.metadata.image.replace("ipfs://", "https://gateway.ipfs.io/ipfs/")
+        return this.nft.metadata.image.replace("ipfs://", "https://boreddavid.mypinata.cloud/ipfs/")
       }
       return this.nft.metadata.image
     }
