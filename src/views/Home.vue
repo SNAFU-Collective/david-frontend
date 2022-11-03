@@ -94,7 +94,7 @@ export default {
     HomeParallax,
     Introduction,
     Distribution,
-    VideoMaccio
+    VideoMaccio,
     // Bonuses,
     VideoKez,
     Team,
