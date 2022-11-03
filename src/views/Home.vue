@@ -64,6 +64,7 @@
 
       <Introduction class="homeMargin"/>
       <Distribution id="distributionSection"/>
+      <VideoMaccio class="homeMargin"/>
       <Team id="teamSection"/>
       <VideoKez class="homeMargin"/>
       <FAQ class="homeMargin"/>
@@ -77,6 +78,7 @@ import Introduction from "@/components/Introduction"
 import Distribution from "@/components/Distribution"
 import SaleView from "@/views/SaleView"
 import VideoKez from "@/components/VideoKez"
+import VideoMaccio from "@/components/VideoMaccio"
 import Bonuses from "@/components/Bonuses"
 import Welcome from "@/components/Welcome"
 import FAQ from "@/components/FAQ"
@@ -92,6 +94,7 @@ export default {
     HomeParallax,
     Introduction,
     Distribution,
+    VideoMaccio
     // Bonuses,
     VideoKez,
     Team,
