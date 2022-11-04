@@ -10,8 +10,7 @@
        <router-link class="backHome"  style="color:#d5ff32 !important;" :to="{ name: 'Airdrop'}">CLAIM AIRDROP</router-link>
         <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
        <router-link class="backHome" :to="{ name: 'Wallet'}">WALLET</router-link>
-       <!-- <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link> -->
-       <a href="https://etherscan.io/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank" class="backHome">EXPLORE</a>
+       <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
     </v-col>
 
       <v-col cols="3">
@@ -34,8 +33,8 @@
           <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop'}">CLAIM AIRDROP</router-link>
           <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
           <router-link class="backHome" :to="{ name: 'Wallet'}">WALLET</router-link>
-          <!-- <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link> -->
-          <a href="https://etherscan.io/address/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C" target="_blank" class="backHome">EXPLORE</a>
+          <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+
           <wallet-status class="mt-5 pb-2 walletHeader mobileWallet"/>
         </Slide>
       </div>
