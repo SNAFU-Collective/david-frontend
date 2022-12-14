@@ -114,9 +114,7 @@ export const getNetworks = () => {
 
     let networksObj = {};
     for (let key in networks) {
-        // if (networks[key].testnet === testnet) {
         networksObj[key] = networks[key];
-        // }
     }
     return networksObj
 }

@@ -78,12 +78,21 @@ export default {
 
     },
     actions: {
+        startWeb3: async function (context) {
+
+            context.dispatch("setWeb3", { web3: null, connected: false });
+
+            if (this._vm.$web3Modal.cachedProvider) {
+                //This is case where someone already connected
+                context.dispatch("connectWallet")
+            }
+
+        },
         setWeb3: async function (context, payload) {
             let { web3, connected } = payload;
             let state = context.state;
             console.log("connected", connected)
             let networks = getNetworks();
-
 
             if (connected) {
                 state = context.state.connected;
@@ -173,16 +182,6 @@ export default {
             await this._vm.$web3Modal.clearCachedProvider();
             context.commit("disconnectWallet");
             context.commit("setConnected", false)
-        },
-        startWeb3: async function (context) {
-
-            context.dispatch("setWeb3", { web3: null, connected: false });
-
-            if (this._vm.$web3Modal.cachedProvider) {
-                //This is case where someone already connected
-                context.dispatch("connectWallet")
-            }
-
         },
         async updateBoredDavidState(context, payload) {
 
