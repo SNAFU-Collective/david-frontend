@@ -56,10 +56,10 @@ export default {
                     token.tokenURI(nft).then(async uri => {
                         //hotfix
                         if (uri.startsWith("https://ipfs.infura.io")) {
-                            uri = uri.replace("https://ipfs.infura.io", "https://boreddavid.mypinata.cloud")
+                            uri = uri.replace("https://ipfs.infura.io", "https://ipfs.x3me.me")
                         }
                         if (uri.startsWith("ipfs://")) {
-                            uri = uri.replace("ipfs://", "https://boreddavid.mypinata.cloud/ipfs/")
+                            uri = uri.replace("ipfs://", "https://ipfs.x3me.me/ipfs/")
                         }
 
                         let metadata = await axios.get(uri)
