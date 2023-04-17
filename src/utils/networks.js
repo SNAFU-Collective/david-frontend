@@ -53,7 +53,7 @@ const networks = {
         symbol: "xDAI",
         explorer: "https://blockscout.com/xdai/mainnet/tx/",
         nft_explorer_url: "https://blockscout.com/xdai/mainnet/token/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C/instance/",
-        rpc: "https://rpc.xdaichain.com/oe-only/",
+        rpc: "https://rpc.gnosischain.com/",
         marketplace_url: "https://epor.io/tokens/0x8B8AF1072e8cf40CF75ad6EFDf9Fe999a47E285C/",
         logo: "projects/gnosis.jpg",
         starting_block: 22412483,
