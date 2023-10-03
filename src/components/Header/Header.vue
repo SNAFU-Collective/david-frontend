@@ -2,19 +2,21 @@
   <div class="headerMain">
     <div id="desktopHeader" class="stickHeader">
       <v-col cols="1" id="pinnedLeftHeader">
-          <router-link :to="{ name: 'Home'}"><img width="150px" src="logo.png" style="image-rendering: -webkit-optimize-contrast;"/></router-link>
+        <router-link :to="{ name: 'Home' }"><img width="150px" src="logo.png"
+            style="image-rendering: -webkit-optimize-contrast;" /></router-link>
       </v-col>
 
-    <v-col cols="8" id="subtitle">
-       <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
-       <router-link class="backHome"  style="color:#d5ff32 !important;" :to="{ name: 'Airdrop'}">CLAIM AIRDROP</router-link>
-        <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
-       <router-link class="backHome" :to="{ name: 'Wallet'}">WALLET</router-link>
-       <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
-    </v-col>
+      <v-col cols="8" id="subtitle">
+        <router-link class="backHome" :to="{ name: 'Home' }">HOME</router-link>
+        <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop' }">CLAIM
+          AIRDROP</router-link>
+        <router-link class="backHome" :to="{ name: 'Sale' }">MINT</router-link>
+        <router-link class="backHome" :to="{ name: 'Wallet' }">WALLET</router-link>
+        <!-- <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link> -->
+      </v-col>
 
       <v-col cols="3">
-        <wallet-status class="mt-5 pb-2 walletHeader"/>
+        <wallet-status class="mt-5 pb-2 walletHeader" />
       </v-col>
 
     </div>
@@ -22,20 +24,20 @@
     <div id="mobileHeader" class="stickHeader">
       <div id="mobileHeaderContainer">
         <v-col cols="6" id="mobileLogoContainer">
-          <router-link :to="{ name: 'Home'}"><v-img width="100px" src="logo.png"></v-img></router-link>
+          <router-link :to="{ name: 'Home' }"><v-img width="100px" src="logo.png"></v-img></router-link>
         </v-col>
       </div>
 
       <div id="menuMobile" class="slideHeader">
-        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu"
-               :width=windowWidth >
-          <router-link class="backHome" :to="{ name: 'Home'}">HOME</router-link>
-          <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop'}">CLAIM AIRDROP</router-link>
-          <router-link class="backHome" :to="{ name: 'Sale'}">MINT</router-link>
-          <router-link class="backHome" :to="{ name: 'Wallet'}">WALLET</router-link>
-          <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link>
+        <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu" :width=windowWidth>
+          <router-link class="backHome" :to="{ name: 'Home' }">HOME</router-link>
+          <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop' }">CLAIM
+            AIRDROP</router-link>
+          <router-link class="backHome" :to="{ name: 'Sale' }">MINT</router-link>
+          <router-link class="backHome" :to="{ name: 'Wallet' }">WALLET</router-link>
+          <!-- <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link> -->
 
-          <wallet-status class="mt-5 pb-2 walletHeader mobileWallet"/>
+          <wallet-status class="mt-5 pb-2 walletHeader mobileWallet" />
         </Slide>
       </div>
     </div>
@@ -43,12 +45,12 @@
 </template>
 
 <script>
-import {Slide} from 'vue-burger-menu'
+import { Slide } from 'vue-burger-menu'
 import WalletStatus from '../Wallet/WalletStatus.vue'
 
 export default {
   components: {
-     WalletStatus,
+    WalletStatus,
     Slide
   },
   methods: {
@@ -108,6 +110,7 @@ export default {
   width: 100%;
   top: 0;
 }
+
 .stickHeader {
   position: fixed;
   top: 0;
@@ -117,8 +120,8 @@ export default {
 
 @media screen and (min-width: 769px) {
   #desktopHeader {
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,0.9556197478991597) 0%, rgba(0,0,0,0.7679446778711485) 49%, rgba(0,0,0,0) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9556197478991597) 0%, rgba(0, 0, 0, 0.7679446778711485) 49%, rgba(0, 0, 0, 0) 100%);
     display: flex;
     align-content: center;
     align-items: center;
@@ -143,7 +146,7 @@ export default {
     left: 10px
   }
 
-  #pinnedLeftHeader > #logo {
+  #pinnedLeftHeader>#logo {
     width: 65px;
     height: 65px;
     position: absolute;
@@ -152,7 +155,7 @@ export default {
     cursor: pointer;
   }
 
-  #desktopHeader > #subtitle {
+  #desktopHeader>#subtitle {
     /*position: absolute;*/
     /*top: 50px;*/
     /*left: 250px;*/
@@ -246,7 +249,7 @@ export default {
     font-size: 16px;
   }
 
-  #subtitleMobile > a {
+  #subtitleMobile>a {
     text-decoration: unset;
     color: #303030;
   }
@@ -259,8 +262,8 @@ export default {
 
   #mobileHeader {
     display: flex;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 49%, rgba(0,0,0,0) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 49%, rgba(0, 0, 0, 0) 100%);
     align-content: center;
     align-items: center;
     padding: 0 20px;
@@ -313,12 +316,12 @@ export default {
     opacity: 1;
   }
 
-  .bm-item-list > * {
+  .bm-item-list>* {
     display: flex;
-    padding: 0.7em 1.5em!important;
+    padding: 0.7em 1.5em !important;
     text-decoration: none;
     font-size: 27px;
-    padding-top: 6px!important;
+    padding-top: 6px !important;
     justify-content: flex-end;
     font-weight: 500;
     letter-spacing: 2px;
@@ -329,11 +332,11 @@ export default {
     margin-top: 25px;
   }
 
-  #menuMobile > div > div > div.bm-menu > nav > a.backHome.router-link-exact-active.router-link-active {
+  #menuMobile>div>div>div.bm-menu>nav>a.backHome.router-link-exact-active.router-link-active {
     color: rgb(143, 143, 143) !important;
   }
 
-  #menuMobile > div > div > div.bm-menu > nav > a {
+  #menuMobile>div>div>div.bm-menu>nav>a {
     color: white;
   }
 
@@ -352,10 +355,12 @@ export default {
 
   .bm-menu {
     background-image: url("https://i.ibb.co/2c8c8sK/bg2.png");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
   }
 
-}
-</style>
+}</style>
