@@ -7,11 +7,11 @@
       </v-col>
 
       <v-col cols="8" id="subtitle">
-        <router-link class="backHome" :to="{ name: 'Home' }">HOME</router-link>
+        <!-- <router-link class="backHome" :to="{ name: 'Home' }">HOME</router-link>
         <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop' }">CLAIM
           AIRDROP</router-link>
         <router-link class="backHome" :to="{ name: 'Sale' }">MINT</router-link>
-        <router-link class="backHome" :to="{ name: 'Wallet' }">WALLET</router-link>
+        <router-link class="backHome" :to="{ name: 'Wallet' }">WALLET</router-link> -->
         <!-- <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link> -->
       </v-col>
 
@@ -30,11 +30,11 @@
 
       <div id="menuMobile" class="slideHeader">
         <Slide right :closeOnNavigation="true" @openMenu="handleOpenMenu" @closeMenu="handleCloseMenu" :width=windowWidth>
-          <router-link class="backHome" :to="{ name: 'Home' }">HOME</router-link>
+          <!-- <router-link class="backHome" :to="{ name: 'Home' }">HOME</router-link>
           <router-link class="backHome" style="color:#d5ff32 !important;" :to="{ name: 'Airdrop' }">CLAIM
             AIRDROP</router-link>
           <router-link class="backHome" :to="{ name: 'Sale' }">MINT</router-link>
-          <router-link class="backHome" :to="{ name: 'Wallet' }">WALLET</router-link>
+          <router-link class="backHome" :to="{ name: 'Wallet' }">WALLET</router-link> -->
           <!-- <router-link class="backHome" :to="{ name: 'Explore'}">EXPLORE</router-link> -->
 
           <wallet-status class="mt-5 pb-2 walletHeader mobileWallet" />
@@ -363,4 +363,5 @@ export default {
     /* Resize the background image to cover the entire container */
   }
 
-}</style>
+}
+</style>

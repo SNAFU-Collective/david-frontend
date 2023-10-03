@@ -5,7 +5,7 @@ import BOREDABI from "@/assets/abis/BoredDavid.json"
 
 import { getNetworks } from "../../utils/networks";
 import { getField, updateField } from 'vuex-map-fields';
-import detectEthereumProvider from '@metamask/detect-provider';
+// import detectEthereumProvider from '@metamask/detect-provider';
 
 
 export default {
@@ -238,38 +238,38 @@ export default {
             }
         },
         async connectToChain(context, chainId) {
-            const provider = await detectEthereumProvider();
-            let networks = getNetworks();
-            let network = networks[chainId];
-            if (network) {
-                provider.request({
-                    method: 'wallet_switchEthereumChain',
-                    params: [{ chainId: `0x${Number(chainId).toString(16)}` }],
-                })
-                    .then((res) => {
-                        console.log('switch', res)
-                    })
-                    .catch((e) => {
-                        if (e.code === 4902) {
-                            provider.request({
-                                method: 'wallet_addEthereumChain',
-                                params: [
-                                    {
-                                        chainId: `0x${Number(chainId).toString(16)}`,
-                                        chainName: network.name,
-                                        nativeCurrency: {
-                                            name: network.symbol,
-                                            symbol: network.symbol, // 2-6 characters long
-                                            decimals: 18,
-                                        },
-                                        rpcUrls: [network.rpc],
-                                        blockExplorerUrls: [network.explorer],
-                                    },
-                                ],
-                            })
-                        }
-                    })
-            }
+            // const provider = await detectEthereumProvider();
+            // let networks = getNetworks();
+            // let network = networks[chainId];
+            // if (network) {
+            //     provider.request({
+            //         method: 'wallet_switchEthereumChain',
+            //         params: [{ chainId: `0x${Number(chainId).toString(16)}` }],
+            //     })
+            //         .then((res) => {
+            //             console.log('switch', res)
+            //         })
+            //         .catch((e) => {
+            //             if (e.code === 4902) {
+            //                 provider.request({
+            //                     method: 'wallet_addEthereumChain',
+            //                     params: [
+            //                         {
+            //                             chainId: `0x${Number(chainId).toString(16)}`,
+            //                             chainName: network.name,
+            //                             nativeCurrency: {
+            //                                 name: network.symbol,
+            //                                 symbol: network.symbol, // 2-6 characters long
+            //                                 decimals: 18,
+            //                             },
+            //                             rpcUrls: [network.rpc],
+            //                             blockExplorerUrls: [network.explorer],
+            //                         },
+            //                     ],
+            //                 })
+            //             }
+            //         })
+            // }
         }
     },
 }
